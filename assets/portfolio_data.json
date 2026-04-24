@@ -1,0 +1,1170 @@
+{
+  "identity": {
+    "name": "Danish Nadar",
+    "title": "AI Engineer",
+    "location": "Chicago · Illinois Tech",
+    "email": "danish.t.nadar@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/danish-nadar",
+    "github": "https://github.com/DanishNadar"
+  },
+  "homeMetrics": [
+    {
+      "value": "14+",
+      "label": "Selected builds"
+    },
+    {
+      "value": "5",
+      "label": "Core lanes"
+    },
+    {
+      "value": "50+",
+      "label": "Machines automated"
+    },
+    {
+      "value": "2026",
+      "label": "StarkHacks winner"
+    }
+  ],
+  "focusLanes": [
+    {
+      "icon": "roboticsLane",
+      "title": "Accessibility Robotics",
+      "copy": "OBSERV-E, GRVI, DRVI, and HRVI connect assistive robotics with direct user feedback.",
+      "points": [
+        "Guide robot for visually impaired users",
+        "Drone support for broader perception",
+        "Haptic receiver with direct Bluetooth cues"
+      ]
+    },
+    {
+      "icon": "appliedAI",
+      "title": "Applied AI",
+      "copy": "Models, agents, and voice systems that move past demo mode.",
+      "points": [
+        "LLM and speech prototypes",
+        "Classification and anomaly detection",
+        "Workflows that connect to useful outcomes"
+      ]
+    },
+    {
+      "icon": "roboticsLane",
+      "title": "Robotics",
+      "copy": "Real-time validation, perception, and autonomy support.",
+      "points": [
+        "Sensor fusion with RTMaps + C++",
+        "Lead vehicle and driver monitoring work",
+        "Requirements, testing, and integration coverage"
+      ]
+    },
+    {
+      "icon": "securityLane",
+      "title": "Security Automation",
+      "copy": "Operational tools that reduce manual effort and improve visibility.",
+      "points": [
+        "SPF, DKIM, and DMARC automation",
+        "Reporting and downstream integrations",
+        "Monitoring-minded architecture"
+      ]
+    },
+    {
+      "icon": "productLane",
+      "title": "Product Systems",
+      "copy": "Cloud tooling, UX thinking, and practical delivery.",
+      "points": [
+        "Azure, Supabase, and deployment tooling",
+        "Internal tools and AI-facing product work",
+        "Interfaces designed around clarity and useful routing"
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "value": "OBSERV-E",
+      "label": "Accessibility robotics ecosystem"
+    },
+    {
+      "value": "BS/MS",
+      "label": "Artificial Intelligence at Illinois Tech"
+    },
+    {
+      "value": "100%",
+      "label": "Budget approval rate as robotics treasurer"
+    },
+    {
+      "value": "Voice",
+      "label": "Portfolio avatar direction with browser speech"
+    }
+  ],
+  "projects": [
+    {
+      "id": "observ-e",
+      "page": "project-observ-e.html",
+      "title": "OBSERV-E Accessibility Robotics Ecosystem",
+      "domain": "Robotics",
+      "domainSlug": "robotics",
+      "period": "2026–Present",
+      "role": "Founder / technical product lead",
+      "summary": "OBSERV-E is an accessibility robotics umbrella focused on helping visually impaired users perceive, navigate, and receive environmental guidance through robots, drones, and haptic feedback.",
+      "showcase": "Special section for GRVI, DRVI, and HRVI as one connected accessibility system.",
+      "visualType": "sensor",
+      "visualLabel": "OBSERV-E system map",
+      "visualHint": "Robot vision, direct Bluetooth signaling, and haptic user feedback.",
+      "image": "project-observ-e.svg",
+      "skills": [
+        "Robotics",
+        "Computer Vision",
+        "Bluetooth",
+        "Haptics",
+        "Product Strategy",
+        "Accessibility"
+      ],
+      "outcomes": [
+        "Reframed the architecture from robot → web app → end user to direct robot → end user Bluetooth signaling for faster feedback.",
+        "Defined OBSERV-E as the umbrella ecosystem that includes GRVI, DRVI, and HRVI instead of treating each robot as an isolated project.",
+        "Built the pitch direction around service-dog-inspired guidance, computer vision, and user-centered support for visually impaired people."
+      ],
+      "proof": {
+        "robotics": "OBSERV-E connects mobile robotics, aerial robotics, and haptic receivers into one assistive navigation ecosystem.",
+        "cpp": "Future embedded control and signal handling can connect robot state to haptic output.",
+        "python": "Prototype logic and perception experiments can be supported through Python-based robotics tooling."
+      },
+      "detailCards": [
+        {
+          "title": "GRVI · Guide Robot for the Visually Impaired",
+          "note": "Ground robot that acts like a robotic guide companion, using perception to detect obstacles and route guidance cues to the user."
+        },
+        {
+          "title": "DRVI · Drone Robot for the Visually Impaired",
+          "note": "Aerial support robot concept for broader environmental awareness, scouting, and overhead perception when ground-level sensing is limited."
+        },
+        {
+          "title": "HRVI · Haptic Receiver for the Visually Impaired",
+          "note": "Wearable or handheld receiver that turns robot signals into direct tactile feedback for the end user through Bluetooth."
+        }
+      ]
+    },
+    {
+      "id": "starkhacks-selvam",
+      "page": "project-starkhacks-selvam.html",
+      "title": "Selvam Valuations · StarkHacks 2026 Winner",
+      "domain": "Product",
+      "domainSlug": "product",
+      "period": "2026",
+      "role": "Hackathon winner · AI/product engineering contributor",
+      "summary": "Built a winning hardware-hackathon project at StarkHacks 2026 with the Illinois Tech Robotics team, focused on turning a technical idea into a clear, demo-ready product under time pressure.",
+      "showcase": "Award-winning build that demonstrates rapid prototyping, teamwork, and technical presentation.",
+      "visualType": "workflow",
+      "visualLabel": "Hackathon build flow",
+      "visualHint": "Ideation, prototype, demo, judging, and award outcome.",
+      "image": "project-starkhacks.svg",
+      "skills": [
+        "Rapid Prototyping",
+        "AI/Product",
+        "Team Leadership",
+        "Pitching",
+        "Engineering"
+      ],
+      "outcomes": [
+        "Won at StarkHacks 2026 while representing Illinois Tech Robotics.",
+        "Contributed technical implementation and product framing during a high-pressure hardware hackathon.",
+        "Turned a rough concept into a judge-facing demo with clear value, story, and execution."
+      ],
+      "proof": {
+        "python": "Project work involved practical prototype logic and demo-ready implementation.",
+        "apis": "Hackathon builds often required connecting frontend, backend, and service workflows quickly.",
+        "product": "The project emphasized product value and explainability, not only technical implementation."
+      },
+      "detailCards": [
+        {
+          "title": "Winning demo",
+          "note": "Use this for a photo, award screenshot, or final demo image from StarkHacks."
+        },
+        {
+          "title": "Technical contribution",
+          "note": "Highlight the implementation pieces you personally owned."
+        },
+        {
+          "title": "Pitch story",
+          "note": "Show how the project was explained to judges and why it stood out."
+        }
+      ]
+    },
+    {
+      "id": "lane-detection-salad",
+      "page": "project-lane-detection-salad.html",
+      "title": "Monocular Lane Detection Improvement Study",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2026",
+      "role": "Computer vision research project",
+      "summary": "Compared backbone architectures and data augmentation strategies for lane detection, simplifying the original 3D problem into a feasible 2D lane-coordinate prediction pipeline.",
+      "showcase": "Research-style ML project comparing robustness, accuracy, and efficiency tradeoffs.",
+      "visualType": "classifier",
+      "visualLabel": "Lane model comparison",
+      "visualHint": "Backbone comparison, augmentation impact, and SALAD-style evaluation.",
+      "image": "project-lane-detection.svg",
+      "skills": [
+        "Python",
+        "Computer Vision",
+        "PyTorch",
+        "Data Augmentation",
+        "Model Evaluation"
+      ],
+      "outcomes": [
+        "Compared ResNet-18, EfficientNet-B0, and MobileNetV2 to study accuracy versus efficiency.",
+        "Used augmentation such as blur, noise, brightness changes, and shadow simulation to test robustness.",
+        "Presented F1-score, precision, recall, and center-distance error to explain strengths and weaknesses clearly."
+      ],
+      "proof": {
+        "python": "Training, preprocessing, metrics, and plotting were handled in Python.",
+        "sklearn": "Evaluation used structured metrics and comparison tables to explain model behavior.",
+        "ml": "The project focused on model performance, robustness, and architecture tradeoffs."
+      },
+      "detailCards": [
+        {
+          "title": "Backbone comparison",
+          "note": "ResNet-18 baseline versus EfficientNet-B0 and MobileNetV2."
+        },
+        {
+          "title": "Augmentation study",
+          "note": "Weather and lighting-inspired transforms tested model robustness."
+        },
+        {
+          "title": "Results narrative",
+          "note": "Explain F1-score, precision, recall, and CD error in terms of lane detection quality."
+        }
+      ]
+    },
+    {
+      "id": "rl-autonomous-driving",
+      "page": "project-rl-autonomous-driving.html",
+      "title": "Reinforcement Learning Lane-Keeping Simulator",
+      "domain": "Robotics",
+      "domainSlug": "robotics",
+      "period": "2026",
+      "role": "RL simulation and evaluation project",
+      "summary": "Built a lightweight lane-keeping simulator to compare sensor configurations and reward design for autonomous-driving-style reinforcement learning behavior.",
+      "showcase": "Explores rewards, crashes, lane deviation, completion rate, and simulated sensor tradeoffs.",
+      "visualType": "sensor",
+      "visualLabel": "RL driving simulator",
+      "visualHint": "Policy, reward, sensor stack, and lane-keeping behavior.",
+      "image": "project-rl-driving.svg",
+      "skills": [
+        "Python",
+        "Reinforcement Learning",
+        "PPO",
+        "Simulation",
+        "Evaluation"
+      ],
+      "outcomes": [
+        "Compared Camera, Camera+LiDAR, and full-stack sensing configurations using driving metrics.",
+        "Tracked reward, collision rate, off-road rate, task completion, lane deviation, and distance traveled.",
+        "Used simulator videos and metric tables to explain why more sensor data is not always better for RL."
+      ],
+      "proof": {
+        "python": "The custom simulator, training loop, and evaluation scripts were built in Python.",
+        "ml": "PPO training connected policy learning to reward feedback and state observations.",
+        "robotics": "The task modeled autonomous lane keeping and sensor-based decision making."
+      },
+      "detailCards": [
+        {
+          "title": "Reward design",
+          "note": "Show how good lane position, crashes, and off-road behavior affected learning."
+        },
+        {
+          "title": "Sensor comparison",
+          "note": "Camera versus Camera+LiDAR versus full stack."
+        },
+        {
+          "title": "Demo video slot",
+          "note": "Use for the cleanest driving replay or the most informative failure case."
+        }
+      ]
+    },
+    {
+      "id": "dns-security-scanner",
+      "page": "project-dns-security-scanner.html",
+      "github": "https://github.com/DanishNadar/TTP_DNS-Screening-Tool",
+      "title": "DNS Email Authentication Scanner",
+      "domain": "Cybersecurity",
+      "domainSlug": "security",
+      "period": "2025–Present",
+      "role": "Software Automation Engineer project direction",
+      "summary": "Python automation that checks SPF, DKIM, and DMARC posture, validates findings against EasyDMARC, and fits MSP monitoring workflows.",
+      "showcase": "Automates domain security checks and reporting.",
+      "githubNote": "GitHub repo includes domain scanner scripts, DNS tooling, and requirements.",
+      "visualType": "terminal",
+      "visualLabel": "Scanner console placeholder",
+      "visualHint": "Drop terminal output, dashboard shots, or JSON/CSV reporting visuals here.",
+      "skills": [
+        "Python",
+        "APIs",
+        "JSON/CSV",
+        "Automation",
+        "Security"
+      ],
+      "outcomes": [
+        "Built a reusable Python workflow for domain email-auth checks.",
+        "Designed JSON and CSV reporting for operational use.",
+        "Validated outputs against EasyDMARC instead of trusting raw automation blindly."
+      ],
+      "proof": {
+        "python": "Core scanner logic, DNS parsing, result normalization, and reporting live in Python.",
+        "apis": "The workflow is built to pass results into downstream systems and monitoring services.",
+        "security": "The project centers on SPF, DKIM, DMARC posture, and domain security visibility.",
+        "data": "Results are structured for downstream review and operations."
+      },
+      "detailCards": [
+        {
+          "title": "Terminal or dashboard",
+          "note": "Use this spot for the scanner UI, terminal output, or a reporting screenshot."
+        },
+        {
+          "title": "Workflow diagram",
+          "note": "Map DNS lookup -> validation -> report -> monitoring handoff."
+        },
+        {
+          "title": "Before / after ops view",
+          "note": "Show how manual checks became a repeatable workflow."
+        }
+      ]
+    },
+    {
+      "id": "aila-avatar",
+      "page": "project-aila-avatar.html",
+      "github": "https://github.com/DanishNadar/AILA",
+      "title": "AILA · AI Leadership Avatar",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2025–Present",
+      "role": "Voice and AI portfolio assistant concept",
+      "summary": "A voice-driven leadership assistant concept for Illinois Tech that explores conversational presence, speech, and accessible guidance.",
+      "showcase": "Combines voice UX, AI orchestration, and portfolio storytelling.",
+      "githubNote": "GitHub repo includes app.py, scenarios, speech helpers, and Ollama wiring.",
+      "visualType": "voice",
+      "visualLabel": "Avatar scene placeholder",
+      "visualHint": "Ideal for a rendered avatar still, voice UI, or system architecture snapshot.",
+      "skills": [
+        "Python",
+        "Azure",
+        "Speech",
+        "LLMs",
+        "Product"
+      ],
+      "outcomes": [
+        "Explores how speech, presence, and guidance can feel more human on the web.",
+        "Connects AI orchestration with design, narrative, and accessibility.",
+        "Acts as both a prototype and a statement about Danish’s direction in applied AI."
+      ],
+      "proof": {
+        "python": "Prototype orchestration and service glue logic were built in Python.",
+        "azure": "Speech and AI service exploration leaned on Azure-based tooling.",
+        "apis": "Voice and inference services are stitched together through backend service calls."
+      },
+      "detailCards": [
+        {
+          "title": "Avatar render",
+          "note": "Place a hero render or 3D scene still here."
+        },
+        {
+          "title": "Conversation flow",
+          "note": "Show prompt -> response -> speech -> UI feedback."
+        },
+        {
+          "title": "Accessibility note",
+          "note": "Use this card for fast-loading or low-friction UX notes."
+        }
+      ]
+    },
+    {
+      "id": "jtr-agent",
+      "page": "project-jtr-agent.html",
+      "github": "https://github.com/DanishNadar/JTR",
+      "title": "JTR · AI Job-Seeking Agent",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2025",
+      "role": "Agent workflow and product direction",
+      "summary": "An AI-powered job-seeking system focused on matching, outreach ideas, and workflow automation for real-world career ops.",
+      "showcase": "Shows product thinking around AI assistance and structured workflows.",
+      "githubNote": "GitHub repo includes separate backend and frontend folders.",
+      "visualType": "workflow",
+      "visualLabel": "Agent flow placeholder",
+      "visualHint": "Use for agent routing, job-matching pipeline, or outreach workflow visuals.",
+      "skills": [
+        "Python",
+        "APIs",
+        "Automation",
+        "ML"
+      ],
+      "outcomes": [
+        "Frames job-seeking as an operations problem, not just a chat problem.",
+        "Connects matching, outreach, and automation into a single system direction.",
+        "Demonstrates product thinking around AI assistance and workflow clarity."
+      ],
+      "proof": {
+        "python": "Python handled orchestration and system logic for the agent pipeline.",
+        "apis": "External job, messaging, and enrichment workflows rely on API-first integration patterns."
+      },
+      "detailCards": [
+        {
+          "title": "System overview",
+          "note": "Show the end-to-end agent architecture or matching logic here."
+        },
+        {
+          "title": "Workflow board",
+          "note": "Capture outreach generation, tracking, or job triage UI."
+        },
+        {
+          "title": "Reasoning example",
+          "note": "Use this for prompt strategy or matching screenshots."
+        }
+      ]
+    },
+    {
+      "id": "ecocar-sensor-fusion",
+      "page": "project-ecocar-sensor-fusion.html",
+      "title": "EcoCAR Sensor Fusion Lead",
+      "domain": "Robotics",
+      "domainSlug": "robotics",
+      "period": "2024",
+      "role": "Connected Automated Vehicle Engineer · Sensor Fusion Lead",
+      "summary": "Authored requirements and test cases for perception and monitoring modules while implementing C++ components for lead vehicle detection and driver attention systems.",
+      "showcase": "Real-time engineering with LiDAR, radar, and camera data in RTMaps + C++.",
+      "visualType": "sensor",
+      "visualLabel": "Sensor-fusion placeholder",
+      "visualHint": "Great place for sensor diagrams, RTMaps screenshots, or test visuals.",
+      "skills": [
+        "C++",
+        "RTMaps",
+        "Validation",
+        "Sensor Fusion",
+        "Robotics"
+      ],
+      "outcomes": [
+        "Wrote requirements and test cases with full validation coverage in mind.",
+        "Implemented real-time C++ modules for lead vehicle and driver attention work.",
+        "Worked across LiDAR, radar, camera data, and RTMaps synchronization."
+      ],
+      "proof": {
+        "cpp": "Core modules for lead vehicle detection and driver monitoring were implemented in C++.",
+        "rtmaps": "Sensor synchronization and anomaly handling were managed in RTMaps.",
+        "robotics": "The entire project is grounded in autonomous vehicle perception and validation."
+      },
+      "detailCards": [
+        {
+          "title": "Sensor stack diagram",
+          "note": "Show how camera, radar, and LiDAR inputs connect."
+        },
+        {
+          "title": "RTMaps view",
+          "note": "Add a screenshot of timing, fusion, or anomaly handling."
+        },
+        {
+          "title": "Validation board",
+          "note": "Use for test plans, results, or module requirements."
+        }
+      ]
+    },
+    {
+      "id": "ai-headshot-platform",
+      "page": "project-ai-headshot-platform.html",
+      "title": "AI Headshot Platform Contribution",
+      "domain": "Product",
+      "domainSlug": "product",
+      "period": "2025",
+      "role": "Production contribution on AI product tooling",
+      "summary": "Contributed to production fixes on an AI headshot platform using TypeScript, Supabase, Vercel CI/CD, and Stripe.",
+      "showcase": "Bridges AI product work with cloud tooling and operational reliability.",
+      "visualType": "dashboard",
+      "visualLabel": "Product dashboard placeholder",
+      "visualHint": "Use for deployment flow, billing UI, or issue-resolution snapshots.",
+      "skills": [
+        "TypeScript",
+        "Supabase",
+        "Vercel",
+        "Stripe",
+        "CI/CD"
+      ],
+      "outcomes": [
+        "Contributed to production fixes rather than only local prototypes.",
+        "Touched deployment, backend support, and payments-related flows.",
+        "Shows comfort with fast-moving product environments around AI services."
+      ],
+      "proof": {
+        "supabase": "Database and application flows were supported through Supabase-backed services.",
+        "vercel": "Deployment and CI/CD were part of shipping fixes and stabilizing the product.",
+        "apis": "Payments and service interactions required dependable integration work."
+      },
+      "detailCards": [
+        {
+          "title": "Deployment pipeline",
+          "note": "Add a release flow, CI/CD view, or deployment showcase."
+        },
+        {
+          "title": "Product surface",
+          "note": "Use this for a UI screenshot or issue-resolution example."
+        },
+        {
+          "title": "Operational note",
+          "note": "Highlight reliability, debugging, or customer-facing impact."
+        }
+      ]
+    },
+    {
+      "id": "phishing-detector",
+      "page": "project-phishing-detector.html",
+      "title": "Phishing Detection Model",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2024",
+      "role": "Model design, preprocessing, and evaluation",
+      "summary": "An AI-powered phishing detector built with RandomForestClassifier for anomaly-driven detection, reaching 92% accuracy.",
+      "showcase": "Clear model pipeline with measurable evaluation.",
+      "visualType": "classifier",
+      "visualLabel": "Model pipeline placeholder",
+      "visualHint": "Good for feature charts, confusion matrix, or dataset-processing screenshots.",
+      "skills": [
+        "Python",
+        "Scikit-learn",
+        "Data Prep",
+        "Classification"
+      ],
+      "outcomes": [
+        "Handled preprocessing, model training, and evaluation end to end.",
+        "Reached a reported detection accuracy of 92%.",
+        "Shows an showcase-based applied ML workflow with measurable output."
+      ],
+      "proof": {
+        "python": "Data preprocessing, training, and evaluation were managed in Python.",
+        "sklearn": "The detector used scikit-learn for the RandomForestClassifier workflow.",
+        "data": "The project required structured feature preparation and model evaluation."
+      },
+      "detailCards": [
+        {
+          "title": "Model workflow",
+          "note": "Use for preprocessing, training, and evaluation flow."
+        },
+        {
+          "title": "Metrics view",
+          "note": "Drop accuracy, precision, or confusion-matrix visuals here."
+        },
+        {
+          "title": "Feature board",
+          "note": "Explain which signals helped classify phishing."
+        }
+      ]
+    },
+    {
+      "id": "course-recommendation",
+      "page": "project-course-recommendation.html",
+      "title": "Course Recommendation System",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2024",
+      "role": "Recommendation logic and similarity system build",
+      "summary": "Recommendation system using CountVectorizer and cosine similarity for course matching and relevance scoring.",
+      "showcase": "Demonstrates practical NLP-style feature engineering and ranking logic.",
+      "visualType": "ranking",
+      "visualLabel": "Recommendation placeholder",
+      "visualHint": "Use for ranking results, similarity views, or recommendation output.",
+      "skills": [
+        "Python",
+        "NLP",
+        "Scikit-learn",
+        "Ranking"
+      ],
+      "outcomes": [
+        "Used vectorization and cosine similarity to compare courses.",
+        "Framed recommendation as a structured ranking problem.",
+        "Shows practical feature engineering for user-facing relevance."
+      ],
+      "proof": {
+        "python": "Recommendation logic and preprocessing were built in Python.",
+        "sklearn": "Vectorization and similarity methods fit naturally into a scikit-learn style workflow."
+      },
+      "detailCards": [
+        {
+          "title": "Ranking UI",
+          "note": "Show how the recommended courses are displayed."
+        },
+        {
+          "title": "Similarity logic",
+          "note": "Map CountVectorizer + cosine similarity in a simple diagram."
+        },
+        {
+          "title": "Input / output",
+          "note": "Add before-and-after recommendation examples here."
+        }
+      ]
+    },
+    {
+      "id": "fraud-detection",
+      "page": "project-fraud-detection.html",
+      "title": "Credit Card Fraud Detection",
+      "domain": "Applied AI",
+      "domainSlug": "ai",
+      "period": "2024",
+      "role": "Anomaly detection experimentation and evaluation",
+      "summary": "Used Isolation Forest and One-Class SVM to detect anomalous or fraudulent transactions.",
+      "showcase": "Portfolio case for anomaly detection and model selection.",
+      "visualType": "anomaly",
+      "visualLabel": "Anomaly placeholder",
+      "visualHint": "Best for anomaly maps, flagged transactions, or evaluation views.",
+      "skills": [
+        "Python",
+        "Scikit-learn",
+        "Anomaly Detection"
+      ],
+      "outcomes": [
+        "Compared anomaly-detection approaches for fraud-style data.",
+        "Used unsupervised and semi-supervised style methods to flag outliers.",
+        "Shows range across practical ML tasks beyond standard classification."
+      ],
+      "proof": {
+        "python": "Experimentation and evaluation ran in Python notebooks and scripts.",
+        "sklearn": "Isolation Forest and One-Class SVM align directly with scikit-learn usage.",
+        "security": "Fraud analytics support security and risk-oriented problem solving."
+      },
+      "detailCards": [
+        {
+          "title": "Anomaly map",
+          "note": "Show clusters, outliers, or a flagged-transaction visual."
+        },
+        {
+          "title": "Method comparison",
+          "note": "Contrast Isolation Forest with One-Class SVM here."
+        },
+        {
+          "title": "Risk summary",
+          "note": "Use for thresholding logic or fraud-review workflow."
+        }
+      ]
+    },
+    {
+      "id": "spiron-assistant",
+      "page": "project-spiron-assistant.html",
+      "title": "Spiron Virtual Assistant",
+      "domain": "Product",
+      "domainSlug": "product",
+      "period": "2022",
+      "role": "Early voice-assistant build",
+      "summary": "A multifunctional voice assistant using pyttsx3 and speech_recognition for task automation and hands-free interaction.",
+      "showcase": "Early signal of Danish’s ongoing interest in voice-first systems.",
+      "visualType": "assistant",
+      "visualLabel": "Voice assistant placeholder",
+      "visualHint": "Use for command examples, interaction flow, or assistant UI concepts.",
+      "skills": [
+        "Python",
+        "Speech",
+        "Automation"
+      ],
+      "outcomes": [
+        "Built an early voice-first system around commands and automation.",
+        "Explored how interaction changes when voice becomes the primary interface.",
+        "Signals a consistent long-term interest in conversational systems."
+      ],
+      "proof": {
+        "python": "Voice command handling and assistant behavior were built in Python.",
+        "apis": "Even when local-first, the system reflects integration-oriented thinking."
+      },
+      "detailCards": [
+        {
+          "title": "Command gallery",
+          "note": "Place example prompts or tasks handled by the assistant."
+        },
+        {
+          "title": "Voice flow",
+          "note": "Show speech input -> action -> response."
+        },
+        {
+          "title": "Automation payoff",
+          "note": "Use for practical tasks the assistant sped up."
+        }
+      ]
+    },
+    {
+      "id": "shopping-bot",
+      "page": "project-shopping-bot.html",
+      "title": "Automated Shopping Bot",
+      "domain": "Product",
+      "domainSlug": "product",
+      "period": "2021–2022",
+      "role": "Browser automation workflow",
+      "summary": "Selenium-based automation bot that scraped product data and completed transactions from user-provided links.",
+      "showcase": "Shows workflow automation and web interaction experience.",
+      "visualType": "browser",
+      "visualLabel": "Browser automation placeholder",
+      "visualHint": "Good for Selenium flows, page-state screenshots, or checkout automation visuals.",
+      "skills": [
+        "Python",
+        "Selenium",
+        "Automation"
+      ],
+      "outcomes": [
+        "Automated scraping and browser-driven actions from user inputs.",
+        "Shows early comfort with web workflows and repetitive-task automation.",
+        "Adds depth to the automation side of the portfolio."
+      ],
+      "proof": {
+        "python": "Automation, scraping, and orchestration were built in Python.",
+        "apis": "Even with browser automation, the project reflects integration-style thinking."
+      },
+      "detailCards": [
+        {
+          "title": "Browser flow",
+          "note": "Show Selenium-driven task steps or page-state transitions."
+        },
+        {
+          "title": "Data extraction",
+          "note": "Use for scraped-product fields or automation logic."
+        },
+        {
+          "title": "Checkout sequence",
+          "note": "Add a safe, redacted detail view of the workflow."
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "slug": "python",
+      "name": "Python",
+      "icon": "python",
+      "category": "Language",
+      "short": "Primary language across AI, automation, and tooling.",
+      "link": "https://www.python.org/",
+      "projects": [
+        "dns-security-scanner",
+        "aila-avatar",
+        "jtr-agent",
+        "phishing-detector",
+        "course-recommendation",
+        "fraud-detection",
+        "spiron-assistant",
+        "shopping-bot",
+        "lane-detection-salad",
+        "rl-autonomous-driving"
+      ]
+    },
+    {
+      "slug": "cpp",
+      "name": "C++",
+      "icon": "cpp",
+      "category": "Language",
+      "short": "Used for real-time modules in autonomy work.",
+      "link": "https://isocpp.org/",
+      "projects": [
+        "ecocar-sensor-fusion",
+        "observ-e",
+        "rl-autonomous-driving"
+      ]
+    },
+    {
+      "slug": "sklearn",
+      "name": "Scikit-learn",
+      "icon": "ml",
+      "category": "ML",
+      "short": "Applied for classification, ranking, and anomaly detection.",
+      "link": "https://scikit-learn.org/stable/",
+      "projects": [
+        "phishing-detector",
+        "course-recommendation",
+        "fraud-detection"
+      ]
+    },
+    {
+      "slug": "azure",
+      "name": "Azure",
+      "icon": "cloud",
+      "category": "Cloud",
+      "short": "Used for AI and speech service prototyping.",
+      "link": "https://azure.microsoft.com/",
+      "projects": [
+        "aila-avatar"
+      ]
+    },
+    {
+      "slug": "supabase",
+      "name": "Supabase",
+      "icon": "database",
+      "category": "Backend",
+      "short": "Database + app support in production-flavored product work.",
+      "link": "https://supabase.com/",
+      "projects": [
+        "ai-headshot-platform"
+      ]
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "icon": "deploy",
+      "category": "Deployment",
+      "short": "Deployment and CI/CD support for web products.",
+      "link": "https://vercel.com/",
+      "projects": [
+        "ai-headshot-platform"
+      ]
+    },
+    {
+      "slug": "rtmaps",
+      "name": "RTMaps",
+      "icon": "sensor",
+      "category": "Robotics",
+      "short": "Used for synchronized sensor-fusion workflows.",
+      "link": "https://intempora.com/products/rtmaps/",
+      "projects": [
+        "ecocar-sensor-fusion",
+        "observ-e",
+        "rl-autonomous-driving"
+      ]
+    },
+    {
+      "slug": "apis",
+      "name": "APIs",
+      "icon": "integrations",
+      "category": "Integrations",
+      "short": "Service layers and backend calls that connect systems together.",
+      "link": "apis.html",
+      "projects": [
+        "dns-security-scanner",
+        "aila-avatar",
+        "jtr-agent",
+        "ai-headshot-platform",
+        "spiron-assistant"
+      ]
+    },
+    {
+      "slug": "security",
+      "name": "Security",
+      "icon": "shield",
+      "category": "Domain",
+      "short": "Email auth, fraud analytics, and risk-aware automation.",
+      "link": "https://www.cisa.gov/",
+      "projects": [
+        "dns-security-scanner",
+        "fraud-detection"
+      ]
+    },
+    {
+      "slug": "data",
+      "name": "Data & EDA",
+      "icon": "analytics",
+      "category": "Analysis",
+      "short": "Preprocessing and feature work across ML projects.",
+      "link": "https://pandas.pydata.org/",
+      "projects": [
+        "phishing-detector",
+        "fraud-detection",
+        "course-recommendation"
+      ]
+    }
+  ],
+  "githubRepos": [
+    {
+      "updated": "Featured",
+      "name": "DanishNadarPortfolio",
+      "language": "HTML/CSS/JS/Python",
+      "title": "Personal AI portfolio",
+      "summary": "Portfolio site with avatar page, project case studies, and OpenVoice-ready local backend.",
+      "href": "https://github.com/DanishNadar/DanishNadarPortfolio"
+    },
+    {
+      "name": "AILA",
+      "title": "AI Leadership Avatar",
+      "summary": "The Illinois Tech Leadership Academy’s AI Leadership Avatar (AILA).",
+      "href": "https://github.com/DanishNadar/AILA",
+      "language": "Python · JavaScript",
+      "updated": "Updated Mar 7, 2026"
+    },
+    {
+      "name": "JTR",
+      "title": "Job Tracker & Recommender",
+      "summary": "Repository for the JTR job-seeking system, with separate backend and frontend folders.",
+      "href": "https://github.com/DanishNadar/JTR",
+      "language": "Python · HTML · JavaScript",
+      "updated": "Updated Nov 7, 2025"
+    },
+    {
+      "name": "TTP_DNS-Screening-Tool",
+      "title": "DNS Screening Automation",
+      "summary": "DNS Screening Tool providing automation for Technology Transition Paradigm.",
+      "href": "https://github.com/DanishNadar/TTP_DNS-Screening-Tool",
+      "language": "Python",
+      "updated": "Updated Aug 19, 2025"
+    },
+    {
+      "name": "AIRA",
+      "title": "Illinois Tech Robotics AIRA",
+      "summary": "Code for the Illinois Tech Robotics Autonomous Interactive Robotic Assistant (AIRA).",
+      "href": "https://github.com/DanishNadar/AIRA",
+      "language": "CMake · C · Python",
+      "updated": "Updated Apr 22, 2025"
+    },
+    {
+      "name": "DN_DiamondPricePrediction",
+      "title": "Diamond Price Prediction",
+      "summary": "A full end-to-end machine learning project to predict diamond prices.",
+      "href": "https://github.com/DanishNadar/DN_DiamondPricePrediction",
+      "language": "Python",
+      "updated": "Updated Jun 26, 2024"
+    },
+    {
+      "name": "DN_HousePricePrediction",
+      "title": "House Price Prediction",
+      "summary": "An AI model web deployment to predict house prices.",
+      "href": "https://github.com/DanishNadar/DN_HousePricePrediction",
+      "language": "Python",
+      "updated": "Updated Jun 11, 2024"
+    },
+    {
+      "name": "IntegrityFailure",
+      "title": "IntegrityFailure",
+      "summary": "A cybersecurity education game built to teach people how to recognize scams.",
+      "href": "https://github.com/DanishNadar/IntegrityFailure",
+      "language": "Game project",
+      "updated": "Updated May 21, 2025"
+    },
+    {
+      "name": "PropagandaDetection",
+      "title": "Propaganda Detection",
+      "summary": "A machine learning model built for propaganda detection.",
+      "href": "https://github.com/DanishNadar/PropagandaDetection",
+      "language": "Python",
+      "updated": "Updated Nov 7, 2023"
+    }
+  ],
+  "apis": [
+    {
+      "name": "Azure Cognitive Services / Speech",
+      "type": "Voice + AI",
+      "summary": "Used in avatar-style and training prototypes to connect speech, interaction, and AI behavior.",
+      "uses": [
+        "Speech-enabled prototypes",
+        "Voice UX experiments",
+        "Cloud AI service integration"
+      ],
+      "link": "https://azure.microsoft.com/products/ai-services/"
+    },
+    {
+      "name": "Microsoft Graph",
+      "type": "Productivity / M365",
+      "summary": "Relevant for secure enterprise messaging flows and automation patterns in Microsoft environments.",
+      "uses": [
+        "Enterprise mail workflows",
+        "App registration + secure integrations",
+        "M365 service automation"
+      ],
+      "link": "https://learn.microsoft.com/graph/overview"
+    },
+    {
+      "name": "Stripe",
+      "type": "Payments",
+      "summary": "Used in product work where payments and subscriptions connect to a user-facing service.",
+      "uses": [
+        "AI product payments",
+        "Checkout flow support",
+        "Operational issue resolution"
+      ],
+      "link": "https://stripe.com/docs/api"
+    },
+    {
+      "name": "Supabase APIs",
+      "type": "Backend",
+      "summary": "Database, auth, and app-level service layer used in production-flavored web work.",
+      "uses": [
+        "Database-backed product workflows",
+        "Auth and storage support",
+        "Rapid backend enablement"
+      ],
+      "link": "https://supabase.com/docs"
+    },
+    {
+      "name": "Apollo.io / Enrichment-style Integrations",
+      "type": "Workflow",
+      "summary": "Representative of outreach and enrichment integrations around job and sales-style automation workflows.",
+      "uses": [
+        "Lead or job workflow enrichment",
+        "Automation chains",
+        "External data lookup"
+      ],
+      "link": "https://docs.apollo.io/"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Automation Engineer",
+      "company": "Technology Transition Paradigm",
+      "period": "Aug 2025 – Present",
+      "points": [
+        "Building a DNS/security outreach automation pipeline around SPF, DKIM, DMARC, dark-web evidence, Microsoft Graph email delivery, and tracking workflows.",
+        "Developing Python tooling that turns manual client security checks into repeatable reporting and outreach operations.",
+        "Designing structured CSV/JSON outputs, database persistence, and validation steps against external tools such as EasyDMARC."
+      ]
+    },
+    {
+      "role": "AI Software Development Intern",
+      "company": "OfficePro, Inc.",
+      "period": "May 2025 – Aug 2025",
+      "points": [
+        "Developed AI instructor and training-support prototypes using Azure Cognitive Services, Speech Services, Azure Functions, and web tooling.",
+        "Automated and supported a 50+ computer training fleet with Python, PowerShell, and operational scripting.",
+        "Contributed to AIHeadShotMasters production workflows involving TypeScript, Supabase, Vercel CI/CD, Stripe checkout, and debugging deployment issues."
+      ]
+    },
+    {
+      "role": "Connected Automated Vehicle Engineer · Sensor Fusion Lead",
+      "company": "EcoCAR EV Challenge",
+      "period": "Aug 2024 – Present",
+      "points": [
+        "Authored requirements and validation test cases for perception, lead-vehicle detection, and driver-monitoring modules.",
+        "Implemented real-time C++ and RTMaps workflows across camera, radar, LiDAR, and vehicle-state signals.",
+        "Built practical understanding of autonomy systems, signal routing, and test-driven validation for connected automated vehicles."
+      ]
+    },
+    {
+      "role": "Founder / Technical Product Lead",
+      "company": "OBSERV-E",
+      "period": "2026 – Present",
+      "points": [
+        "Defining OBSERV-E as an accessibility robotics umbrella for GRVI, DRVI, and HRVI.",
+        "Shifting the architecture toward direct Bluetooth robot-to-user feedback rather than relying on a web app as the main signal path.",
+        "Building pitch materials around service-dog-inspired robotics, computer vision, haptics, and accessible navigation."
+      ]
+    },
+    {
+      "role": "Treasurer · Instructor · Developer",
+      "company": "Illinois Tech Robotics",
+      "period": "Nov 2024 – Present",
+      "points": [
+        "Secured budget approvals and coordinated purchasing, workshops, and student robotics operations.",
+        "Led and supported workshops across AI/ML, Linux, Python, systems programming, and robotics fundamentals.",
+        "Represented Illinois Tech Robotics in competitions and collaborative projects, including a winning StarkHacks 2026 build."
+      ]
+    },
+    {
+      "role": "Leadership Academy Scholar",
+      "company": "M.A. and Lila Self Leadership Academy · Illinois Tech",
+      "period": "2025 – Present",
+      "points": [
+        "Selected for leadership development focused on service, execution, and interdisciplinary teamwork.",
+        "Serves in student leadership contexts that connect engineering, communication, and community impact.",
+        "Uses leadership training to strengthen project planning, technical storytelling, and team accountability."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Illinois Institute of Technology",
+      "degree": "Bachelor of Science & Master of Science, Artificial Intelligence · GPA 3.42",
+      "period": "Expected May 2027"
+    },
+    {
+      "school": "Montgomery College",
+      "degree": "Associate of Applied Sciences, Cloud Computing & Network Technology · GPA 3.89",
+      "period": "Apr 2023"
+    }
+  ],
+  "resumeStats": [
+    {
+      "value": "AI",
+      "label": "BS/MS Artificial Intelligence"
+    },
+    {
+      "value": "OBSERV-E",
+      "label": "Accessibility robotics venture"
+    },
+    {
+      "value": "2026",
+      "label": "StarkHacks winner"
+    },
+    {
+      "value": "6",
+      "label": "Current roles highlighted"
+    }
+  ],
+  "resumeWins": [
+    "Builds across AI, robotics, autonomy, cloud tooling, and cybersecurity automation.",
+    "Connects technical execution with pitch storytelling, product strategy, and user impact.",
+    "Has hands-on work in Python, C++, TypeScript, RTMaps, Supabase, Vercel, Stripe, and Azure tooling.",
+    "Brings leadership experience from Illinois Tech Robotics, EcoCAR, Leadership Academy, and OBSERV-E."
+  ],
+  "articles": [
+    {
+      "kicker": "Featured direction",
+      "title": "OBSERV-E: accessibility robotics beyond a single robot",
+      "summary": "How GRVI, DRVI, and HRVI work together as an assistive ecosystem.",
+      "cta": "Ask about OBSERV-E"
+    },
+    {
+      "kicker": "Coming soon",
+      "title": "Moving an AI idea past demo mode",
+      "summary": "How useful systems get shipped.",
+      "cta": "Request early access"
+    },
+    {
+      "kicker": "Planned note",
+      "title": "Sensor fusion lessons from robotics",
+      "summary": "Validation, teamwork, and real-time constraints.",
+      "cta": "Ask Danish about this topic"
+    },
+    {
+      "kicker": "Planned note",
+      "title": "Email auth automation for operations",
+      "summary": "Turning security checks into repeatable workflows.",
+      "cta": "Start a conversation"
+    }
+  ],
+  "testimonials": [
+    {
+      "type": "Placeholder",
+      "name": "Manager / mentor quote slot",
+      "quote": "Use this space for a short recommendation that highlights execution, ownership, and clarity.",
+      "note": "Swap in a verified quote when ready."
+    },
+    {
+      "type": "Placeholder",
+      "name": "Professor / advisor quote slot",
+      "quote": "This works well for engineering depth, leadership, and academic rigor.",
+      "note": "Ideal for an AI, robotics, or research mentor."
+    },
+    {
+      "type": "Placeholder",
+      "name": "Collaborator quote slot",
+      "quote": "Best used for teamwork, reliability, and how Danish operates under pressure.",
+      "note": "Replace with a real collaborator quote."
+    }
+  ],
+  "contactWays": [
+    {
+      "kicker": "Email",
+      "title": "Start a hiring conversation",
+      "copy": "Best for roles, consulting inquiries, collaborations, or project discussions.",
+      "href": "mailto:danish.t.nadar@gmail.com?subject=Portfolio%20inquiry"
+    },
+    {
+      "kicker": "LinkedIn",
+      "title": "Connect professionally",
+      "copy": "Use LinkedIn for networking, recruiter outreach, and professional updates.",
+      "href": "https://www.linkedin.com/in/danish-nadar"
+    },
+    {
+      "kicker": "GitHub",
+      "title": "See code history",
+      "copy": "Explore repositories, experiments, and public technical work.",
+      "href": "https://github.com/DanishNadar"
+    },
+    {
+      "kicker": "Book a meeting",
+      "title": "Book a meeting",
+      "copy": "This can later be swapped with a Calendly link. For now it opens a direct email inquiry.",
+      "href": "mailto:danish.t.nadar@gmail.com?subject=Book%20a%20meeting&body=Hi%20Danish%2C%20I%E2%80%99d%20like%20to%20schedule%20a%20meeting..."
+    }
+  ],
+  "avatarReplies": {
+    "intro": "I’m Danish Nadar. I build AI systems, automation workflows, robotics software, and security-focused tooling that aim to create real value outside of a demo environment.",
+    "build": "My work sits at the intersection of applied AI, robotics, and practical product engineering. That includes voice prototypes, ML systems, sensor fusion, and automation tools for real workflows.",
+    "hire": "You hire me when you want someone who can think across model logic, system integration, validation, and user-facing delivery instead of treating those as separate worlds.",
+    "next": "Right now I’m focused on AI engineering roles where I can help move systems from prototype to production and keep building stronger depth in useful, real-world applications."
+  }
+}

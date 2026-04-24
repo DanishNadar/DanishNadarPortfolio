@@ -1,0 +1,222 @@
+{
+  "identity": {
+    "name": "Danish Nadar",
+    "title": "AI Engineer",
+    "email": "danish.t.nadar@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/danish-nadar",
+    "github": "https://github.com/DanishNadar"
+  },
+  "pages": [
+    {
+      "label": "Home",
+      "href": "/index.html",
+      "keywords": [
+        "home",
+        "overview",
+        "about"
+      ]
+    },
+    {
+      "label": "Projects",
+      "href": "/pages/projects.html",
+      "keywords": [
+        "projects",
+        "builds",
+        "work",
+        "portfolio"
+      ]
+    },
+    {
+      "label": "Stack",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "skills",
+        "stack",
+        "python",
+        "c++",
+        "azure",
+        "apis"
+      ]
+    },
+    {
+      "label": "Resume",
+      "href": "/pages/resume.html",
+      "keywords": [
+        "resume",
+        "experience",
+        "timeline",
+        "education"
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/pages/contact.html",
+      "keywords": [
+        "contact",
+        "email",
+        "hire",
+        "call",
+        "meeting"
+      ]
+    },
+    {
+      "label": "Avatar",
+      "href": "/pages/avatar.html",
+      "keywords": [
+        "avatar",
+        "assistant",
+        "guide"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "dns-security-scanner",
+      "title": "DNS Email Authentication Scanner",
+      "href": "/pages/project-dns-security-scanner.html",
+      "summary": "Python automation that checks SPF, DKIM, and DMARC posture, validates findings against EasyDMARC, and fits MSP monitoring workflows.",
+      "keywords": [
+        "security",
+        "spf",
+        "dkim",
+        "dmarc",
+        "scanner",
+        "email authentication",
+        "dns",
+        "automation"
+      ],
+      "repo": "https://github.com/DanishNadar/TTP_DNS-Screening-Tool"
+    },
+    {
+      "id": "aila-avatar",
+      "title": "AILA \u00b7 AI Leadership Avatar",
+      "href": "/pages/project-aila-avatar.html",
+      "summary": "A voice-driven leadership assistant concept that explores conversational presence, speech, and accessible guidance.",
+      "keywords": [
+        "aila",
+        "avatar",
+        "voice",
+        "speech",
+        "llm",
+        "assistant",
+        "leadership"
+      ],
+      "repo": "https://github.com/DanishNadar/AILA"
+    },
+    {
+      "id": "jtr-agent",
+      "title": "JTR \u00b7 AI Job-Seeking Agent",
+      "href": "/pages/project-jtr-agent.html",
+      "summary": "An AI-powered job-seeking system focused on matching, outreach ideas, and workflow automation.",
+      "keywords": [
+        "job",
+        "agent",
+        "matching",
+        "outreach",
+        "workflow",
+        "ai"
+      ],
+      "repo": "https://github.com/DanishNadar/JTR"
+    },
+    {
+      "id": "ecocar-sensor-fusion",
+      "title": "EcoCAR Sensor Fusion Lead",
+      "href": "/pages/project-ecocar-sensor-fusion.html",
+      "summary": "Sensor fusion, validation, and C++ modules for lead vehicle detection and driver attention systems in RTMaps.",
+      "keywords": [
+        "robotics",
+        "ecocar",
+        "sensor fusion",
+        "rtmaps",
+        "lidar",
+        "radar",
+        "camera",
+        "c++",
+        "vehicle"
+      ]
+    },
+    {
+      "id": "ai-headshot-platform",
+      "title": "AI Headshot Platform Contribution",
+      "href": "/pages/project-ai-headshot-platform.html",
+      "summary": "Production contribution using TypeScript, Supabase, Vercel CI/CD, and Stripe.",
+      "keywords": [
+        "supabase",
+        "vercel",
+        "stripe",
+        "typescript",
+        "product"
+      ]
+    },
+    {
+      "id": "phishing-detector",
+      "title": "Phishing Detection Model",
+      "href": "/pages/project-phishing-detector.html",
+      "summary": "AI-powered phishing detector with a RandomForestClassifier and 92% reported detection accuracy.",
+      "keywords": [
+        "phishing",
+        "machine learning",
+        "random forest",
+        "classification"
+      ]
+    }
+  ],
+  "experience": [
+    "Software Automation Engineer at Technology Transition Paradigm",
+    "AI Software Development Intern at OfficePro, Inc.",
+    "Connected Automated Vehicle Engineer \u00b7 Sensor Fusion Lead at EcoCAR EV Challenge",
+    "Treasurer \u00b7 Instructor \u00b7 Developer at Illinois Tech Robotics"
+  ],
+  "education": [
+    "BS/MS in Artificial Intelligence at Illinois Institute of Technology",
+    "Associate of Applied Sciences in Cloud Computing & Network Technology at Montgomery College"
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "python",
+        "automation",
+        "backend",
+        "tooling"
+      ]
+    },
+    {
+      "name": "C++",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "c++",
+        "robotics",
+        "real-time"
+      ]
+    },
+    {
+      "name": "Azure",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "azure",
+        "speech",
+        "cloud"
+      ]
+    },
+    {
+      "name": "RTMaps",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "rtmaps",
+        "sensor fusion",
+        "vehicle"
+      ]
+    },
+    {
+      "name": "Supabase",
+      "href": "/pages/stack.html",
+      "keywords": [
+        "supabase",
+        "product",
+        "database"
+      ]
+    }
+  ]
+}

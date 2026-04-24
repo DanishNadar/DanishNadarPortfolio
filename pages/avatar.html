@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta name="description" content="Avatar page for Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=35" />
+  <title>Avatar · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+      <section class="section-block fade-up">
+        <span class="eyebrow">Danish-only assistant</span>
+        <h1 class="page-title">Avatar + Danish guide</h1>
+        <p class="lead short">Ask about Danish’s projects, work style, strongest skills, resume, or how to contact him. Responses are generated live from a local LLM grounded in the portfolio content.</p>
+      </section>
+      <section class="section avatar-page-grid">
+        <div class="avatar-stage fade-up assistant-stage-panel">
+          <div class="visual-topline assistant-stage-topline">
+            <span class="status-pill"><span></span>Grounded in portfolio + resume</span>
+            <span class="tag" data-avatar-runtime>Checking local model…</span>
+          </div>
+          <div class="avatar-display avatar-display-large">
+            <div data-avatar-slot="full"></div>
+          </div>
+          <div class="label-stack">
+            <span class="tag">2D interactive avatar</span>
+            <span class="tag">Blink + reactive mouth</span>
+            <span class="tag">Live LLM + streaming text + TTS</span>
+          </div>
+          <div class="assistant-route-grid">
+            <a class="route-card" href="projects.html">
+              <strong>See projects</strong>
+              <span>Case pages for AI, robotics, automation, and security work.</span>
+            </a>
+            <a class="route-card" href="stack.html">
+              <strong>Open stack map</strong>
+              <span>Skills mapped to real projects instead of vague percentages.</span>
+            </a>
+            <a class="route-card" href="resume.html">
+              <strong>Review resume</strong>
+              <span>Timeline, education, and experience connected to project pages and GitHub links.</span>
+            </a>
+            <a class="route-card" href="contact.html">
+              <strong>Contact Danish</strong>
+              <span>Best path for hiring, consulting, or collaboration conversations.</span>
+            </a>
+          </div>
+        </div>
+        <div class="avatar-console fade-up assistant-panel-shell">
+          <div>
+            <h2 class="section-title" style="font-size:1.8rem;">Ask the avatar</h2>
+            <p class="section-copy">This assistant is constrained to Danish’s site content, so it stays relevant and points visitors toward the right page.</p>
+          </div>
+          <div class="quick-prompts">
+            <button class="prompt-btn" data-avatar-q="Give me a 30-second intro to Danish">30-second intro</button>
+            <button class="prompt-btn" data-avatar-q="Show me Danish's strongest AI projects">Strongest AI projects</button>
+            <button class="prompt-btn" data-avatar-q="Show Danish's robotics background">Robotics background</button>
+            <button class="prompt-btn" data-avatar-q="How can I contact Danish for a role or project?">Contact Danish</button>
+          </div>
+          <div class="voice-log" data-voice-log></div>
+          <form class="assistant-form" data-avatar-form>
+            <input class="assistant-input" type="text" data-avatar-input placeholder="Ask how Danish works, what he builds, which project fits a need, or how to contact him" />
+            <button class="secondary-btn voice-btn" type="button" data-avatar-mic>Mic</button>
+            <button class="cta-btn" type="submit">Ask</button>
+          </form>
+          <div class="assistant-links-wrap">
+            <span class="article-kicker">Suggested links</span>
+            <div class="assistant-links" data-avatar-links></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=35"></script>
+  <script src="../assets/main.js?v=35"></script>
+</body>
+</html>
