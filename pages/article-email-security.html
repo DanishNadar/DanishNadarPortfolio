@@ -14,104 +14,137 @@
     <div data-nav></div>
     <main class="page container">
 
+      <!-- Hero -->
       <section class="section-block fade-up">
         <span class="eyebrow">Security Automation · Email Authentication · Operations</span>
         <h1 class="page-title">Turning SPF, DKIM, and DMARC Checks into a Repeatable Security Workflow</h1>
-        <p class="lead short">Manual email authentication checks don't scale. Here's how I built the automation pipeline at Technology Transition Paradigm that replaced hours of per-domain work with structured, validated, reportable results.</p>
+        <!-- Author byline -->
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">Software Automation Engineer · Technology Transition Paradigm</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Manual email authentication checks don't scale. Here's how I built the automation pipeline at TTP that replaced hours of per-domain work with structured, validated, reportable results.</p>
         <div class="hero-actions" style="margin-top:18px;">
           <a class="secondary-btn" href="project-dns-security-scanner.html">See the project page</a>
           <a class="ghost-btn" href="articles.html">Back to articles</a>
         </div>
       </section>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-2" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — TTP workspace or security tool in action ]</span>
-        </div>
+      <!-- Scammantha screenshot — related security product -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://scammantha.vercel.app" target="_blank" rel="noreferrer" style="display:block;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fscammantha.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="Scammantha — cybersecurity education platform" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">Scammantha at scammantha.vercel.app — interactive scam-baiting simulator, part of Danish's cybersecurity work</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">Why email authentication matters more than most organizations think</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          SPF, DKIM, and DMARC are the three core standards that let receiving mail servers verify that email from your domain is actually from you. When configured correctly, they make it significantly harder for attackers to spoof your domain in phishing campaigns — emails that appear to come from your CEO, your IT team, or your billing system.
+          SPF, DKIM, and DMARC are the three core standards that let receiving mail servers verify that email from your domain is actually from you. When configured correctly, they make it significantly harder for attackers to spoof your domain in phishing campaigns.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
           When misconfigured — or completely absent — they leave your domain open to spoofing attacks that are trivially easy to execute and extremely effective against users who have been trained to trust your brand.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          For a managed service provider like Technology Transition Paradigm, this is multiplied across every client domain under management. Checking the posture of one domain manually takes 15–20 minutes. Across 30, 50, or 100 client domains? That's not a security check — it's a full-time job that still doesn't produce consistent, auditable results.
+          For a managed service provider like Technology Transition Paradigm, this is multiplied across every client domain. Checking the posture of one domain manually takes 15–20 minutes. Across 30, 50, or 100 client domains? That's not a security check — it's a full-time job that still doesn't produce consistent, auditable results.
         </p>
         <p class="section-copy" style="line-height:1.8;">
           That's the problem I was hired to solve.
         </p>
       </article>
 
+      <!-- GitHub profile -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fgithub.com%2FDanishNadar&screenshot=true&meta=false&embed=screenshot.url" alt="Danish Nadar GitHub — security and automation work" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub — TTP DNS Screening Tool, Scammantha, IntegrityFailure, and more security-focused work</p>
+      </section>
+
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">What the automation pipeline does</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The TTP DNS Screening Tool is a Python automation pipeline that takes a list of client domains and runs a structured email authentication audit on each one. The core workflow:
+          The TTP DNS Screening Tool is a Python automation pipeline that takes a list of client domains and runs a structured email authentication audit on each one.
         </p>
         <div class="mini-list" style="margin-bottom:20px;">
-          <div class="mini-list-item"><strong>DNS record retrieval</strong> — query SPF (TXT records), DKIM (TXT records at standard selectors), and DMARC (TXT records at _dmarc subdomain) for each domain using Python's dns.resolver.</div>
-          <div class="mini-list-item"><strong>Parsing and normalization</strong> — raw DNS records are messy. SPF records in particular can be complex chains with includes, redirects, and mechanism modifiers. The tool parses these into a normalized structure that's consistent across all domains.</div>
-          <div class="mini-list-item"><strong>Validation against EasyDMARC</strong> — raw DNS lookups tell you what's there, not whether it's correct. The pipeline validates findings against EasyDMARC's API rather than trusting local parsing alone — catching edge cases where records exist but are malformed or ineffective.</div>
-          <div class="mini-list-item"><strong>Structured output generation</strong> — results are written to JSON for downstream system consumption and CSV for human review. The output includes pass/fail status per standard, policy level (for DMARC: none, quarantine, reject), and flagged issues.</div>
-          <div class="mini-list-item"><strong>Microsoft Graph integration</strong> — the pipeline can surface findings through Microsoft Graph for enterprise environments where email-based reporting or M365 integration is required.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">DNS record retrieval</strong> — query SPF, DKIM, and DMARC records for each domain using Python's dns.resolver, handling all standard selector and subdomain patterns.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Parsing and normalization</strong> — raw DNS records are messy. SPF records can chain includes, redirects, and mechanism modifiers. The tool normalizes these into a consistent structure across all domains.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Validation against EasyDMARC</strong> — raw DNS lookups tell you what's there, not whether it's correct. The pipeline validates against EasyDMARC's API, catching edge cases where records exist but are malformed or ineffective.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Structured output generation</strong> — results go to JSON for downstream system consumption and CSV for human review, with pass/fail status, policy level, and flagged issues per domain.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Microsoft Graph integration</strong> — findings can surface through Microsoft Graph for M365 enterprise environments where email-based reporting is required.</div>
         </div>
       </article>
+
+      <!-- DNS security project SVG -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;">
+          <!-- Using ITRC Treasury App screenshot as a "production tooling" visual -->
+          <a href="https://itrctreasurybookkeeping.vercel.app" target="_blank" rel="noreferrer" style="display:block;">
+            <img src="https://api.microlink.io/?url=https%3A%2F%2Fitrctreasurybookkeeping.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="ITRC Treasury App — TypeScript production tooling" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+          </a>
+          <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">ITRC Treasury Bookkeeping App at itrctreasurybookkeeping.vercel.app — operational tooling built for club treasury management</p>
+        </div>
+      </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">The validation step is the important one</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          Early versions of the tool just parsed DNS records and reported what they found. The problem: "found a DMARC record" is not the same as "DMARC is correctly configured." A DMARC policy of p=none does nothing to prevent spoofing — it's monitoring-only, not enforcement. An SPF record with too many DNS lookups (the standard allows 10 maximum) will cause authentication failures in ways that aren't visible from the record itself.
+          Early versions of the tool just parsed DNS records and reported what they found. The problem: "found a DMARC record" is not the same as "DMARC is correctly configured."
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          Adding EasyDMARC validation as a second verification layer caught a significant number of cases where records existed but were effectively non-functional. This is the difference between a tool that tells you what's there and a tool that tells you whether you're actually protected.
+          A DMARC policy of <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px;font-family:monospace;">p=none</code> does nothing to prevent spoofing — it's monitoring-only, not enforcement. An SPF record with too many DNS lookups (the standard allows 10 maximum) will cause authentication failures in ways that aren't visible from the record itself.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Adding EasyDMARC validation as a second verification layer caught a significant number of cases where records existed but were effectively non-functional.
         </p>
         <p class="section-copy" style="line-height:1.8;">
-          It also gave the outputs credibility with clients — "our tool says your DMARC is fine" is a different conversation than "EasyDMARC independently confirms your DMARC is correctly enforcing reject policy."
+          It also gave outputs credibility with clients — "our tool says your DMARC is fine" is a different conversation than "EasyDMARC independently confirms your DMARC is correctly enforcing reject policy."
         </p>
       </article>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-1" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — terminal output, dashboard, or security tool screenshot ]</span>
+      <!-- GitHub stats -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api?username=DanishNadar&show_icons=true&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6&icon_color=ff7a1a" alt="Danish Nadar GitHub stats" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DanishNadar&layout=compact&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6" alt="Danish Nadar top languages" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
         </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub — Python automation, TypeScript tooling, and security-focused projects</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">What this pattern generalizes to</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The DNS screening tool is one instance of a broader pattern: taking a manual security audit workflow, identifying the repeatable structure within it, and automating the structure while preserving the human judgment at the points where it actually matters.
+          The DNS screening tool is one instance of a broader pattern: taking a manual security audit workflow, identifying the repeatable structure within it, and automating the structure while preserving human judgment at the points where it actually matters.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          Most security tooling either fully automates (and loses context) or stays fully manual (and doesn't scale). The middle ground — automation with structured output designed for human review — is where MSP operations actually live. The tool's CSV output is designed to be actionable in a morning standup, not a data dump that requires a security analyst to interpret.
+          Most security tooling either fully automates (and loses context) or stays fully manual (and doesn't scale). The middle ground — automation with structured output designed for human review — is where MSP operations actually live. The tool's CSV output is designed to be actionable in a morning standup, not a data dump requiring a security analyst to interpret.
         </p>
-        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The pipeline is also designed for integration. The JSON output can feed into ticketing systems, monitoring dashboards, or downstream remediation workflows. The Microsoft Graph layer connects it to M365 environments where clients are already managing their messaging infrastructure.
+        <p class="section-copy" style="line-height:1.8;margin-bottom:20px;">
+          Extensions in progress: dark web monitoring integration to flag when a client domain appears in breach data, BIMI record validation, and a dashboard layer making per-domain status visible at a glance.
         </p>
-        <p class="section-copy" style="line-height:1.8;">
-          Security automation done well creates visibility. It doesn't replace the security engineer — it gives them leverage.
-        </p>
-      </article>
-
-      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
-        <h2 class="section-title" style="font-size:1.6rem;">What's next</h2>
-        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The current version covers the core email authentication trifecta. Extensions I'm working toward: dark web monitoring integration to flag when a client domain appears in breach data, BIMI record validation for organizations pursuing brand-level email trust indicators, and a dashboard layer that makes the per-domain status visible at a glance without requiring a report run.
-        </p>
-        <p class="section-copy" style="line-height:1.8;">
-          If you work in security operations, MSP environments, or enterprise email infrastructure and want to dig into the technical details, I'm happy to talk through the implementation.
-        </p>
+        <!-- Author card -->
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.4);" />
+          <div>
+            <strong style="color:#fff;font-size:.92rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.82rem;">Software Automation Engineer · Technology Transition Paradigm · Illinois Tech</span>
+          </div>
+          <a class="ghost-btn slim" href="contact.html" style="margin-left:auto;">Contact</a>
+        </div>
       </article>
 
       <section class="section fade-up">
         <div class="section-heading fade-up">
           <div>
             <h2 class="section-title">Related work</h2>
-            <p class="section-copy">Other security and automation projects in the portfolio.</p>
           </div>
           <a class="secondary-btn" href="projects.html">All projects</a>
         </div>
@@ -119,17 +152,17 @@
           <a class="detail-card" href="project-dns-security-scanner.html" style="text-decoration:none;">
             <span class="article-kicker">Cybersecurity</span>
             <h3>DNS Email Auth Scanner</h3>
-            <p>Full project case page — SPF, DKIM, DMARC automation with EasyDMARC validation and MSP reporting.</p>
+            <p>SPF, DKIM, DMARC automation — EasyDMARC validation, JSON/CSV output, MSP reporting pipeline.</p>
           </a>
           <a class="detail-card" href="project-scammantha.html" style="text-decoration:none;">
             <span class="article-kicker">Cybersecurity</span>
-            <h3>Scammantha Simulation Platform</h3>
-            <p>Cybersecurity education through interactive scam-baiting — training social engineering recognition skills.</p>
+            <h3>Scammantha</h3>
+            <p>Interactive scam-baiting education platform — live at scammantha.vercel.app.</p>
           </a>
           <a class="detail-card" href="project-phishing-detector.html" style="text-decoration:none;">
             <span class="article-kicker">Applied AI</span>
             <h3>Phishing Detection Model</h3>
-            <p>RandomForestClassifier-based phishing detector reaching 92% accuracy — ML applied to security domain.</p>
+            <p>RandomForestClassifier phishing detector reaching 92% accuracy — ML applied to security domain.</p>
           </a>
         </div>
       </section>

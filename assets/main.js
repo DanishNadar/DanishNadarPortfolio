@@ -1171,6 +1171,17 @@ function renderProjectDetail() {
           ${visualPlaceholder(project, true)}
           <div class="mini-list">${project.outcomes.map(point => `<div class="mini-list-item">${point}</div>`).join('')}</div>
         </article>
+        ${project.liveUrl ? `
+        <article class="panel fade-up">
+          <div class="project-top detail-head" style="margin-bottom:14px;">
+            <h2 class="section-title" style="font-size:1.75rem;">Live site</h2>
+            <a class="cta-btn" href="${project.liveUrl}" target="_blank" rel="noreferrer">Open live site ${icons.external}</a>
+          </div>
+          <a href="${project.liveUrl}" target="_blank" rel="noreferrer" style="display:block;">
+            <img src="https://api.microlink.io/?url=${encodeURIComponent(project.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url&waitFor=1500" alt="${project.title} live screenshot" style="width:100%;border-radius:12px;display:block;border:1px solid rgba(255,122,26,.18);" loading="lazy" />
+          </a>
+          <p class="section-copy" style="margin-top:10px;font-size:.9rem;">Screenshot of the deployed application — click to open the live site.</p>
+        </article>` : ''}
         <article class="panel fade-up">
           <h2 class="section-title" style="font-size:1.75rem;">Suggested visuals</h2>
           <div class="detail-visual-grid">

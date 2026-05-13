@@ -14,27 +14,37 @@
     <div data-nav></div>
     <main class="page container">
 
+      <!-- Hero -->
       <section class="section-block fade-up">
         <span class="eyebrow">Applied AI · Product Engineering · Internship Lessons</span>
         <h1 class="page-title">Getting Past Demo Mode: Lessons from Shipping AI in Production</h1>
-        <p class="lead short">A prototype that works locally in a Jupyter notebook is not a product. This is what I learned spending a summer building Azure-backed AI training tools and fixing production issues on a live AI platform.</p>
+        <!-- Author byline -->
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Software Dev Intern · OfficePro, Inc. · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">A prototype that works locally in a Jupyter notebook is not a product. This is what I learned spending a summer building Azure-backed AI training tools and fixing production issues on a live AI platform.</p>
         <div class="hero-actions" style="margin-top:18px;">
           <a class="secondary-btn" href="project-aila-avatar.html">See AILA project</a>
           <a class="ghost-btn" href="articles.html">Back to articles</a>
         </div>
       </section>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-1" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — OfficePro internship, workspace, or team ]</span>
-        </div>
+      <!-- Portfolio live site screenshot -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://danish-nadar-portfolio.vercel.app" target="_blank" rel="noreferrer" style="display:block;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fdanish-nadar-portfolio.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="Danish Nadar portfolio site" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">Portfolio at danish-nadar-portfolio.vercel.app — built with production-minded architecture throughout</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">The demo gap</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          There's a specific failure mode in AI projects that I started calling "demo mode": the system works in the demo. It produces impressive outputs in the exact context it was designed to show. But when someone slightly outside that context uses it — different input, different environment, different network — it breaks in ways the demo never revealed.
+          There's a specific failure mode in AI projects I started calling "demo mode": the system works in the demo. It produces impressive outputs in the exact context it was designed to show. But when someone slightly outside that context uses it — different input, different environment, different network — it breaks in ways the demo never revealed.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
           I spent the summer of 2025 as an AI Software Development Intern at OfficePro, Inc., where I ran into this pattern repeatedly from both sides: building new AI prototypes and maintaining production systems where the demo gap had already been found, usually by a real user.
@@ -44,69 +54,90 @@
         </p>
       </article>
 
+      <!-- AILA Avatar live screenshot -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://aila-avatar.vercel.app" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Faila-avatar.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="AILA Avatar — AI Leadership Avatar live site" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">AILA Avatar live at aila-avatar.vercel.app — AI voice coaching built with production-minded fallback design</p>
+      </section>
+
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">Building Azure-backed AI training tools</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          One of my primary projects was developing AI instructor and training-support prototypes using Azure Cognitive Services and Azure Speech Services. The concept: an interactive AI that could support a 50+ computer training fleet at OfficePro's client sites — walking users through procedures, answering questions, and adapting to different skill levels.
-        </p>
-        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          What this actually required, in practice:
+          One of my primary projects was developing AI instructor and training-support prototypes using Azure Cognitive Services and Azure Speech Services for a 50+ computer training fleet at OfficePro client sites.
         </p>
         <div class="mini-list" style="margin-bottom:20px;">
-          <div class="mini-list-item"><strong>Azure Functions as the orchestration layer</strong> — keeping the AI logic serverless and scalable, rather than running it on a machine that might be rebooted or disconnected mid-session.</div>
-          <div class="mini-list-item"><strong>Speech Services latency budgeting</strong> — TTS and STT add real latency. For an interactive training context, &gt;1.5s response time breaks the conversational flow. Optimizing the pipeline to stay under that threshold was unglamorous but critical work.</div>
-          <div class="mini-list-item"><strong>Python + PowerShell for fleet automation</strong> — the 50+ computer fleet needed consistent configuration. Automation scripting that works reliably across a heterogeneous Windows fleet is not the same as scripting that works on your dev machine.</div>
-          <div class="mini-list-item"><strong>Error states are user experiences</strong> — when the speech service times out, the user sees something. Designing graceful degradation — falling back to text, surfacing a clear error message, not just silently failing — is part of the product, not an afterthought.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Azure Functions as the orchestration layer</strong> — keeping the AI logic serverless and scalable, rather than running it on a machine that might be rebooted mid-session.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Speech Services latency budgeting</strong> — TTS and STT add real latency. For interactive training, &gt;1.5s response time breaks conversational flow. Optimizing the pipeline to stay under that threshold was unglamorous but critical work.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Python + PowerShell for fleet automation</strong> — scripting that works reliably across a heterogeneous Windows fleet is not the same as scripting that works on your dev machine.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Error states are user experiences</strong> — when the speech service times out, the user sees something. Designing graceful degradation is part of the product, not an afterthought.</div>
         </div>
-        <p class="section-copy" style="line-height:1.8;">
-          The prototype phase is where you figure out if the idea works at all. The hardening phase is where you figure out if it works for humans in the real world.
-        </p>
       </article>
+
+      <!-- ITR Lab Access screenshot — production example -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://itr-lab-access.vercel.app" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fitr-lab-access.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitFor=2000" alt="ITR Lab Access — full-stack production app" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">Elevate Underground Lab Access at itr-lab-access.vercel.app — production app serving Illinois Tech Robotics members</p>
+      </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">Production lessons from AIHeadShotMasters</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The second major thread of the internship was contributing to production workflows on AIHeadShotMasters — an AI headshot generation platform. This was not prototype work. Real users, real payments, real consequences when things broke.
+          The second major thread was contributing to production workflows on AIHeadShotMasters — an AI headshot generation platform. Real users, real payments, real consequences when things broke.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The stack: TypeScript on the frontend, Supabase for database and auth, Vercel for CI/CD, Stripe for payments. When issues appeared in production — and they did — tracing them required understanding all four layers simultaneously.
-        </p>
-        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          Some specific things that production taught me that prototypes never would:
+          The stack: TypeScript on the frontend, Supabase for database and auth, Vercel for CI/CD, Stripe for payments. When issues appeared in production, tracing them required understanding all four layers simultaneously.
         </p>
         <div class="mini-list" style="margin-bottom:20px;">
-          <div class="mini-list-item"><strong>Database migrations in production are different</strong> — running a schema change against a Supabase instance with live data requires a different level of care than running it locally. Row locking, migration atomicity, and rollback paths matter.</div>
-          <div class="mini-list-item"><strong>Stripe webhook idempotency</strong> — payment webhooks can be delivered more than once. The handler needs to be idempotent — processing the same event twice should not charge a customer twice or duplicate a record. This is a class of bug that a demo will never surface.</div>
-          <div class="mini-list-item"><strong>Vercel preview deployments are not production</strong> — environment variables, edge function behavior, and cold start timing can differ between preview and production. A fix that works in preview can fail in production in subtle ways.</div>
-          <div class="mini-list-item"><strong>Debugging someone else's production system requires reading the code before writing any</strong> — the most effective thing I did was spend time understanding what the system was doing before I changed anything.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Database migrations in production are different</strong> — running a schema change against a live Supabase instance requires a different level of care than running it locally. Row locking, migration atomicity, and rollback paths matter.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Stripe webhook idempotency</strong> — payment webhooks can be delivered more than once. The handler must be idempotent — processing the same event twice should not charge a customer twice. A demo will never surface this bug.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Vercel preview ≠ production</strong> — environment variables, edge function behavior, and cold start timing can differ. A fix that works in preview can fail in production in subtle ways.</div>
+          <div class="mini-list-item"><strong style="color:#fff;">Read before you write</strong> — the most effective thing I did was spend time understanding what the system was doing before I changed anything.</div>
         </div>
       </article>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-3" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — internship project demo or Azure portal screenshot ]</span>
+      <!-- GitHub stats -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api?username=DanishNadar&show_icons=true&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6&icon_color=ff7a1a" alt="Danish Nadar GitHub stats" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DanishNadar&layout=compact&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6" alt="Danish Nadar top languages" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
         </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub — Python, TypeScript, JavaScript across AI, product, and automation work</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">The mindset shift: systems over models</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The biggest takeaway from the summer wasn't technical — it was a change in how I think about AI projects. The model is one component. The system around it — the orchestration, the infrastructure, the error handling, the operational monitoring, the user-facing behavior when things go wrong — is the product.
+          The biggest takeaway: the model is one component. The system around it — the orchestration, the infrastructure, the error handling, the operational monitoring, the user-facing behavior when things go wrong — is the product.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          This sounds obvious in retrospect, but it changes how you approach a project from the start. A prototype that's designed to become a production system looks different from one that's designed to generate a demo. You build in observability earlier. You think about failure modes before they occur. You design the degraded-state experience alongside the happy path.
+          A prototype designed to become a production system looks different from one designed to generate a demo. You build in observability earlier. You think about failure modes before they occur. You design the degraded-state experience alongside the happy path.
         </p>
-        <p class="section-copy" style="line-height:1.8;">
-          AILA — the AI Leadership Avatar I built for the Illinois Tech Leadership Academy — benefited directly from these lessons. The voice system, the Ollama integration, the fallback behavior when TTS is unavailable — all of those were designed with the production mindset, not just "does it work in the demo."
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          AILA — the AI Leadership Avatar I built for the Illinois Tech Leadership Academy — benefited directly from these lessons. The voice system, the Ollama integration, the fallback behavior when TTS is unavailable — all designed with the production mindset, not just "does it work in the demo."
         </p>
+        <!-- Author card -->
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.4);" />
+          <div>
+            <strong style="color:#fff;font-size:.92rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.82rem;">AI Software Dev Intern · OfficePro · BS/MS Artificial Intelligence · Illinois Tech</span>
+          </div>
+          <a class="ghost-btn slim" href="contact.html" style="margin-left:auto;">Contact</a>
+        </div>
       </article>
 
       <section class="section fade-up">
         <div class="section-heading fade-up">
           <div>
             <h2 class="section-title">Related work</h2>
-            <p class="section-copy">Projects where the production mindset shows up directly.</p>
           </div>
           <a class="secondary-btn" href="projects.html">All projects</a>
         </div>
@@ -114,24 +145,24 @@
           <a class="detail-card" href="project-aila-avatar.html" style="text-decoration:none;">
             <span class="article-kicker">Applied AI</span>
             <h3>AILA · AI Leadership Avatar</h3>
-            <p>Voice-driven AI assistant built for Illinois Tech — Azure Speech, Ollama LLM, and production-minded fallback design.</p>
+            <p>Azure Speech, Ollama LLM, OpenVoice TTS, and production-minded fallback design.</p>
           </a>
           <a class="detail-card" href="project-ai-headshot-platform.html" style="text-decoration:none;">
             <span class="article-kicker">Product</span>
-            <h3>AI Headshot Platform Contribution</h3>
-            <p>Production fixes on a live AI product — TypeScript, Supabase, Vercel CI/CD, and Stripe payment flows.</p>
+            <h3>AI Headshot Platform</h3>
+            <p>TypeScript, Supabase, Vercel CI/CD, and Stripe — production debugging on a live AI product.</p>
           </a>
           <a class="detail-card" href="project-itr-lab-access.html" style="text-decoration:none;">
             <span class="article-kicker">Product</span>
             <h3>Elevate Underground Lab Access</h3>
-            <p>Full-stack platform shipped to production for Illinois Tech Robotics — Next.js 14, Neon Postgres, Discord bot.</p>
+            <p>Next.js 14, Neon Postgres, Discord bot, Nodemailer — shipped to production for Illinois Tech Robotics.</p>
           </a>
         </div>
       </section>
 
       <section class="section fade-up" style="text-align:center;padding-bottom:48px;">
         <h2 class="section-title">Interested in AI engineering roles</h2>
-        <p class="section-copy" style="margin-bottom:24px;">I'm looking for roles where I can keep closing the gap between prototype and production — AI, applied ML, or full-stack product engineering.</p>
+        <p class="section-copy" style="margin-bottom:24px;">I'm looking for roles where I can keep closing the gap between prototype and production.</p>
         <a class="cta-btn" href="contact.html">Start a conversation</a>
       </section>
 

@@ -14,21 +14,31 @@
     <div data-nav></div>
     <main class="page container">
 
+      <!-- Hero -->
       <section class="section-block fade-up">
         <span class="eyebrow">Robotics · Accessibility · Systems Design</span>
         <h1 class="page-title">OBSERV-E: Building Assistive Robotics as a Systems Problem, Not a Hardware Problem</h1>
-        <p class="lead short">Most assistive tech projects focus on the device. OBSERV-E started as three separate robot ideas before I realized the real design challenge was the signal path between them and the person who needs help.</p>
+        <!-- Author byline with real GitHub/LinkedIn profile photo -->
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Founder, OBSERV-E · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Most assistive tech projects focus on the device. OBSERV-E started as three separate robot ideas before I realized the real design challenge was the signal path between them and the person who needs help.</p>
         <div class="hero-actions" style="margin-top:18px;">
           <a class="secondary-btn" href="project-observ-e.html">See the project page</a>
           <a class="ghost-btn" href="articles.html">Back to articles</a>
         </div>
       </section>
 
-      <!-- LinkedIn photo slot: replace src with your actual LinkedIn image URL or local path -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-1" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — OBSERV-E team or robotics workshop ]</span>
-        </div>
+      <!-- Hero image: Portfolio live site showing OBSERV-E -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://danish-nadar-portfolio.vercel.app" target="_blank" rel="noreferrer" style="display:block;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fdanish-nadar-portfolio.vercel.app&screenshot=true&meta=false&embed=screenshot.url" alt="Danish Nadar portfolio — OBSERV-E featured" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Live portfolio at danish-nadar-portfolio.vercel.app featuring the OBSERV-E project</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
@@ -40,9 +50,17 @@
           The problem: I was treating them like three products. Each had its own architecture sketch. Each was going to talk to a phone app. Each had a slightly different philosophy about what the user experience should feel like.
         </p>
         <p class="section-copy" style="line-height:1.8;">
-          That's when I hit the real design question: <strong>if a person with low vision needs guidance, what's the critical path between the robot sensing something and that person receiving useful feedback?</strong> It's not the robot. It's not the app. It's the latency and reliability of the signal chain between them.
+          That's when I hit the real design question: <strong style="color:#fff;">if a person with low vision needs guidance, what's the critical path between the robot sensing something and that person receiving useful feedback?</strong> It's not the robot. It's not the app. It's the latency and reliability of the signal chain between them.
         </p>
       </article>
+
+      <!-- GitHub profile screenshot -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fgithub.com%2FDanishNadar&screenshot=true&meta=false&embed=screenshot.url" alt="Danish Nadar GitHub profile" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub profile — github.com/DanishNadar · robotics, AI, and automation work</p>
+      </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">The architectural shift: cutting out the web app</h2>
@@ -63,6 +81,14 @@
         </p>
       </article>
 
+      <!-- OBSERV-E SVG visual from the portfolio -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,122,26,.2);">
+          <img src="../assets/images/project-observ-e.svg" alt="OBSERV-E ecosystem: GRVI, DRVI, HRVI system map" style="width:100%;display:block;" />
+        </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">OBSERV-E system map — GRVI (ground), DRVI (aerial), and HRVI (haptic receiver) as one connected ecosystem</p>
+      </section>
+
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">Why the service dog model matters</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
@@ -76,11 +102,17 @@
         </p>
       </article>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-2" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — robotics lab, competition, or demo ]</span>
+      <!-- GitHub stats card -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api?username=DanishNadar&show_icons=true&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6&icon_color=ff7a1a" alt="Danish Nadar GitHub stats" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DanishNadar&layout=compact&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6" alt="Danish Nadar top languages" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
         </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub activity — Python, TypeScript, C++ across AI, robotics, and product work</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
@@ -94,6 +126,15 @@
         <p class="section-copy" style="line-height:1.8;">
           I'm building OBSERV-E out of Illinois Tech Robotics with the goal of getting a working GRVI prototype into structured user testing. If you work on assistive systems, robotics, or accessibility, I'd genuinely value a conversation.
         </p>
+        <!-- Inline author card -->
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.4);" />
+          <div>
+            <strong style="color:#fff;font-size:.92rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.82rem;">Founder · OBSERV-E · BS/MS Artificial Intelligence · Illinois Tech</span>
+          </div>
+          <a class="ghost-btn slim" href="contact.html" style="margin-left:auto;">Contact</a>
+        </div>
       </article>
 
       <section class="section fade-up">
@@ -113,12 +154,12 @@
           <a class="detail-card" href="project-ecocar-sensor-fusion.html" style="text-decoration:none;">
             <span class="article-kicker">Autonomous Vehicles</span>
             <h3>EcoCAR Sensor Fusion Lead</h3>
-            <p>Real-time perception engineering on a CAV platform — the sensor work that informs OBSERV-E's vision system design.</p>
+            <p>Real-time perception engineering on a CAV platform — LiDAR, radar, camera fusion in RTMaps + C++.</p>
           </a>
           <a class="detail-card" href="project-rl-autonomous-driving.html" style="text-decoration:none;">
             <span class="article-kicker">Simulation</span>
             <h3>RL Lane-Keeping Simulator</h3>
-            <p>Reinforcement learning for autonomous lane keeping — sensors, policy, and reward design for navigating environments.</p>
+            <p>PPO-based lane keeping — camera, LiDAR, and full-stack sensor configurations compared.</p>
           </a>
         </div>
       </section>

@@ -14,21 +14,31 @@
     <div data-nav></div>
     <main class="page container">
 
+      <!-- Hero -->
       <section class="section-block fade-up">
         <span class="eyebrow">Autonomous Vehicles · Sensor Fusion · Engineering</span>
         <h1 class="page-title">Sensor Fusion at EcoCAR: What Real-Time Validation Actually Looks Like</h1>
-        <p class="lead short">Writing requirements is one thing. Writing requirements that actually get tested — against real LiDAR, radar, and camera data running in RTMaps on a Chevy Blazer EV — is a completely different discipline.</p>
+        <!-- Author byline -->
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">Sensor Fusion Lead · EcoCAR EV Challenge · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Writing requirements is one thing. Writing requirements that actually get tested — against real LiDAR, radar, and camera data running in RTMaps on a Chevy Blazer EV — is a completely different discipline.</p>
         <div class="hero-actions" style="margin-top:18px;">
           <a class="secondary-btn" href="project-ecocar-sensor-fusion.html">See the project page</a>
           <a class="ghost-btn" href="articles.html">Back to articles</a>
         </div>
       </section>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-2" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — EcoCAR team, vehicle, or lab session ]</span>
+      <!-- EcoCAR project SVG visual -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,122,26,.2);">
+          <img src="../assets/images/project-lane-detection.svg" alt="Lane detection and sensor fusion pipeline" style="width:100%;display:block;" />
         </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">Sensor and perception pipeline — backbone architectures and augmentation strategies for autonomous vehicle systems</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
@@ -43,6 +53,14 @@
           "Testable" is doing a lot of work in that sentence.
         </p>
       </article>
+
+      <!-- GitHub profile screenshot -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fgithub.com%2FDanishNadar&screenshot=true&meta=false&embed=screenshot.url" alt="Danish Nadar GitHub — robotics and autonomy projects" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub profile — EcoCAR, AIRA, lane detection, and RL autonomy projects</p>
+      </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">The gap between requirements and real hardware</h2>
@@ -59,31 +77,45 @@
           <div class="mini-list-item">Driver attention monitoring adds a human-factors layer: the system must distinguish intentional behavior from distraction, which is a classification problem with real safety implications.</div>
         </div>
         <p class="section-copy" style="line-height:1.8;">
-          Working through those gaps — between the clean requirement on paper and the signal behavior on hardware — taught me more about embedded systems engineering than any course could.
+          Working through those gaps taught me more about embedded systems engineering than any course could.
         </p>
       </article>
+
+      <!-- RL driving SVG and sensor comparison visual -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,122,26,.2);">
+          <img src="../assets/images/project-rl-driving.svg" alt="RL autonomous driving simulator — sensor stack comparison" style="width:100%;display:block;" />
+        </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">RL lane-keeping simulator — directly related work comparing Camera, Camera+LiDAR, and full-stack sensor configurations</p>
+      </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
         <h2 class="section-title" style="font-size:1.6rem;">RTMaps as an engineering environment</h2>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          RTMaps (Real-Time Multisensor Applications) is Intempora's middleware for sensor fusion and real-time embedded systems. It's graphical — you build processing pipelines by connecting blocks, which makes the data flow explicit and reviewable. For a student team, this is valuable: you can show a non-expert exactly what data goes where.
+          RTMaps (Real-Time Multisensor Applications) is Intempora's middleware for sensor fusion and real-time embedded systems. It's graphical — you build processing pipelines by connecting blocks, which makes the data flow explicit and reviewable.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
           The C++ components I implemented plugged into this pipeline as processing blocks. Lead vehicle detection required taking fused camera and radar data, applying detection logic, and producing a vehicle state estimate that the vehicle's control layer could consume — all with defined latency bounds.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          The most useful thing RTMaps does: it lets you replay recorded sensor data through your pipeline. That means you can test a new algorithm version against the exact same real-world data, without needing the vehicle present. This is how automotive-grade V&V teams work — and learning it in a student competition context gave me hands-on exposure to the pattern.
+          The most useful thing RTMaps does: it lets you replay recorded sensor data through your pipeline. That means you can test a new algorithm version against the exact same real-world data, without needing the vehicle present. This is how automotive-grade V&V teams work.
         </p>
         <p class="section-copy" style="line-height:1.8;">
           What I hadn't expected: the debugging workflow for real-time systems is fundamentally different from debugging application code. Race conditions, timing-dependent failures, and sensor-specific edge cases don't reproduce reliably. You learn to instrument first and log everything.
         </p>
       </article>
 
-      <!-- LinkedIn photo slot -->
-      <section class="section fade-up" style="margin-bottom:0;">
-        <div class="placeholder-photo alt-3" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
-          <span class="placeholder-label">[ LinkedIn photo — EcoCAR vehicle sensor array or RTMaps screenshot ]</span>
+      <!-- GitHub stats -->
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <div style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api?username=DanishNadar&show_icons=true&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6&icon_color=ff7a1a" alt="Danish Nadar GitHub stats" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
+          <a href="https://github.com/DanishNadar" target="_blank" rel="noreferrer">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=DanishNadar&layout=compact&theme=dark&hide_border=true&bg_color=0b1020&title_color=ff7a1a&text_color=b9c7e6" alt="Danish Nadar top languages" style="width:100%;border-radius:12px;display:block;" loading="lazy" />
+          </a>
         </div>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin:8px 0 32px;">GitHub activity — C++, Python, TypeScript across autonomy, AI, and product engineering</p>
       </section>
 
       <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
@@ -92,14 +124,20 @@
           The most counterintuitive lesson: more sensors does not mean better perception. It means more data to reconcile — and more ways to be confidently wrong.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          When camera and radar disagree about whether there's a vehicle ahead, you need a decision rule. Naive fusion (just average them) produces worse results than either sensor alone in certain conditions. The engineering judgment is knowing when to trust which sensor, how to weight disagreements, and how to flag uncertainty rather than suppress it.
+          When camera and radar disagree about whether there's a vehicle ahead, you need a decision rule. Naive fusion produces worse results than either sensor alone in certain conditions. The engineering judgment is knowing when to trust which sensor, how to weight disagreements, and how to flag uncertainty rather than suppress it.
         </p>
         <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
-          This is the same pattern that showed up in my RL lane-keeping simulation work: a more complex sensor configuration doesn't automatically produce better policy learning. The sensor stack needs to be matched to the task and the architecture, not just maximized.
+          EcoCAR's structured competition environment — with OEM-grade requirements expectations, peer review of test plans, and real hardware sessions — gave me a level of engineering rigor I try to bring into every project. Requirements should have traceability. Tests should be designed before implementation. Failure modes should be documented, not just fixed.
         </p>
-        <p class="section-copy" style="line-height:1.8;">
-          EcoCAR's structured competition environment — with OEM-grade requirements expectations, peer review of test plans, and real hardware sessions — gave me a level of engineering rigor that I try to bring into every project. Requirements should have traceability. Tests should be designed before implementation. Failure modes should be documented, not just fixed.
-        </p>
+        <!-- Author card -->
+        <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.4);" />
+          <div>
+            <strong style="color:#fff;font-size:.92rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.82rem;">Sensor Fusion Lead · EcoCAR EV Challenge · Illinois Tech</span>
+          </div>
+          <a class="ghost-btn slim" href="contact.html" style="margin-left:auto;">Contact</a>
+        </div>
       </article>
 
       <section class="section fade-up">
@@ -114,17 +152,17 @@
           <a class="detail-card" href="project-ecocar-sensor-fusion.html" style="text-decoration:none;">
             <span class="article-kicker">Robotics</span>
             <h3>EcoCAR Sensor Fusion Lead</h3>
-            <p>Full project case page with sensor stack details, RTMaps pipeline, and V&V context.</p>
+            <p>Full case page — RTMaps pipeline, C++ modules, V&V requirements on Chevy Blazer EV.</p>
           </a>
           <a class="detail-card" href="project-rl-autonomous-driving.html" style="text-decoration:none;">
             <span class="article-kicker">Simulation</span>
             <h3>RL Lane-Keeping Simulator</h3>
-            <p>Comparing Camera, Camera+LiDAR, and full-stack sensor configs for RL lane keeping — directly related sensor reasoning.</p>
+            <p>Camera vs. Camera+LiDAR vs. full-stack — sensor reasoning for RL policy learning.</p>
           </a>
           <a class="detail-card" href="project-lane-detection-salad.html" style="text-decoration:none;">
             <span class="article-kicker">Applied AI</span>
             <h3>Lane Detection Improvement Study</h3>
-            <p>Backbone architecture comparison for monocular lane detection — ResNet-18, EfficientNet-B0, MobileNetV2.</p>
+            <p>ResNet-18, EfficientNet-B0, MobileNetV2 backbone comparison for monocular lane detection.</p>
           </a>
         </div>
       </section>
