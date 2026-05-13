@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta name="description" content="OBSERV-E: Building Assistive Robotics as a Systems Problem — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>OBSERV-E: Building Assistive Robotics as a Systems Problem · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Robotics · Accessibility · Systems Design</span>
+        <h1 class="page-title">OBSERV-E: Building Assistive Robotics as a Systems Problem, Not a Hardware Problem</h1>
+        <p class="lead short">Most assistive tech projects focus on the device. OBSERV-E started as three separate robot ideas before I realized the real design challenge was the signal path between them and the person who needs help.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-observ-e.html">See the project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <!-- LinkedIn photo slot: replace src with your actual LinkedIn image URL or local path -->
+      <section class="section fade-up" style="margin-bottom:0;">
+        <div class="placeholder-photo alt-1" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
+          <span class="placeholder-label">[ LinkedIn photo — OBSERV-E team or robotics workshop ]</span>
+        </div>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Where it started: three separate robots</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          When I first started sketching out OBSERV-E, I had three ideas sitting in three separate folders. GRVI was going to be a ground robot that guides visually impaired users through indoor spaces. DRVI was a drone concept for aerial environmental awareness — scouting ahead or covering spaces where ground robots can't reach. HRVI was the wearable receiver that would translate robot signals into something the user could feel.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The problem: I was treating them like three products. Each had its own architecture sketch. Each was going to talk to a phone app. Each had a slightly different philosophy about what the user experience should feel like.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          That's when I hit the real design question: <strong>if a person with low vision needs guidance, what's the critical path between the robot sensing something and that person receiving useful feedback?</strong> It's not the robot. It's not the app. It's the latency and reliability of the signal chain between them.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The architectural shift: cutting out the web app</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The original architecture had a familiar shape: robot → web app → phone → user. That's the standard IoT pattern. It's also a chain with multiple points of failure and unpredictable latency. For something like obstacle detection or navigation guidance, "check your phone" is a terrible interaction model.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The shift I made was moving to direct robot-to-user Bluetooth signaling — bypassing the web app entirely for the critical feedback path. The HRVI receiver becomes the endpoint. The robot sends signals that get translated into haptic patterns the user feels immediately, without any server round-trip.
+        </p>
+        <div class="mini-list" style="margin-bottom:20px;">
+          <div class="mini-list-item">Removes server-side latency from the primary feedback path</div>
+          <div class="mini-list-item">Eliminates Wi-Fi dependency for the most critical interaction: guidance cues</div>
+          <div class="mini-list-item">Puts the experience in the user's hands — literally — rather than on a screen</div>
+          <div class="mini-list-item">The web app becomes a configuration and monitoring layer, not the signal path</div>
+        </div>
+        <p class="section-copy" style="line-height:1.8;">
+          This is a pattern I see repeatedly in well-designed assistive systems: the key user interaction should not depend on network reliability. Bluetooth's range and pairing model make it the right layer for real-time feedback.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Why the service dog model matters</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The framing shift that clarified everything: I started thinking about OBSERV-E not as a robot that assists visually impaired users, but as a system that behaves like a trained service animal — one that senses the environment, interprets what's relevant, and communicates directly with the person it's guiding.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          A guide dog doesn't send you a push notification. It steers you. The feedback is immediate and physical. HRVI's role in the ecosystem is to translate GRVI's perception into that kind of direct, tactile signal. Different haptic patterns for "obstacle ahead," "clear to move," and "stop" — without the user needing to look at anything.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          DRVI enters the picture for scenarios where ground-level perception isn't enough: navigating unfamiliar spaces, scouting ahead at intersections, or providing aerial awareness in environments where GRVI's camera has limited field of view. The ecosystem model means these robots can coordinate — they're not competing products, they're a sensing system at different layers.
+        </p>
+      </article>
+
+      <!-- LinkedIn photo slot -->
+      <section class="section fade-up" style="margin-bottom:0;">
+        <div class="placeholder-photo alt-2" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <span class="placeholder-label">[ LinkedIn photo — robotics lab, competition, or demo ]</span>
+        </div>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What I'm still working through</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The honest answer is that OBSERV-E is in an early-architecture phase. The system design decisions are clearer than they were when I started, but there's significant implementation work ahead — perception pipelines, Bluetooth protocol design for the HRVI receiver, and the coordination logic between GRVI and DRVI.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          What's been most valuable so far: forcing myself to define the ecosystem as one thing instead of three separate projects changed how I think about the architecture, the pitch, and the user experience. The hardest part of building assistive technology isn't the sensing — it's designing the interaction model so the technology disappears and the person can focus on living.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          I'm building OBSERV-E out of Illinois Tech Robotics with the goal of getting a working GRVI prototype into structured user testing. If you work on assistive systems, robotics, or accessibility, I'd genuinely value a conversation.
+        </p>
+      </article>
+
+      <section class="section fade-up">
+        <div class="section-heading fade-up">
+          <div>
+            <h2 class="section-title">Related work</h2>
+            <p class="section-copy">Other projects in the robotics and accessibility direction.</p>
+          </div>
+          <a class="secondary-btn" href="projects.html">All projects</a>
+        </div>
+        <div class="detail-visual-grid">
+          <a class="detail-card" href="project-observ-e.html" style="text-decoration:none;">
+            <span class="article-kicker">Robotics</span>
+            <h3>OBSERV-E Ecosystem</h3>
+            <p>The full case page for GRVI, DRVI, and HRVI as one connected accessibility system.</p>
+          </a>
+          <a class="detail-card" href="project-ecocar-sensor-fusion.html" style="text-decoration:none;">
+            <span class="article-kicker">Autonomous Vehicles</span>
+            <h3>EcoCAR Sensor Fusion Lead</h3>
+            <p>Real-time perception engineering on a CAV platform — the sensor work that informs OBSERV-E's vision system design.</p>
+          </a>
+          <a class="detail-card" href="project-rl-autonomous-driving.html" style="text-decoration:none;">
+            <span class="article-kicker">Simulation</span>
+            <h3>RL Lane-Keeping Simulator</h3>
+            <p>Reinforcement learning for autonomous lane keeping — sensors, policy, and reward design for navigating environments.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="text-align:center;padding-bottom:48px;">
+        <h2 class="section-title">Want to talk through this?</h2>
+        <p class="section-copy" style="margin-bottom:24px;">I'm always open to conversations about assistive robotics, accessibility, and systems design.</p>
+        <a class="cta-btn" href="contact.html">Start a conversation</a>
+      </section>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

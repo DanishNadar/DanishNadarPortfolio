@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta name="description" content="Getting Past Demo Mode: Lessons from Shipping AI in Production — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Getting Past Demo Mode: Lessons from Shipping AI in Production · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · Product Engineering · Internship Lessons</span>
+        <h1 class="page-title">Getting Past Demo Mode: Lessons from Shipping AI in Production</h1>
+        <p class="lead short">A prototype that works locally in a Jupyter notebook is not a product. This is what I learned spending a summer building Azure-backed AI training tools and fixing production issues on a live AI platform.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-aila-avatar.html">See AILA project</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <!-- LinkedIn photo slot -->
+      <section class="section fade-up" style="margin-bottom:0;">
+        <div class="placeholder-photo alt-1" style="max-width:100%;height:280px;border-radius:16px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;">
+          <span class="placeholder-label">[ LinkedIn photo — OfficePro internship, workspace, or team ]</span>
+        </div>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The demo gap</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          There's a specific failure mode in AI projects that I started calling "demo mode": the system works in the demo. It produces impressive outputs in the exact context it was designed to show. But when someone slightly outside that context uses it — different input, different environment, different network — it breaks in ways the demo never revealed.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          I spent the summer of 2025 as an AI Software Development Intern at OfficePro, Inc., where I ran into this pattern repeatedly from both sides: building new AI prototypes and maintaining production systems where the demo gap had already been found, usually by a real user.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The things I learned weren't about model architecture or prompt engineering. They were about system design, operational reality, and the difference between "it works on my machine" and "it works for the person paying for it."
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Building Azure-backed AI training tools</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          One of my primary projects was developing AI instructor and training-support prototypes using Azure Cognitive Services and Azure Speech Services. The concept: an interactive AI that could support a 50+ computer training fleet at OfficePro's client sites — walking users through procedures, answering questions, and adapting to different skill levels.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          What this actually required, in practice:
+        </p>
+        <div class="mini-list" style="margin-bottom:20px;">
+          <div class="mini-list-item"><strong>Azure Functions as the orchestration layer</strong> — keeping the AI logic serverless and scalable, rather than running it on a machine that might be rebooted or disconnected mid-session.</div>
+          <div class="mini-list-item"><strong>Speech Services latency budgeting</strong> — TTS and STT add real latency. For an interactive training context, &gt;1.5s response time breaks the conversational flow. Optimizing the pipeline to stay under that threshold was unglamorous but critical work.</div>
+          <div class="mini-list-item"><strong>Python + PowerShell for fleet automation</strong> — the 50+ computer fleet needed consistent configuration. Automation scripting that works reliably across a heterogeneous Windows fleet is not the same as scripting that works on your dev machine.</div>
+          <div class="mini-list-item"><strong>Error states are user experiences</strong> — when the speech service times out, the user sees something. Designing graceful degradation — falling back to text, surfacing a clear error message, not just silently failing — is part of the product, not an afterthought.</div>
+        </div>
+        <p class="section-copy" style="line-height:1.8;">
+          The prototype phase is where you figure out if the idea works at all. The hardening phase is where you figure out if it works for humans in the real world.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Production lessons from AIHeadShotMasters</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The second major thread of the internship was contributing to production workflows on AIHeadShotMasters — an AI headshot generation platform. This was not prototype work. Real users, real payments, real consequences when things broke.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The stack: TypeScript on the frontend, Supabase for database and auth, Vercel for CI/CD, Stripe for payments. When issues appeared in production — and they did — tracing them required understanding all four layers simultaneously.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Some specific things that production taught me that prototypes never would:
+        </p>
+        <div class="mini-list" style="margin-bottom:20px;">
+          <div class="mini-list-item"><strong>Database migrations in production are different</strong> — running a schema change against a Supabase instance with live data requires a different level of care than running it locally. Row locking, migration atomicity, and rollback paths matter.</div>
+          <div class="mini-list-item"><strong>Stripe webhook idempotency</strong> — payment webhooks can be delivered more than once. The handler needs to be idempotent — processing the same event twice should not charge a customer twice or duplicate a record. This is a class of bug that a demo will never surface.</div>
+          <div class="mini-list-item"><strong>Vercel preview deployments are not production</strong> — environment variables, edge function behavior, and cold start timing can differ between preview and production. A fix that works in preview can fail in production in subtle ways.</div>
+          <div class="mini-list-item"><strong>Debugging someone else's production system requires reading the code before writing any</strong> — the most effective thing I did was spend time understanding what the system was doing before I changed anything.</div>
+        </div>
+      </article>
+
+      <!-- LinkedIn photo slot -->
+      <section class="section fade-up" style="margin-bottom:0;">
+        <div class="placeholder-photo alt-3" style="max-width:720px;margin:0 auto 32px;height:220px;border-radius:16px;display:flex;align-items:center;justify-content:center;">
+          <span class="placeholder-label">[ LinkedIn photo — internship project demo or Azure portal screenshot ]</span>
+        </div>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The mindset shift: systems over models</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The biggest takeaway from the summer wasn't technical — it was a change in how I think about AI projects. The model is one component. The system around it — the orchestration, the infrastructure, the error handling, the operational monitoring, the user-facing behavior when things go wrong — is the product.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          This sounds obvious in retrospect, but it changes how you approach a project from the start. A prototype that's designed to become a production system looks different from one that's designed to generate a demo. You build in observability earlier. You think about failure modes before they occur. You design the degraded-state experience alongside the happy path.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          AILA — the AI Leadership Avatar I built for the Illinois Tech Leadership Academy — benefited directly from these lessons. The voice system, the Ollama integration, the fallback behavior when TTS is unavailable — all of those were designed with the production mindset, not just "does it work in the demo."
+        </p>
+      </article>
+
+      <section class="section fade-up">
+        <div class="section-heading fade-up">
+          <div>
+            <h2 class="section-title">Related work</h2>
+            <p class="section-copy">Projects where the production mindset shows up directly.</p>
+          </div>
+          <a class="secondary-btn" href="projects.html">All projects</a>
+        </div>
+        <div class="detail-visual-grid">
+          <a class="detail-card" href="project-aila-avatar.html" style="text-decoration:none;">
+            <span class="article-kicker">Applied AI</span>
+            <h3>AILA · AI Leadership Avatar</h3>
+            <p>Voice-driven AI assistant built for Illinois Tech — Azure Speech, Ollama LLM, and production-minded fallback design.</p>
+          </a>
+          <a class="detail-card" href="project-ai-headshot-platform.html" style="text-decoration:none;">
+            <span class="article-kicker">Product</span>
+            <h3>AI Headshot Platform Contribution</h3>
+            <p>Production fixes on a live AI product — TypeScript, Supabase, Vercel CI/CD, and Stripe payment flows.</p>
+          </a>
+          <a class="detail-card" href="project-itr-lab-access.html" style="text-decoration:none;">
+            <span class="article-kicker">Product</span>
+            <h3>Elevate Underground Lab Access</h3>
+            <p>Full-stack platform shipped to production for Illinois Tech Robotics — Next.js 14, Neon Postgres, Discord bot.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="text-align:center;padding-bottom:48px;">
+        <h2 class="section-title">Interested in AI engineering roles</h2>
+        <p class="section-copy" style="margin-bottom:24px;">I'm looking for roles where I can keep closing the gap between prototype and production — AI, applied ML, or full-stack product engineering.</p>
+        <a class="cta-btn" href="contact.html">Start a conversation</a>
+      </section>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

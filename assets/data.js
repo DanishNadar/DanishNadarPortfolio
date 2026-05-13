@@ -9,7 +9,7 @@ window.PORTFOLIO_DATA = {
   },
   "homeMetrics": [
     {
-      "value": "14+",
+      "value": "16+",
       "label": "Selected builds"
     },
     {
@@ -192,6 +192,7 @@ window.PORTFOLIO_DATA = {
     {
       "id": "lane-detection-salad",
       "page": "project-lane-detection-salad.html",
+      "github": "https://github.com/DanishNadar/CS-584-Final-Project",
       "title": "Monocular Lane Detection Improvement Study",
       "domain": "Applied AI",
       "domainSlug": "ai",
@@ -424,45 +425,49 @@ window.PORTFOLIO_DATA = {
     {
       "id": "ecocar-sensor-fusion",
       "page": "project-ecocar-sensor-fusion.html",
-      "title": "EcoCAR Sensor Fusion Lead",
+      "title": "EcoCAR EV Challenge · Sensor Fusion Lead",
       "domain": "Robotics",
       "domainSlug": "robotics",
-      "period": "2024",
+      "period": "2024–Present",
       "role": "Connected Automated Vehicle Engineer · Sensor Fusion Lead",
-      "summary": "Authored requirements and test cases for perception and monitoring modules while implementing C++ components for lead vehicle detection and driver attention systems.",
-      "showcase": "Real-time engineering with LiDAR, radar, and camera data in RTMaps + C++.",
+      "summary": "As Sensor Fusion Lead on the U.S. Department of Energy's EcoCAR EV Challenge, I authored V&V requirements, implemented real-time C++ perception modules in RTMaps, and built test infrastructure for lead vehicle detection and driver attention monitoring on a Chevy Blazer EV connected automated vehicle platform.",
+      "showcase": "Real-time CAV engineering — LiDAR, radar, camera fusion in C++ and RTMaps on a production EV platform.",
       "visualType": "sensor",
-      "visualLabel": "Sensor-fusion placeholder",
-      "visualHint": "Great place for sensor diagrams, RTMaps screenshots, or test visuals.",
+      "visualLabel": "EcoCAR sensor fusion pipeline",
+      "visualHint": "RTMaps diagram showing camera, radar, and LiDAR signal routing with C++ processing modules.",
       "skills": [
         "C++",
         "RTMaps",
-        "Validation",
         "Sensor Fusion",
-        "Robotics"
+        "Validation",
+        "Robotics",
+        "Systems Engineering"
       ],
       "outcomes": [
-        "Wrote requirements and test cases with full validation coverage in mind.",
-        "Implemented real-time C++ modules for lead vehicle and driver attention work.",
-        "Worked across LiDAR, radar, camera data, and RTMaps synchronization."
+        "Authored verification and validation requirements and test cases for lead vehicle detection and driver monitoring modules — requirements tied to actual hardware test sessions on the Chevy Blazer EV platform.",
+        "Implemented real-time C++ perception modules within the RTMaps pipeline, handling multi-sensor timestamping, state estimation, and signal arbitration across camera, radar, and LiDAR feeds.",
+        "Built practical understanding of sensor dropout handling and edge-case arbitration — what happens when one sensor disagrees with the others in a live autonomous system.",
+        "Operated within EcoCAR's structured competition environment, learning to meet OEM-grade engineering rigor while collaborating across a student team under real competition deadlines.",
+        "Developed driver attention monitoring logic that required bridging human-factors requirements with real-time embedded C++ system behavior."
       ],
       "proof": {
-        "cpp": "Core modules for lead vehicle detection and driver monitoring were implemented in C++.",
-        "rtmaps": "Sensor synchronization and anomaly handling were managed in RTMaps.",
-        "robotics": "The entire project is grounded in autonomous vehicle perception and validation."
+        "cpp": "Lead vehicle detection and driver monitoring modules were implemented and validated in C++ within the RTMaps runtime.",
+        "rtmaps": "RTMaps managed sensor synchronization, timestamping, and real-time data routing across the full sensor stack.",
+        "robotics": "The project is grounded in connected automated vehicle systems — real platform, real sensor data, real V&V requirements.",
+        "validation": "Requirements were authored with full traceability in mind, connected to test cases and hardware validation sessions."
       },
       "detailCards": [
         {
-          "title": "Sensor stack diagram",
-          "note": "Show how camera, radar, and LiDAR inputs connect."
+          "title": "RTMaps pipeline diagram",
+          "note": "Show the sensor routing — camera, radar, LiDAR inputs flowing into C++ processing modules with timestamping."
         },
         {
-          "title": "RTMaps view",
-          "note": "Add a screenshot of timing, fusion, or anomaly handling."
+          "title": "Chevy Blazer EV platform",
+          "note": "Photo or diagram of the EcoCAR vehicle — the physical platform where this work runs."
         },
         {
-          "title": "Validation board",
-          "note": "Use for test plans, results, or module requirements."
+          "title": "V&V requirements sample",
+          "note": "Redacted requirement or test case showing the structure of the validation work."
         }
       ]
     },
@@ -724,6 +729,104 @@ window.PORTFOLIO_DATA = {
           "note": "Add a safe, redacted detail view of the workflow."
         }
       ]
+    },
+    {
+      "id": "itr-lab-access",
+      "page": "project-itr-lab-access.html",
+      "github": "https://github.com/DanishNadar/ITR-Lab-Access",
+      "title": "Elevate Underground · Illinois Tech Robotics Lab Access Platform",
+      "domain": "Product",
+      "domainSlug": "product",
+      "period": "2026",
+      "role": "Full-stack developer · Illinois Tech Robotics",
+      "summary": "A production full-stack lab management platform for Illinois Tech Robotics. Streamlines access requests, scheduling, and admin oversight through Next.js 14, Neon Postgres, Drizzle ORM, and a Discord bot integration — live at itr-lab-access.vercel.app.",
+      "showcase": "Production web app replacing manual coordination for robotics lab access. Used by real Illinois Tech Robotics members.",
+      "githubNote": "GitHub repo includes Next.js app router, Discord bot REST API, Drizzle schema, and Nodemailer email integration.",
+      "visualType": "dashboard",
+      "visualLabel": "Lab access dashboard",
+      "visualHint": "7-day calendar scheduling, admin approval workflow, and Discord status bot.",
+      "image": "project-itr-lab-access.svg",
+      "skills": [
+        "TypeScript",
+        "Next.js",
+        "PostgreSQL",
+        "Discord API",
+        "Vercel"
+      ],
+      "outcomes": [
+        "Designed and shipped a full-stack lab access and scheduling system used by Illinois Tech Robotics members — replacing ad-hoc coordination with a structured, database-backed workflow.",
+        "Built a Discord bot integration with 5 REST endpoints controlling real-time lab status (open, closed, limbo) and surfacing upcoming schedules directly in the club's Discord server.",
+        "Implemented visual 7-day calendar scheduling, admin password-protected dashboard, and email notifications via Nodemailer with SMTP — covering the full user journey from request to approval.",
+        "Deployed on Vercel with Neon Postgres via Drizzle ORM — production infrastructure from day one, not a localhost-only prototype.",
+        "Parsed ICS calendar files for availability tracking and built database seeding for reliable local development and test environments."
+      ],
+      "proof": {
+        "typescript": "Next.js 14 app router and all server-side logic written in TypeScript with Drizzle ORM for type-safe database access.",
+        "vercel": "Continuous deployment on Vercel with Neon Postgres storage integration — production-grade deployment pipeline.",
+        "apis": "Discord bot integration uses 5 REST endpoints secured via API key headers for lab status control and schedule retrieval."
+      },
+      "detailCards": [
+        {
+          "title": "Admin dashboard",
+          "note": "Screenshot of the calendar scheduling view or request approval workflow."
+        },
+        {
+          "title": "Discord bot in action",
+          "note": "Show the /lab-status or schedule command output in the Illinois Tech Robotics Discord server."
+        },
+        {
+          "title": "Live site flow",
+          "note": "Screen recording or capture of the full request submission and approval flow at itr-lab-access.vercel.app."
+        }
+      ]
+    },
+    {
+      "id": "scammantha",
+      "page": "project-scammantha.html",
+      "github": "https://github.com/DanishNadar/Scammantha",
+      "title": "Scammantha · Interactive Scam-Baiting Education Platform",
+      "domain": "Cybersecurity",
+      "domainSlug": "security",
+      "period": "2026",
+      "role": "Developer · Cybersecurity education product",
+      "summary": "An interactive web platform that teaches people how scammers operate through live call simulations, mission-based training, and real-time manipulation tactic coaching. Live at scammantha.vercel.app.",
+      "showcase": "Turns cybersecurity awareness into an interactive experience — users practice derailing real scammer scripts in simulated calls.",
+      "githubNote": "GitHub repo includes the simulation engine, mission progression system, and scammer mood tracking logic.",
+      "visualType": "assistant",
+      "visualLabel": "Scam simulation console",
+      "visualHint": "Live call simulation with microphone support, manipulation detection training, and dynamic scammer mood tracking.",
+      "image": "project-scammantha.svg",
+      "skills": [
+        "JavaScript",
+        "Security",
+        "Product",
+        "UX"
+      ],
+      "outcomes": [
+        "Built a live call simulation engine where users practice interrupting and derailing real scammer tactics in real time — not just reading about them.",
+        "Implemented a dynamic scammer mood and emotion tracking system that responds to user behavior, creating realistic pressure and urgency dynamics.",
+        "Designed mission-based progression scenarios (e.g., 'Tech Support Panic') teaching users to recognize secrecy, remote-access, and gift-card manipulation patterns.",
+        "Shipped with microphone API integration for immersive interaction and deployed at scammantha.vercel.app for public access.",
+        "Collaborated on IntegrityFailure — a related cybersecurity education game built with teammates to teach scam recognition through interactive gameplay."
+      ],
+      "proof": {
+        "security": "The platform directly targets social engineering and fraud — translating security awareness into repeatable, practiced recognition skills.",
+        "apis": "Microphone API integration and real-time interaction state management power the live call simulation experience."
+      },
+      "detailCards": [
+        {
+          "title": "Mission screen",
+          "note": "Screenshot of 'Tech Support Panic' or another mission scenario in progress."
+        },
+        {
+          "title": "Scammer mood tracker",
+          "note": "Show the real-time emotional pressure feedback system responding to user actions."
+        },
+        {
+          "title": "Live call interface",
+          "note": "Capture the simulated call view with the coaching guidance panel visible."
+        }
+      ]
     }
   ],
   "skills": [
@@ -858,37 +961,81 @@ window.PORTFOLIO_DATA = {
         "fraud-detection",
         "course-recommendation"
       ]
+    },
+    {
+      "slug": "typescript",
+      "name": "TypeScript",
+      "icon": "deploy",
+      "category": "Language",
+      "short": "Full-stack product work with Next.js, Vercel, Supabase, and Stripe.",
+      "link": "https://www.typescriptlang.org/",
+      "projects": [
+        "ai-headshot-platform",
+        "itr-lab-access"
+      ]
     }
   ],
   "githubRepos": [
     {
       "updated": "Featured",
+      "name": "ITR-Lab-Access",
+      "language": "TypeScript · Next.js",
+      "title": "Elevate Underground Lab Access Platform",
+      "summary": "Full-stack lab management platform for Illinois Tech Robotics — calendar scheduling, admin dashboard, Discord bot integration, and email notifications. Live at itr-lab-access.vercel.app.",
+      "href": "https://github.com/DanishNadar/ITR-Lab-Access"
+    },
+    {
+      "updated": "Featured",
       "name": "DanishNadarPortfolio",
       "language": "HTML/CSS/JS/Python",
       "title": "Personal AI portfolio",
-      "summary": "Portfolio site with avatar page, project case studies, and OpenVoice-ready local backend.",
+      "summary": "Portfolio site with avatar page, OpenVoice-ready voice cloning backend, and 16+ project case studies.",
       "href": "https://github.com/DanishNadar/DanishNadarPortfolio"
     },
     {
       "name": "AILA",
       "title": "AI Leadership Avatar",
-      "summary": "The Illinois Tech Leadership Academy’s AI Leadership Avatar (AILA).",
+      "summary": "The Illinois Tech Leadership Academy’s AI Leadership Avatar — Python orchestration backend with speech, Ollama LLM integration, and scenario-based conversation design.",
       "href": "https://github.com/DanishNadar/AILA",
       "language": "Python · JavaScript",
       "updated": "Updated Mar 7, 2026"
     },
     {
+      "name": "AILA_Avatar",
+      "title": "AILA Avatar Interface",
+      "summary": "Interactive avatar front-end for the Illinois Tech Leadership Academy AI system. Live at aila-avatar.vercel.app.",
+      "href": "https://github.com/DanishNadar/AILA_Avatar",
+      "language": "JavaScript",
+      "updated": "Live at aila-avatar.vercel.app"
+    },
+    {
+      "name": "Scammantha",
+      "title": "Scammantha Scam-Baiting Simulator",
+      "summary": "Interactive platform for learning to recognize and resist scammer tactics through live call simulations, mission progression, and scammer mood tracking. Live at scammantha.vercel.app.",
+      "href": "https://github.com/DanishNadar/Scammantha",
+      "language": "JavaScript",
+      "updated": "Live at scammantha.vercel.app"
+    },
+    {
+      "name": "CS-584-Final-Project",
+      "title": "ONCE-3DLanes Deep Learning Pipeline",
+      "summary": "CS 584 final project: multi-backbone 3D lane detection pipeline comparing ResNet-18, EfficientNet-B0, and MobileNetV2 with and without augmentation. Generates videos, comparison tables, and animated GIF results.",
+      "href": "https://github.com/DanishNadar/CS-584-Final-Project",
+      "language": "Python · PyTorch",
+      "updated": "Academic · 1 fork"
+    },
+    {
       "name": "JTR",
       "title": "Job Tracker & Recommender",
-      "summary": "Repository for the JTR job-seeking system, with separate backend and frontend folders.",
+      "summary": "AI-powered job-seeking system with separate backend and frontend — matching, outreach automation, and structured job-ops workflow.",
       "href": "https://github.com/DanishNadar/JTR",
       "language": "Python · HTML · JavaScript",
       "updated": "Updated Nov 7, 2025"
     },
     {
       "name": "TTP_DNS-Screening-Tool",
-      "title": "DNS Screening Automation",
-      "summary": "DNS Screening Tool providing automation for Technology Transition Paradigm.",
+      "title": "DNS Email Auth Screening Tool",
+      "summary": "Python automation for SPF, DKIM, and DMARC domain security checks — validates against EasyDMARC and outputs structured JSON/CSV reports for MSP operations.",
       "href": "https://github.com/DanishNadar/TTP_DNS-Screening-Tool",
       "language": "Python",
       "updated": "Updated Aug 19, 2025"
@@ -896,15 +1043,31 @@ window.PORTFOLIO_DATA = {
     {
       "name": "AIRA",
       "title": "Illinois Tech Robotics AIRA",
-      "summary": "Code for the Illinois Tech Robotics Autonomous Interactive Robotic Assistant (AIRA).",
+      "summary": "Code for the Illinois Tech Robotics Autonomous Interactive Robotic Assistant — CMake/C/Python robotics system.",
       "href": "https://github.com/DanishNadar/AIRA",
       "language": "CMake · C · Python",
       "updated": "Updated Apr 22, 2025"
     },
     {
+      "name": "ITRC-Treasury-App",
+      "title": "ITRC Treasury Bookkeeping App",
+      "summary": "Treasury management application for the Illinois Tech Railroad Club — TypeScript, PostgreSQL, Vercel deployment, and financial tracking workflows. Live at itrctreasurybookkeeping.vercel.app.",
+      "href": "https://github.com/DanishNadar/ITRC-Treasury-App",
+      "language": "TypeScript",
+      "updated": "Live at itrctreasurybookkeeping.vercel.app"
+    },
+    {
+      "name": "IntegrityFailure",
+      "title": "IntegrityFailure Cybersecurity Game",
+      "summary": "A cybersecurity education game built with teammates to teach scam recognition through interactive gameplay and simulated social engineering scenarios.",
+      "href": "https://github.com/DanishNadar/IntegrityFailure",
+      "language": "Game project",
+      "updated": "Updated May 21, 2025"
+    },
+    {
       "name": "DN_DiamondPricePrediction",
       "title": "Diamond Price Prediction",
-      "summary": "A full end-to-end machine learning project to predict diamond prices.",
+      "summary": "End-to-end machine learning project predicting diamond prices using regression models, feature engineering, and model evaluation.",
       "href": "https://github.com/DanishNadar/DN_DiamondPricePrediction",
       "language": "Python",
       "updated": "Updated Jun 26, 2024"
@@ -912,23 +1075,15 @@ window.PORTFOLIO_DATA = {
     {
       "name": "DN_HousePricePrediction",
       "title": "House Price Prediction",
-      "summary": "An AI model web deployment to predict house prices.",
+      "summary": "ML model with web deployment for predicting house prices — covers training, evaluation, and serving predictions via a web interface.",
       "href": "https://github.com/DanishNadar/DN_HousePricePrediction",
       "language": "Python",
       "updated": "Updated Jun 11, 2024"
     },
     {
-      "name": "IntegrityFailure",
-      "title": "IntegrityFailure",
-      "summary": "A cybersecurity education game built to teach people how to recognize scams.",
-      "href": "https://github.com/DanishNadar/IntegrityFailure",
-      "language": "Game project",
-      "updated": "Updated May 21, 2025"
-    },
-    {
       "name": "PropagandaDetection",
-      "title": "Propaganda Detection",
-      "summary": "A machine learning model built for propaganda detection.",
+      "title": "Propaganda Detection Model",
+      "summary": "Machine learning model for propaganda detection — NLP-based classification of persuasion techniques in text.",
       "href": "https://github.com/DanishNadar/PropagandaDetection",
       "language": "Python",
       "updated": "Updated Nov 7, 2023"
@@ -1091,28 +1246,32 @@ window.PORTFOLIO_DATA = {
   ],
   "articles": [
     {
-      "kicker": "Featured direction",
-      "title": "OBSERV-E: accessibility robotics beyond a single robot",
-      "summary": "How GRVI, DRVI, and HRVI work together as an assistive ecosystem.",
-      "cta": "Ask about OBSERV-E"
+      "href": "article-observ-e.html",
+      "kicker": "Robotics · Accessibility",
+      "title": "OBSERV-E: Building Assistive Robotics as a Systems Problem, Not a Hardware Problem",
+      "summary": "Most assistive tech projects focus on the device. OBSERV-E started as three separate robot ideas — GRVI, DRVI, and HRVI — before I realized the real design challenge was the signal path between them and the person who needs help. Here's how the architecture shifted.",
+      "cta": "Read the article"
     },
     {
-      "kicker": "Coming soon",
-      "title": "Moving an AI idea past demo mode",
-      "summary": "How useful systems get shipped.",
-      "cta": "Request early access"
+      "href": "article-ecocar-sensor-fusion.html",
+      "kicker": "Autonomous Vehicles · Engineering",
+      "title": "Sensor Fusion at EcoCAR: What Real-Time Validation Actually Looks Like",
+      "summary": "Writing requirements is one thing. Writing requirements that actually get tested — against real LiDAR, radar, and camera data running in RTMaps on a Chevy Blazer EV — is a completely different discipline. Here's what I learned as Sensor Fusion Lead.",
+      "cta": "Read the article"
     },
     {
-      "kicker": "Planned note",
-      "title": "Sensor fusion lessons from robotics",
-      "summary": "Validation, teamwork, and real-time constraints.",
-      "cta": "Ask Danish about this topic"
+      "href": "article-ai-production.html",
+      "kicker": "Applied AI · Product Engineering",
+      "title": "Getting Past Demo Mode: Lessons from Shipping AI in Production",
+      "summary": "A prototype that works locally in a Jupyter notebook is not a product. This is what I learned spending a summer building Azure-backed AI training tools and fixing production issues on a live AI headshot platform — Supabase, Vercel, Stripe, and all.",
+      "cta": "Read the article"
     },
     {
-      "kicker": "Planned note",
-      "title": "Email auth automation for operations",
-      "summary": "Turning security checks into repeatable workflows.",
-      "cta": "Start a conversation"
+      "href": "article-email-security.html",
+      "kicker": "Security Automation · Operations",
+      "title": "Turning SPF, DKIM, and DMARC Checks into a Repeatable Security Workflow",
+      "summary": "Manual email authentication checks don't scale — especially for MSPs managing dozens of client domains. Here's how I built the automation pipeline at Technology Transition Paradigm that replaced hours of per-domain work with structured, validated, reportable results.",
+      "cta": "Read the article"
     }
   ],
   "testimonials": [

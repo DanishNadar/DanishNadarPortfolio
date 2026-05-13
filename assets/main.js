@@ -684,6 +684,12 @@ function renderResume() {
     </section>`;
 }
 
+function articleHref(article) {
+  if (!article.href) return `${pagePrefix()}contact.html`;
+  if (article.href.startsWith('http')) return article.href;
+  return `${pagePrefix()}${article.href}`;
+}
+
 function renderArticles(selector = '[data-articles]') {
   const wrap = document.querySelector(selector);
   if (!wrap) return;
@@ -691,13 +697,13 @@ function renderArticles(selector = '[data-articles]') {
   wrap.innerHTML = items.map((article, idx) => `
     <article class="article-card fade-up" style="transition-delay:${idx * 45}ms">
       <div class="placeholder-photo alt-${(idx % 3) + 1}">
-        <span class="placeholder-label">Future cover / diagram</span>
+        <span class="placeholder-label">${article.kicker}</span>
       </div>
       <span class="article-kicker">${article.kicker}</span>
-      <h3>${article.title}</h3>
+      <h3><a class="project-title-link" href="${articleHref(article)}">${article.title}</a></h3>
       <p>${article.summary}</p>
       <div class="project-links" style="margin-top:16px;">
-        <a class="inline-link" href="${pagePrefix()}contact.html"><span>${article.cta}</span><span>${icons.arrow}</span></a>
+        <a class="inline-link" href="${articleHref(article)}"><span>${article.cta}</span><span>${icons.arrow}</span></a>
       </div>
     </article>`).join('');
 }
