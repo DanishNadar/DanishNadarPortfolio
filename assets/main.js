@@ -696,9 +696,10 @@ function renderArticles(selector = '[data-articles]') {
   const items = selector === '[data-articles-preview]' ? DATA.articles.slice(0, 2) : DATA.articles;
   wrap.innerHTML = items.map((article, idx) => `
     <article class="article-card fade-up" style="transition-delay:${idx * 45}ms">
-      <div class="placeholder-photo alt-${(idx % 3) + 1}">
-        <span class="placeholder-label">${article.kicker}</span>
-      </div>
+      ${article.image
+        ? `<a href="${articleHref(article)}" style="display:block;margin-bottom:16px;"><img src="${assetPrefix()}/${article.image}" alt="${article.title}" style="width:100%;border-radius:12px;display:block;aspect-ratio:16/9;object-fit:cover;border:1px solid rgba(255,122,26,.18);" loading="lazy" /></a>`
+        : `<div class="placeholder-photo alt-${(idx % 3) + 1}"><span class="placeholder-label">${article.kicker}</span></div>`
+      }
       <span class="article-kicker">${article.kicker}</span>
       <h3><a class="project-title-link" href="${articleHref(article)}">${article.title}</a></h3>
       <p>${article.summary}</p>

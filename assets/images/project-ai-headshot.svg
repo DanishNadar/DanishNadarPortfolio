@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+  <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#111a33"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".38"/></filter>
+</defs>
+<rect width="1200" height="720" rx="42" fill="#0b1020"/>
+<text x="600" y="68" text-anchor="middle" fill="#fff" font-family="Arial" font-size="44" font-weight="800">AI Headshot Platform</text>
+<text x="600" y="104" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="21">Production Contribution · TypeScript · Supabase · Vercel · Stripe</text>
+
+<!-- Before photo box -->
+<g filter="url(#s)">
+  <rect x="90" y="150" width="280" height="340" rx="18" fill="#111a33" stroke="rgba(185,199,230,.2)" stroke-width="2"/>
+  <text x="230" y="178" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="13">Before</text>
+  <!-- Face placeholder -->
+  <circle cx="230" cy="270" r="80" fill="#16213d"/>
+  <circle cx="205" cy="250" r="12" fill="#0d1628"/>
+  <circle cx="255" cy="250" r="12" fill="#0d1628"/>
+  <path d="M205 300 Q230 318 255 300" fill="none" stroke="#b9c7e6" stroke-width="3" stroke-linecap="round"/>
+  <!-- Casual clothes suggestion -->
+  <rect x="165" y="350" width="130" height="60" rx="12" fill="#16213d"/>
+  <text x="230" y="387" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="12">casual photo</text>
+  <text x="230" y="460" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="13" fill-opacity=".7">uploaded image</text>
+</g>
+
+<!-- AI processing middle -->
+<g transform="translate(430,220)">
+  <rect x="0" y="0" width="340" height="240" rx="18" fill="#0d1628" stroke="url(#g)" stroke-width="2.5"/>
+  <text x="170" y="36" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="16" font-weight="700">AI Processing Pipeline</text>
+  <!-- Steps -->
+  <rect x="20" y="52" width="300" height="32" rx="7" fill="#111a33"/>
+  <text x="170" y="72" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12">✓ Image upload → Supabase Storage</text>
+  <rect x="20" y="92" width="300" height="32" rx="7" fill="#111a33"/>
+  <text x="170" y="112" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12">✓ AI model inference (headshot gen)</text>
+  <rect x="20" y="132" width="300" height="32" rx="7" fill="#111a33"/>
+  <text x="170" y="152" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12">✓ Stripe payment verification</text>
+  <rect x="20" y="172" width="300" height="32" rx="7" fill="#111a33"/>
+  <text x="170" y="192" text-anchor="middle" fill="#febc2e" font-family="Arial" font-size="12">⚙ Vercel CI/CD → production deploy</text>
+  <!-- Progress bar -->
+  <rect x="20" y="214" width="300" height="8" rx="4" fill="#16213d"/>
+  <rect x="20" y="214" width="240" height="8" rx="4" fill="url(#g)" opacity=".85"/>
+</g>
+
+<!-- After photo box -->
+<g filter="url(#s)">
+  <rect x="830" y="150" width="280" height="340" rx="18" fill="#111a33" stroke="url(#g)" stroke-width="2.5"/>
+  <text x="970" y="178" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">After</text>
+  <!-- Professional face -->
+  <circle cx="970" cy="270" r="80" fill="#16213d" stroke="#ff7a1a" stroke-width="2"/>
+  <circle cx="945" cy="250" r="12" fill="#ff7a1a" opacity=".8"/>
+  <circle cx="995" cy="250" r="12" fill="#ff7a1a" opacity=".8"/>
+  <path d="M945 295 Q970 316 995 295" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <!-- Professional suit -->
+  <rect x="905" y="350" width="130" height="60" rx="12" fill="#16213d" stroke="#ff7a1a" stroke-width="1.5"/>
+  <!-- Tie -->
+  <rect x="960" y="350" width="20" height="60" rx="5" fill="#ff7a1a" opacity=".7"/>
+  <text x="970" y="460" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">AI headshot ✓</text>
+</g>
+
+<!-- Stack badges -->
+<g font-family="Arial" text-anchor="middle">
+  <rect x="170" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="230" y="561" fill="#ff7a1a" font-size="13">TypeScript</text>
+  <rect x="306" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="366" y="561" fill="#ff7a1a" font-size="13">Supabase</text>
+  <rect x="442" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="502" y="561" fill="#ff7a1a" font-size="13">Vercel CI/CD</text>
+  <rect x="578" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="638" y="561" fill="#ff7a1a" font-size="13">Stripe</text>
+  <rect x="714" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="774" y="561" fill="#ff7a1a" font-size="13">PostgreSQL</text>
+  <rect x="850" y="540" width="120" height="34" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="910" y="561" fill="#ff7a1a" font-size="13">Production</text>
+</g>
+
+<text x="600" y="624" text-anchor="middle" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Production contribution — real users, real payments, real debugging</text>
+<text x="600" y="654" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="14">Supabase migrations · Stripe webhook idempotency · Vercel deployment pipeline fixes</text>
+</svg>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RL Lane-Keeping: What Adding More Sensors Does to a Trained Policy — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>RL Lane-Keeping: What Adding More Sensors Does to a Trained Policy · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Robotics · Reinforcement Learning · Autonomous Systems</span>
+        <h1 class="page-title">RL Lane-Keeping: What Adding More Sensors Does to a Trained Policy</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Sensor Fusion Lead, EcoCAR · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">You'd expect camera plus LiDAR to outperform camera-only in a reinforcement learning driving task. It didn't — at least not the way I expected. Here's what the reward curves actually showed.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-rl-autonomous-driving.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-rl-driving.svg" alt="RL driving simulator — sensor configuration comparison and reward curves" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Lane-keeping simulator — camera vs camera+LiDAR vs full-stack sensor comparison</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The experiment: three sensor configurations, one task</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The simulator was built to answer a specific question: how does the sensor configuration available to a reinforcement learning agent affect its ability to learn lane-keeping behavior? Three configurations were tested: camera-only, camera plus LiDAR, and a full sensor stack (camera, LiDAR, and radar).
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The policy architecture was PPO (Proximal Policy Optimization) — a standard choice for continuous control tasks that's well-studied and comparatively stable to train. All three configurations used the same reward function, the same environment, and the same training budget.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The metrics tracked across all three: cumulative reward, collision rate, off-road rate, task completion percentage, lane deviation, and distance traveled per episode. Tracking all six prevented optimizing for a single metric that didn't capture overall performance.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What the results actually showed</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Camera-only learned the fastest and achieved the highest cumulative reward in the early training phases. Adding LiDAR initially slowed learning — the agent took longer to develop a stable policy because the observation space was larger and noisier.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          After sufficient training, camera plus LiDAR matched camera-only on most metrics and outperformed it specifically on collision rate — the additional range information helped the agent anticipate situations where a camera alone couldn't react fast enough.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The full sensor stack (camera + LiDAR + radar) was the most difficult to train. The agent struggled to develop a coherent policy given the increased observation dimensionality. With the same training budget, it underperformed both simpler configurations on most metrics. The lesson: more data isn't always better in RL — state space complexity affects sample efficiency in ways that can't be overcome just by extending training.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Why this connects to EcoCAR</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          This simulator project wasn't purely academic — it directly informed how I think about sensor fusion on the Chevy Blazer EV platform. At EcoCAR, I work with camera, radar, and LiDAR streams that need to be fused into a coherent perception output. The question of which sensor to trust in which scenario is exactly the question this simulator was built to investigate.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The practical takeaway: sensor fusion architectures need to consider not just what information each sensor provides, but how that information affects the downstream system's ability to make decisions. Adding sensors should be evaluated against the cost to the decision-making layer, not just the richness of the raw data.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · PPO · Custom simulator · NumPy · matplotlib · sensor state modeling</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Key finding</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">More sensors increased observation complexity beyond what a fixed training budget could handle — camera + LiDAR outperformed the full stack on the same schedule.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-rl-autonomous-driving.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

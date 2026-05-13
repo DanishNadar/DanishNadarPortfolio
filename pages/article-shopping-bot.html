@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Automated Shopping Bot: Selenium, Checkout Flows, and Learning Browser Automation — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Automated Shopping Bot: Selenium, Checkout Flows, and Learning Browser Automation · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Automation · Python · Browser Engineering</span>
+        <h1 class="page-title">Automated Shopping Bot: Selenium, Checkout Flows, and Learning Browser Automation</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Building a bot that completes real e-commerce checkout flows is a lesson in how fragile web UIs actually are — and how to write automation that handles it anyway.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-shopping-bot.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-shopping-bot.svg" alt="Shopping bot — Selenium automation pipeline and browser flow" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Selenium automation pipeline — browser launch, product page, cart, checkout</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Why browser automation is harder than it looks</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The basic Selenium tutorial makes browser automation look simple: find an element, click it, fill in a form, submit. What the tutorial doesn't show you is what happens when the element isn't loaded yet, when the selector changes between page loads, when the site adds anti-bot measures, or when a dynamic React component renders after a delay.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          E-commerce checkout flows are especially difficult because they're multi-step, state-dependent, and often built by teams that are actively trying to prevent automation. Every step — product page, cart, shipping form, payment form, order confirmation — has its own timing requirements and its own failure modes.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Building the shopping bot was essentially a course in defensive automation: write selectors that degrade gracefully, build wait conditions that match actual page behavior, and design the session management to recover from partial failures without corrupting state.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The technical architecture</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The bot takes a product URL as input. ChromeDriver launches a headless browser session and navigates to the product page. WebDriverWait with expected conditions handles loading states — instead of fixed sleep() calls, the bot waits for specific elements to become clickable or visible before proceeding. Fixed sleeps are the root cause of most automation fragility.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Product selection (size, color, quantity) uses a combination of CSS selectors and XPath expressions. CSS selectors are preferred where possible — they're faster and more readable. XPath is reserved for situations where the element relationship can't be expressed cleanly in CSS.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The checkout form-filling logic uses send_keys() for each field, with explicit waits between fields to allow for any validation or dynamic updates. The shipping and payment data is stored in a configuration file, not hardcoded — making it easy to update without touching the automation logic.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What this project taught me about testing and reliability</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Browser automation has a lot in common with integration testing — both require interacting with real systems through their actual interfaces, and both are sensitive to changes in those interfaces. The skills transfer directly: writing robust Selenium automation is good practice for writing robust integration tests.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The reliability mindset that the shopping bot required — always handle the case where an element isn't there, always verify state before acting, always log what happened — is the same mindset I apply to system automation in professional contexts. The tools are different. The thinking is the same.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · Selenium WebDriver · ChromeDriver · BeautifulSoup · requests</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Core skill</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Defensive automation — explicit waits, graceful selector degradation, and state verification before every action.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-shopping-bot.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

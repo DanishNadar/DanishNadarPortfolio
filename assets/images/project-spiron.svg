@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".38"/></filter>
+</defs>
+<rect width="1200" height="720" rx="42" fill="#0b1020"/>
+<text x="600" y="68" text-anchor="middle" fill="#fff" font-family="Arial" font-size="54" font-weight="800">Spiron</text>
+<text x="600" y="106" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="22">Voice Assistant · Python · Offline-First · pyttsx3 · speech_recognition</text>
+
+<!-- Terminal / interaction panel -->
+<g filter="url(#s)">
+  <rect x="60" y="136" width="520" height="440" rx="18" fill="#0d1219"/>
+  <rect x="60" y="136" width="520" height="46" rx="18" fill="#1a1f2a"/>
+  <rect x="60" y="168" width="520" height="14" rx="0" fill="#1a1f2a"/>
+  <circle cx="90" cy="158" r="7" fill="#ff5f57"/>
+  <circle cx="112" cy="158" r="7" fill="#febc2e"/>
+  <circle cx="134" cy="158" r="7" fill="#28c840"/>
+  <text x="320" y="163" text-anchor="middle" fill="#8894a8" font-family="monospace" font-size="13">spiron_assistant.py</text>
+
+  <text x="84" y="204" fill="#28c840" font-family="monospace" font-size="13">$ python spiron.py</text>
+  <text x="84" y="226" fill="#ff7a1a" font-family="monospace" font-size="12">Spiron ready. Listening...</text>
+
+  <text x="84" y="256" fill="#8894a8" font-family="monospace" font-size="12">─── Voice Input ───────────────────────────</text>
+  <text x="84" y="278" fill="#b9c7e6" font-family="monospace" font-size="12">👤 "Hey Spiron, what time is it?"</text>
+  <text x="84" y="300" fill="#28c840" font-family="monospace" font-size="12">🔊 "It's 2:47 PM on Tuesday."</text>
+
+  <text x="84" y="326" fill="#b9c7e6" font-family="monospace" font-size="12">👤 "Open YouTube"</text>
+  <text x="84" y="348" fill="#28c840" font-family="monospace" font-size="12">🔊 "Opening YouTube in your browser."</text>
+  <text x="84" y="368" fill="#8894a8" font-family="monospace" font-size="11">  webbrowser.open("https://youtube.com")</text>
+
+  <text x="84" y="394" fill="#b9c7e6" font-family="monospace" font-size="12">👤 "Search Wikipedia for neural networks"</text>
+  <text x="84" y="416" fill="#28c840" font-family="monospace" font-size="12">🔊 "Here's what I found..."</text>
+  <text x="84" y="436" fill="#8894a8" font-family="monospace" font-size="11">  wikipedia.summary("neural networks", 2)</text>
+
+  <text x="84" y="462" fill="#b9c7e6" font-family="monospace" font-size="12">👤 "Tell me a joke"</text>
+  <text x="84" y="484" fill="#28c840" font-family="monospace" font-size="12">🔊 "Why did the Python developer wear...</text>
+  <text x="84" y="502" fill="#28c840" font-family="monospace" font-size="12">   glasses? Because he couldn't C."</text>
+  <text x="84" y="526" fill="#8894a8" font-family="monospace" font-size="12">$ <rect x="480" y="514" width="8" height="14" fill="#28c840" opacity=".8"/></text>
+  <rect x="480" y="514" width="8" height="14" fill="#28c840" opacity=".8"/>
+</g>
+
+<!-- Command map panel -->
+<g filter="url(#s)" transform="translate(640,136)">
+  <rect x="0" y="0" width="500" height="440" rx="18" fill="#111a33" stroke="url(#g)" stroke-width="2"/>
+  <text x="250" y="34" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="15" font-weight="700">Command Categories</text>
+
+  <!-- Category blocks -->
+  <rect x="20" y="52" width="220" height="90" rx="10" fill="#0d1628" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="130" y="74" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="12" font-weight="700">Time &amp; Date</text>
+  <text x="130" y="92" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"What time is it?"</text>
+  <text x="130" y="108" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"What's today's date?"</text>
+  <text x="130" y="124" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">datetime module</text>
+
+  <rect x="260" y="52" width="220" height="90" rx="10" fill="#0d1628" stroke="#28c840" stroke-width="1.5"/>
+  <text x="370" y="74" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12" font-weight="700">Web Browse</text>
+  <text x="370" y="92" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Open YouTube / Gmail"</text>
+  <text x="370" y="108" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Go to [any site]"</text>
+  <text x="370" y="124" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">webbrowser module</text>
+
+  <rect x="20" y="158" width="220" height="90" rx="10" fill="#0d1628" stroke="#8aa9ff" stroke-width="1.5"/>
+  <text x="130" y="180" text-anchor="middle" fill="#8aa9ff" font-family="Arial" font-size="12" font-weight="700">Wikipedia Search</text>
+  <text x="130" y="198" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Search Wikipedia for..."</text>
+  <text x="130" y="214" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Tell me about..."</text>
+  <text x="130" y="230" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">wikipedia-api</text>
+
+  <rect x="260" y="158" width="220" height="90" rx="10" fill="#0d1628" stroke="#ffd166" stroke-width="1.5"/>
+  <text x="370" y="180" text-anchor="middle" fill="#ffd166" font-family="Arial" font-size="12" font-weight="700">Entertainment</text>
+  <text x="370" y="198" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Tell me a joke"</text>
+  <text x="370" y="214" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">"Play music"</text>
+  <text x="370" y="230" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">pyjokes · os module</text>
+
+  <rect x="20" y="264" width="460" height="70" rx="10" fill="#0d1628" stroke="url(#g)" stroke-width="1.5"/>
+  <text x="250" y="288" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">Voice Pipeline</text>
+  <text x="80" y="312" fill="#b9c7e6" font-family="Arial" font-size="11">Mic input</text>
+  <polygon points="134,308 148,314 134,320" fill="#ff7a1a"/>
+  <text x="162" y="312" fill="#b9c7e6" font-family="Arial" font-size="11">speech_recognition</text>
+  <polygon points="286,308 300,314 286,320" fill="#ff7a1a"/>
+  <text x="312" y="312" fill="#b9c7e6" font-family="Arial" font-size="11">NLP parse</text>
+  <polygon points="372,308 386,314 372,320" fill="#ff7a1a"/>
+  <text x="396" y="312" fill="#b9c7e6" font-family="Arial" font-size="11">pyttsx3 TTS</text>
+
+  <!-- Key features -->
+  <rect x="20" y="352" width="220" height="60" rx="8" fill="#111a33" stroke="#28c840" stroke-width="1.2"/>
+  <text x="130" y="374" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12" font-weight="700">✓ Fully offline</text>
+  <text x="130" y="394" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">No API keys needed</text>
+
+  <rect x="260" y="352" width="220" height="60" rx="8" fill="#111a33" stroke="#ff7a1a" stroke-width="1.2"/>
+  <text x="370" y="374" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="12" font-weight="700">Cross-platform</text>
+  <text x="370" y="394" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">Windows · macOS · Linux</text>
+</g>
+
+<text x="600" y="630" text-anchor="middle" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Python · speech_recognition · pyttsx3 · wikipedia-api · webbrowser</text>
+<text x="600" y="660" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="14">Offline voice assistant · NLP command parsing · multi-category skill routing</text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".38"/></filter>
+</defs>
+<rect width="1200" height="720" rx="42" fill="#0b1020"/>
+<text x="600" y="68" text-anchor="middle" fill="#fff" font-family="Arial" font-size="48" font-weight="800">Automated Shopping Bot</text>
+<text x="600" y="104" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="21">Selenium · Python · Browser Automation · Checkout Pipeline</text>
+
+<!-- Browser window mockup -->
+<g filter="url(#s)">
+  <rect x="60" y="136" width="520" height="440" rx="18" fill="#1a1f2a"/>
+  <rect x="60" y="136" width="520" height="52" rx="18" fill="#252b38"/>
+  <rect x="60" y="170" width="520" height="18" rx="0" fill="#252b38"/>
+  <circle cx="88" cy="161" r="7" fill="#ff5f57"/>
+  <circle cx="110" cy="161" r="7" fill="#febc2e"/>
+  <circle cx="132" cy="161" r="7" fill="#28c840"/>
+  <!-- URL bar -->
+  <rect x="154" y="150" width="360" height="22" rx="6" fill="#1a1f2a"/>
+  <text x="334" y="165" text-anchor="middle" fill="#8894a8" font-family="monospace" font-size="11">https://store.example.com/product/12345</text>
+
+  <!-- Product page content -->
+  <rect x="80" y="200" width="480" height="140" rx="10" fill="#0d1628"/>
+  <rect x="96" y="214" width="140" height="112" rx="8" fill="#111a33"/>
+  <text x="166" y="264" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="10">[Product Image]</text>
+  <text x="280" y="230" fill="#fff" font-family="Arial" font-size="13" font-weight="700">Limited Edition Sneakers</text>
+  <text x="280" y="250" fill="#28c840" font-family="Arial" font-size="12">$149.99 — In Stock</text>
+  <text x="280" y="268" fill="#8894a8" font-family="Arial" font-size="11">Size: US 10 · Color: Black</text>
+  <rect x="280" y="280" width="140" height="36" rx="8" fill="#ff7a1a"/>
+  <text x="350" y="302" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="700">Add to Cart</text>
+  <!-- Bot cursor -->
+  <polygon points="380,288 390,296 385,296 388,306 382,306 379,296 374,296" fill="#fff" opacity=".9"/>
+
+  <!-- Cart / checkout page -->
+  <rect x="80" y="354" width="480" height="202" rx="10" fill="#0d1628"/>
+  <text x="320" y="378" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">Checkout — Auto-filled by bot</text>
+  <rect x="96" y="388" width="220" height="28" rx="6" fill="#111a33" stroke="#ff7a1a" stroke-width="1"/>
+  <text x="206" y="406" text-anchor="middle" fill="#b9c7e6" font-family="monospace" font-size="11">Danish Nadar</text>
+  <rect x="330" y="388" width="220" height="28" rx="6" fill="#111a33" stroke="#ff7a1a" stroke-width="1"/>
+  <text x="440" y="406" text-anchor="middle" fill="#b9c7e6" font-family="monospace" font-size="11">••••  ••••  ••••  4242</text>
+  <rect x="96" y="424" width="454" height="28" rx="6" fill="#111a33" stroke="#ff7a1a" stroke-width="1"/>
+  <text x="323" y="442" text-anchor="middle" fill="#b9c7e6" font-family="monospace" font-size="11">123 Example St, Chicago, IL 60616</text>
+  <rect x="96" y="460" width="454" height="28" rx="6" fill="#111a33" stroke="#28c840" stroke-width="1.5"/>
+  <text x="323" y="478" text-anchor="middle" fill="#28c840" font-family="monospace" font-size="11">✓ Payment details auto-populated</text>
+  <rect x="200" y="496" width="240" height="40" rx="10" fill="#1a3320" stroke="#28c840" stroke-width="2"/>
+  <text x="320" y="520" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="14" font-weight="700">Order Placed ✓</text>
+  <text x="320" y="538" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="9">in 2.3 seconds</text>
+</g>
+
+<!-- Automation flow -->
+<g filter="url(#s)" transform="translate(640,136)">
+  <rect x="0" y="0" width="500" height="440" rx="18" fill="#111a33" stroke="url(#g)" stroke-width="2"/>
+  <text x="250" y="34" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="15" font-weight="700">Selenium Automation Steps</text>
+
+  <rect x="20" y="54" width="460" height="42" rx="10" fill="#0d1628" stroke="url(#g)" stroke-width="1.5"/>
+  <text x="250" y="72" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">1. webdriver.Chrome() — headless launch</text>
+  <text x="250" y="88" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">ChromeDriver initialized, cookies cleared</text>
+
+  <line x1="250" y1="96" x2="250" y2="112" stroke="#ff7a1a" stroke-width="2"/>
+  <polygon points="245,112 255,112 250,122" fill="#ff7a1a"/>
+
+  <rect x="20" y="122" width="460" height="42" rx="10" fill="#0d1628" stroke="url(#g)" stroke-width="1.5"/>
+  <text x="250" y="140" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">2. driver.get(url) → product page</text>
+  <text x="250" y="156" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">WebDriverWait for element visibility</text>
+
+  <line x1="250" y1="164" x2="250" y2="180" stroke="#ff7a1a" stroke-width="2"/>
+  <polygon points="245,180 255,180 250,190" fill="#ff7a1a"/>
+
+  <rect x="20" y="190" width="460" height="42" rx="10" fill="#0d1628" stroke="url(#g)" stroke-width="1.5"/>
+  <text x="250" y="208" text-anchor="middle" fill="#fff" font-family="Arial" font-size="12">3. find_element + click "Add to Cart"</text>
+  <text x="250" y="224" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">By.CSS_SELECTOR / By.XPATH targeting</text>
+
+  <line x1="250" y1="232" x2="250" y2="248" stroke="#ff7a1a" stroke-width="2"/>
+  <polygon points="245,248 255,248 250,258" fill="#ff7a1a"/>
+
+  <rect x="20" y="258" width="460" height="42" rx="10" fill="#0d1628" stroke="#28c840" stroke-width="1.5"/>
+  <text x="250" y="276" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12">4. Auto-fill shipping + payment fields</text>
+  <text x="250" y="292" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">send_keys() for each form element</text>
+
+  <line x1="250" y1="300" x2="250" y2="316" stroke="#ff7a1a" stroke-width="2"/>
+  <polygon points="245,316 255,316 250,326" fill="#ff7a1a"/>
+
+  <rect x="20" y="326" width="460" height="42" rx="10" fill="#0d1628" stroke="#28c840" stroke-width="1.5"/>
+  <text x="250" y="344" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="12">5. Submit order → confirmation scraped</text>
+  <text x="250" y="360" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="10">Order ID extracted · session logged</text>
+
+  <!-- Tags -->
+  <text x="60" y="410" fill="#ff7a1a" font-family="Arial" font-size="12">Python</text>
+  <text x="126" y="410" fill="#ff7a1a" font-family="Arial" font-size="12">Selenium</text>
+  <text x="212" y="410" fill="#ff7a1a" font-family="Arial" font-size="12">ChromeDriver</text>
+  <text x="320" y="410" fill="#ff7a1a" font-family="Arial" font-size="12">BeautifulSoup</text>
+  <text x="434" y="410" fill="#ff7a1a" font-family="Arial" font-size="12">requests</text>
+</g>
+
+<text x="600" y="630" text-anchor="middle" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Python · Selenium WebDriver · ChromeDriver · BeautifulSoup · headless automation</text>
+<text x="600" y="660" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="14">End-to-end checkout automation · form filling · order confirmation extraction</text>
+</svg>

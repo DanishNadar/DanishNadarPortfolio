@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Course Recommendation Without Ratings: TF-IDF and Cosine Similarity on 5,000 Courses — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Course Recommendation Without Ratings: TF-IDF and Cosine Similarity on 5,000 Courses · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · NLP · Content-Based Filtering</span>
+        <h1 class="page-title">Course Recommendation Without Ratings: TF-IDF and Cosine Similarity on 5,000 Courses</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Most recommendation engines lean on ratings data. IIT's course catalog doesn't have that. Here's how TF-IDF vectorization and cosine similarity built a content-based recommender that works without a single user review.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-course-recommendation.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-course-rec.svg" alt="Course recommendation system — TF-IDF vector space and similarity pipeline" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Course similarity vector space — ML cluster, systems cluster, and database cluster by TF-IDF</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The cold start problem: recommending without history</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Collaborative filtering — the approach used by Netflix, Spotify, and most large-scale recommenders — requires usage data. Which users took which courses. Which sequences led to success. Which combinations correlated with good outcomes. Without that data, collaborative filtering has nothing to work with.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          A university course catalog doesn't have that data in a usable form. What it does have is descriptions — sometimes detailed, sometimes sparse, but always text. Content-based filtering starts from the text itself: instead of asking "what did similar users take next?", it asks "what courses are semantically similar to what this student is looking for?"
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The technical challenge is turning unstructured course descriptions into a representation that supports meaningful similarity comparisons at scale.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">TF-IDF: turning words into weighted vectors</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          TF-IDF (Term Frequency-Inverse Document Frequency) gives each term in a document a score based on two factors: how often it appears in this document (TF), and how rare it is across all documents (IDF). Terms that appear frequently in one course description but rarely across all courses are the most discriminating — they tell you what makes that course unique.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Common words like "students" or "introduction" appear across nearly every course, so IDF weights them down toward zero. Domain-specific terms like "convolutional neural network" or "relational algebra" appear rarely, so they get high weights. The result is a vector for each course that emphasizes its distinctive content.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Over 5,000 course descriptions, this produces a matrix where each row is a course and each column is a term weight. Cosine similarity between any two rows then gives you how conceptually close those courses are, regardless of the specific words used.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What the similarity clusters revealed</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          When you visualize the TF-IDF vectors using dimensionality reduction, clear clusters emerge: machine learning courses cluster together, operating systems courses cluster together, database courses cluster together. The math works — similar courses are actually close to each other in the vector space, and dissimilar ones are far apart.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The interesting edge cases were courses that landed between clusters — courses that genuinely span multiple domains. A course on "Machine Learning for Healthcare" sits between the ML cluster and the biology cluster. The similarity scores actually capture that ambiguity: it gets recommended alongside both ML-heavy courses and biomedical ones, which is the right behavior.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Approach</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">TF-IDF vectorization · Cosine similarity · Content-based filtering · 5,000+ IIT course descriptions</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · scikit-learn · pandas · CountVectorizer · TfidfVectorizer</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-course-recommendation.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

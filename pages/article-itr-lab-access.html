@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Building a Real Lab Access System with Next.js and Discord — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Building a Real Lab Access System: Next.js, Discord Bots, and Replacing Spreadsheets · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Full-Stack Product · TypeScript · Illinois Tech Robotics</span>
+        <h1 class="page-title">Building a Real Lab Access System: Next.js, Discord Bots, and Replacing Spreadsheets</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Treasurer, Illinois Tech Robotics</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Illinois Tech Robotics was coordinating lab access through ad-hoc messages and hope. I built a production platform to replace all of it.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="cta-btn" href="https://itr-lab-access.vercel.app" target="_blank" rel="noreferrer">See it live</a>
+          <a class="secondary-btn" href="https://github.com/DanishNadar/ITR-Lab-Access" target="_blank" rel="noreferrer">GitHub repo</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-itr-lab-access.svg" alt="ITR Lab Access platform dashboard" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Elevate Underground — calendar scheduling, admin dashboard, and Discord bot integration</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The problem: coordination overhead that didn't need to exist</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Illinois Tech Robotics has a dedicated lab space — Elevate Underground. Getting access to it involved messaging whoever happened to be available, waiting for a response, hoping the schedule was clear, and repeating. For a club that runs workshops, builds competition robots, and hosts new member sessions, that friction added up fast.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The solution didn't need to be complex — it needed to be reliable. Members needed to see availability, request specific time slots, and know when they were confirmed. Admins needed to approve or deny requests without managing a spreadsheet. And the Discord server — where the club actually communicates — needed to stay updated automatically.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          I built the Elevate Underground Lab Access Platform to solve all three of those in one system.
+        </p>
+      </article>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://itr-lab-access.vercel.app" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fitr-lab-access.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitFor=2000" alt="ITR Lab Access live site" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-top:8px;margin-bottom:32px;">Live at itr-lab-access.vercel.app</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What Next.js 14 and Drizzle ORM actually feel like in production</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The app is built on Next.js 14's app router with TypeScript throughout. The database is Neon Postgres, accessed through Drizzle ORM — which gave me type-safe schema definitions and query building without the overhead of a heavier ORM setup.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The 7-day calendar UI shows real-time availability pulled from the database. Request submissions trigger Nodemailer email notifications to admins. Approval or denial updates the database and sends a confirmation email to the member. The whole flow is database-backed from day one — not session-based or client-only.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          One detail that required real thought: parsing ICS calendar files for availability data. Calendar formats are surprisingly messy. Getting clean, reliable time slot data out of them required writing normalization logic that handled edge cases like recurring events, timezone offsets, and malformed entries.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The Discord bot: five REST endpoints that the club actually uses</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The Discord integration was the feature that made the platform feel real to club members. Instead of having to visit the web app, members can query lab status directly in Discord: is the lab open? What's the upcoming schedule? When is the next available slot?
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The bot connects to five REST endpoints on the app backend, secured with API key authentication. Admins can update lab status (open, closed, limbo) via Discord commands. The status broadcasts to a designated channel automatically. It's a small integration that has a big effect on how visible and usable the platform is for a club that lives in Discord.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">TypeScript · Next.js 14 · Neon Postgres · Drizzle ORM · Discord API · Nodemailer · Vercel</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Impact</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Replaced ad-hoc coordination with a production platform used by real Illinois Tech Robotics members.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-itr-lab-access.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

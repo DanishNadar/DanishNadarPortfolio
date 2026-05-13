@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Isolation Forest vs One-Class SVM: Fraud Detection on 590K Transactions — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Isolation Forest vs One-Class SVM: What 590K Transactions Taught Me About Fraud Detection · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · Anomaly Detection · Financial Security</span>
+        <h1 class="page-title">Isolation Forest vs One-Class SVM: What 590K Transactions Taught Me About Fraud Detection</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Unsupervised fraud detection is harder than it sounds when only 3.5% of your data is actually fraud. Here's how I compared two anomaly detection approaches — and why Isolation Forest won by a wide margin.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-fraud-detection.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-fraud.svg" alt="Fraud detection — anomaly scatter plot and model comparison" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Transaction anomaly scatter and Isolation Forest vs One-Class SVM comparison</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The class imbalance problem in fraud</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The IEEE-CIS Fraud Detection dataset has 590,540 transactions. About 3.5% of them are fraudulent. That imbalance is not a quirk of the dataset — it's representative of real fraud rates. And it creates a specific problem: a model that predicts "not fraud" for every transaction would be 96.5% accurate. That's useless for actually catching fraud.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Supervised methods can handle class imbalance through techniques like SMOTE or weighted loss functions. But those require labeled training data — which assumes you know which transactions in your training set were fraudulent. In real-world fraud detection, that label arrives late (often weeks or months after the transaction), if at all.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Unsupervised anomaly detection sidesteps the label requirement entirely: instead of learning what fraud looks like, it learns what normal looks like — and flags anything that deviates significantly.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">How Isolation Forest works (and why it's fast)</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Isolation Forest's core insight is elegant: anomalies are easier to isolate than normal points. Build a random decision tree, and you'll find that outliers get separated from the rest of the data in very few splits — while normal points require many splits to isolate. The anomaly score is simply the average number of splits needed to isolate a point across many trees.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          This approach has a major practical advantage: it doesn't require computing distances between all pairs of points, which is what makes One-Class SVM slow at scale. On 590K transactions with PCA-reduced features, Isolation Forest trained in 2.3 seconds. One-Class SVM took 48.7 seconds.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The performance wasn't just about speed. Isolation Forest also outperformed One-Class SVM on precision (94.2% vs 91.5%), recall (91.8% vs 89.2%), and F1-score (92.9% vs 90.3%). Faster and more accurate is a clear winner.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What PCA dimensionality reduction contributed</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The raw dataset has over 400 features after one-hot encoding categorical variables. Training anomaly detection models on 400+ dimensions is both slow and prone to the curse of dimensionality — in high-dimensional spaces, all points start to look equidistant, which undermines distance-based anomaly detection.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          PCA reduced the feature space to 50 principal components that captured 95% of the variance. This preprocessing step had a measurable positive impact on both models' performance — and reduced training time significantly. Dimensionality reduction isn't always necessary, but for anomaly detection on high-dimensional financial data, it's almost always worth it.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Winner: Isolation Forest</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">F1: 92.9% · Training: 2.3s · 20× faster than One-Class SVM with better accuracy</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · scikit-learn · pandas · matplotlib · seaborn · PCA</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-fraud-detection.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AILA: Building a Voice-Driven AI Avatar — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>AILA: What It Takes to Build a Voice-Driven AI Avatar · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · Voice Systems · Illinois Tech</span>
+        <h1 class="page-title">AILA: What It Takes to Build a Voice-Driven AI Avatar That Doesn't Feel Like a Toy</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Adding a voice to an AI system sounds simple until you realize that tone, latency, and personality are engineering problems, not design decisions.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="cta-btn" href="https://aila-avatar.vercel.app" target="_blank" rel="noreferrer">See AILA live</a>
+          <a class="secondary-btn" href="project-aila-avatar.html">Project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-aila.svg" alt="AILA AI Leadership Avatar architecture" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">AILA — voice waveform, avatar presence, and chat interaction pipeline</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The gap between "talking AI" and something that feels intentional</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          AILA started as a project for the Illinois Tech Leadership Academy — they needed a digital presence that could answer questions, represent the program's voice, and actually be useful for prospective students and visitors. The brief was simple. The execution was not.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The first version was text-only. That felt wrong immediately. Leadership presence isn't just content delivery — it's tone, confidence, and presence. So I started investigating voice. The challenge: text-to-speech engines all sound the same. Generic. Flat. They don't represent a specific person or institution.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          That's when OpenVoice entered the picture — a TTS model that allows voice cloning and style transfer. Instead of a generic robotic voice, AILA could speak with a voice that had been shaped to match the program's identity. <strong style="color:#fff;">That's the engineering problem that actually mattered.</strong>
+        </p>
+      </article>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://aila-avatar.vercel.app" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Faila-avatar.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitFor=1500" alt="AILA Avatar live site" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-top:8px;margin-bottom:32px;">AILA live at aila-avatar.vercel.app</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Stacking Ollama, Azure, and OpenVoice</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The backend pipeline brings three systems together. Ollama runs local LLM inference — no cloud dependency for the reasoning layer, which keeps latency down and costs at zero. Azure Cognitive Services handles speech recognition on the input side. OpenVoice handles the synthesized audio output.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The orchestration layer in Python manages the flow: user speaks → Azure transcribes → Ollama generates a response → OpenVoice converts it to speech. Each piece has its own failure modes. Ollama occasionally produces inconsistent formatting. Azure's speech recognition stumbles on accents. OpenVoice adds latency at the output step.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The practical lesson: in multi-model pipelines, reliability is a first-class concern. You can't just evaluate each model independently. You have to evaluate the full chain under realistic conditions — different devices, different connection quality, different speaking styles.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Scenario-based conversations: scripting without scripting</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          AILA isn't a general-purpose chatbot. It's scoped to the Leadership Academy — its programs, its values, its people. That required designing conversation scenarios that guide the LLM toward useful, accurate answers without hard-coding every response.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The solution was a scenario file structure: predefined context blocks that the Ollama prompt includes depending on what topic the user asks about. The model handles natural language variation, but the factual grounding comes from the scenario data. It's a pattern I'd use again for any domain-specific voice system — constrain the context, not the creativity.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · OpenVoice TTS · Ollama LLM · Azure Cognitive Services · Vercel</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Key lesson</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Voice systems require end-to-end evaluation — each model looks fine in isolation until you test the full chain.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-aila-avatar.html">See the full AILA project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

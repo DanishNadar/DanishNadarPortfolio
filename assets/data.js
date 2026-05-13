@@ -297,6 +297,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "terminal",
       "visualLabel": "Scanner console placeholder",
       "visualHint": "Drop terminal output, dashboard shots, or JSON/CSV reporting visuals here.",
+      "image": "project-dns-scanner.svg",
       "skills": [
         "Python",
         "APIs",
@@ -346,6 +347,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "voice",
       "visualLabel": "Avatar scene placeholder",
       "visualHint": "Ideal for a rendered avatar still, voice UI, or system architecture snapshot.",
+      "image": "project-aila.svg",
       "skills": [
         "Python",
         "Azure",
@@ -393,6 +395,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "workflow",
       "visualLabel": "Agent flow placeholder",
       "visualHint": "Use for agent routing, job-matching pipeline, or outreach workflow visuals.",
+      "image": "project-jtr.svg",
       "skills": [
         "Python",
         "APIs",
@@ -436,6 +439,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "sensor",
       "visualLabel": "EcoCAR sensor fusion pipeline",
       "visualHint": "RTMaps diagram showing camera, radar, and LiDAR signal routing with C++ processing modules.",
+      "image": "project-ecocar.svg",
       "skills": [
         "C++",
         "RTMaps",
@@ -485,6 +489,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "dashboard",
       "visualLabel": "Product dashboard placeholder",
       "visualHint": "Use for deployment flow, billing UI, or issue-resolution snapshots.",
+      "image": "project-ai-headshot.svg",
       "skills": [
         "TypeScript",
         "Supabase",
@@ -530,6 +535,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "classifier",
       "visualLabel": "Model pipeline placeholder",
       "visualHint": "Good for feature charts, confusion matrix, or dataset-processing screenshots.",
+      "image": "project-phishing.svg",
       "skills": [
         "Python",
         "Scikit-learn",
@@ -574,6 +580,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "ranking",
       "visualLabel": "Recommendation placeholder",
       "visualHint": "Use for ranking results, similarity views, or recommendation output.",
+      "image": "project-course-rec.svg",
       "skills": [
         "Python",
         "NLP",
@@ -617,6 +624,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "anomaly",
       "visualLabel": "Anomaly placeholder",
       "visualHint": "Best for anomaly maps, flagged transactions, or evaluation views.",
+      "image": "project-fraud.svg",
       "skills": [
         "Python",
         "Scikit-learn",
@@ -660,6 +668,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "assistant",
       "visualLabel": "Voice assistant placeholder",
       "visualHint": "Use for command examples, interaction flow, or assistant UI concepts.",
+      "image": "project-spiron.svg",
       "skills": [
         "Python",
         "Speech",
@@ -702,6 +711,7 @@ window.PORTFOLIO_DATA = {
       "visualType": "browser",
       "visualLabel": "Browser automation placeholder",
       "visualHint": "Good for Selenium flows, page-state screenshots, or checkout automation visuals.",
+      "image": "project-shopping-bot.svg",
       "skills": [
         "Python",
         "Selenium",
@@ -1250,6 +1260,7 @@ window.PORTFOLIO_DATA = {
   "articles": [
     {
       "href": "article-observ-e.html",
+      "image": "project-observ-e.svg",
       "kicker": "Robotics · Accessibility",
       "title": "OBSERV-E: Building Assistive Robotics as a Systems Problem, Not a Hardware Problem",
       "summary": "Most assistive tech projects focus on the device. OBSERV-E started as three separate robot ideas — GRVI, DRVI, and HRVI — before I realized the real design challenge was the signal path between them and the person who needs help. Here's how the architecture shifted.",
@@ -1257,6 +1268,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       "href": "article-ecocar-sensor-fusion.html",
+      "image": "project-ecocar.svg",
       "kicker": "Autonomous Vehicles · Engineering",
       "title": "Sensor Fusion at EcoCAR: What Real-Time Validation Actually Looks Like",
       "summary": "Writing requirements is one thing. Writing requirements that actually get tested — against real LiDAR, radar, and camera data running in RTMaps on a Chevy Blazer EV — is a completely different discipline. Here's what I learned as Sensor Fusion Lead.",
@@ -1264,6 +1276,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       "href": "article-ai-production.html",
+      "image": "project-ai-headshot.svg",
       "kicker": "Applied AI · Product Engineering",
       "title": "Getting Past Demo Mode: Lessons from Shipping AI in Production",
       "summary": "A prototype that works locally in a Jupyter notebook is not a product. This is what I learned spending a summer building Azure-backed AI training tools and fixing production issues on a live AI headshot platform — Supabase, Vercel, Stripe, and all.",
@@ -1271,9 +1284,98 @@ window.PORTFOLIO_DATA = {
     },
     {
       "href": "article-email-security.html",
+      "image": "project-dns-scanner.svg",
       "kicker": "Security Automation · Operations",
       "title": "Turning SPF, DKIM, and DMARC Checks into a Repeatable Security Workflow",
       "summary": "Manual email authentication checks don't scale — especially for MSPs managing dozens of client domains. Here's how I built the automation pipeline at Technology Transition Paradigm that replaced hours of per-domain work with structured, validated, reportable results.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-aila.html",
+      "image": "project-aila.svg",
+      "kicker": "Applied AI · Voice Systems",
+      "title": "AILA: What It Takes to Build a Voice-Driven AI Avatar That Doesn't Feel Like a Toy",
+      "summary": "Adding a voice to an AI system sounds simple until you realize that tone, latency, and personality are engineering problems, not design decisions. Here's how OpenVoice TTS, Ollama, and Azure Cognitive Services came together to build AILA for Illinois Tech.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-jtr.html",
+      "image": "project-jtr.svg",
+      "kicker": "Applied AI · Automation",
+      "title": "JTR: Why I Built an AI Job-Seeking Agent Instead of Just Updating My Resume",
+      "summary": "Job searching is an operations problem disguised as a personal challenge. JTR treats it that way — matching, outreach, tracking, and automation instead of hoping the right person sees the right PDF at the right time.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-itr-lab-access.html",
+      "image": "project-itr-lab-access.svg",
+      "kicker": "Full-Stack Product · TypeScript",
+      "title": "Building a Real Lab Access System: Next.js, Discord Bots, and Replacing Spreadsheets",
+      "summary": "Illinois Tech Robotics was coordinating lab access through ad-hoc messages. I built a production full-stack platform — calendar scheduling, admin dashboards, email notifications, and a Discord bot integration — to replace all of it.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-scammantha.html",
+      "image": "project-scammantha.svg",
+      "kicker": "Cybersecurity · UX",
+      "title": "Scammantha: Teaching Scam Resistance Through Live Call Simulation, Not Awareness Videos",
+      "summary": "People know scams exist. They still fall for them. Scammantha puts users inside simulated scam calls — complete with dynamic scammer mood tracking — so they can practice the judgment calls before they face a real one.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-phishing.html",
+      "image": "project-phishing.svg",
+      "kicker": "Applied AI · NLP",
+      "title": "Building a 97% Accurate Phishing Detector: Feature Engineering Beats Model Complexity",
+      "summary": "The biggest lesson from building a phishing email classifier: the model matters less than what you feed it. URL patterns, urgency word counts, and domain age beat raw text embeddings when it comes to email threat detection.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-course-rec.html",
+      "image": "project-course-rec.svg",
+      "kicker": "Applied AI · NLP",
+      "title": "Course Recommendation Without Ratings: TF-IDF and Cosine Similarity on 5,000 Courses",
+      "summary": "Most recommendation engines lean on ratings data. IIT's course catalog doesn't have that. Here's how TF-IDF vectorization and cosine similarity built a content-based recommender that works without a single user review.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-fraud-detection.html",
+      "image": "project-fraud.svg",
+      "kicker": "Applied AI · Anomaly Detection",
+      "title": "Isolation Forest vs One-Class SVM: What 590K Transactions Taught Me About Fraud Detection",
+      "summary": "Unsupervised fraud detection is harder than it sounds when only 3.5% of your data is actually fraud. Here's how I compared two anomaly detection approaches on the IEEE-CIS dataset — and why Isolation Forest won by a wide margin.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-spiron.html",
+      "image": "project-spiron.svg",
+      "kicker": "Voice Systems · Python",
+      "title": "Spiron: Building a Fully Offline Voice Assistant Before LLMs Made It Easy",
+      "summary": "Spiron started as a project to understand voice-first interfaces from scratch — no API keys, no cloud dependencies, no shortcuts. speech_recognition, pyttsx3, and a lot of command parsing logic taught me what voice UX actually requires.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-lane-detection.html",
+      "image": "project-lane-detection.svg",
+      "kicker": "Computer Vision · Research",
+      "title": "Monocular Lane Detection: Why Simpler Backbones Sometimes Win",
+      "summary": "EfficientNet looked better on paper than ResNet-18. It wasn't. A CS 584 research project comparing backbone architectures and augmentation strategies revealed that robustness is not the same as parameter count.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-rl-driving.html",
+      "image": "project-rl-driving.svg",
+      "kicker": "Robotics · RL",
+      "title": "RL Lane-Keeping: What Adding More Sensors Does to a Trained Policy",
+      "summary": "You'd expect a camera plus LiDAR to outperform camera-only in a reinforcement learning driving task. It didn't — at least not the way I expected. Here's what the reward curves actually showed across sensor configurations.",
+      "cta": "Read the article"
+    },
+    {
+      "href": "article-shopping-bot.html",
+      "image": "project-shopping-bot.svg",
+      "kicker": "Automation · Python",
+      "title": "Automated Shopping Bot: Selenium, Checkout Flows, and Learning Browser Automation",
+      "summary": "Building a bot that completes real e-commerce checkout flows is a lesson in how fragile web UIs actually are — and how to write automation that handles it anyway. Here's what Selenium taught me about real-world browser automation.",
       "cta": "Read the article"
     }
   ],

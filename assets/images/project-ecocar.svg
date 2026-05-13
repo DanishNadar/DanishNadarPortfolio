@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+  <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#111a33"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-opacity=".4"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="720" rx="42" fill="#0b1020"/>
+
+<!-- Title -->
+<text x="600" y="68" text-anchor="middle" fill="#fff" font-family="Arial" font-size="48" font-weight="800">EcoCAR EV Challenge</text>
+<text x="600" y="104" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="21">Sensor Fusion Lead · Chevy Blazer EV · U.S. Dept. of Energy</text>
+
+<!-- Vehicle silhouette -->
+<g filter="url(#s)" transform="translate(310,230)">
+  <!-- Car body -->
+  <rect x="60" y="90" width="460" height="120" rx="18" fill="url(#gb)" stroke="url(#g)" stroke-width="3"/>
+  <!-- Cabin -->
+  <path d="M140 90 Q180 40 300 38 Q420 38 460 90Z" fill="#16213d" stroke="url(#g)" stroke-width="2.5"/>
+  <!-- Wheels -->
+  <circle cx="140" cy="220" r="46" fill="#0d1628" stroke="#ff7a1a" stroke-width="4"/>
+  <circle cx="140" cy="220" r="26" fill="#111a33"/>
+  <circle cx="440" cy="220" r="46" fill="#0d1628" stroke="#ff7a1a" stroke-width="4"/>
+  <circle cx="440" cy="220" r="26" fill="#111a33"/>
+  <!-- Sensor array on roof -->
+  <rect x="260" y="28" width="60" height="14" rx="4" fill="#ff7a1a" opacity=".9"/>
+  <text x="290" y="41" text-anchor="middle" fill="#fff" font-family="Arial" font-size="9" font-weight="700">LiDAR</text>
+  <!-- Front sensors -->
+  <rect x="518" y="120" width="16" height="28" rx="3" fill="#ff7a1a" opacity=".8"/>
+  <rect x="518" y="158" width="16" height="18" rx="3" fill="#ffd166" opacity=".7"/>
+  <!-- EV badge -->
+  <rect x="210" y="108" width="40" height="20" rx="5" fill="#28c840"/>
+  <text x="230" y="122" text-anchor="middle" fill="#fff" font-family="Arial" font-size="10" font-weight="700">EV</text>
+</g>
+
+<!-- Sensor rings (radar/LiDAR sweep) -->
+<circle cx="600" cy="320" r="120" fill="none" stroke="#ff7a1a" stroke-width="1.5" opacity=".25" stroke-dasharray="8,6"/>
+<circle cx="600" cy="320" r="190" fill="none" stroke="#ff7a1a" stroke-width="1" opacity=".15" stroke-dasharray="10,8"/>
+<circle cx="600" cy="320" r="260" fill="none" stroke="#ff7a1a" stroke-width="1" opacity=".1" stroke-dasharray="12,10"/>
+
+<!-- Sensor labels -->
+<g font-family="Arial" font-size="14" font-weight="700">
+  <!-- Camera -->
+  <rect x="76" y="148" width="110" height="52" rx="10" fill="#111a33" stroke="#ff7a1a" stroke-width="2"/>
+  <text x="131" y="170" text-anchor="middle" fill="#ff7a1a" font-size="12">📷 Camera</text>
+  <text x="131" y="188" text-anchor="middle" fill="#b9c7e6" font-size="10">30 Hz</text>
+  <line x1="186" y1="174" x2="310" y2="290" stroke="#ff7a1a" stroke-width="1.5" stroke-dasharray="5,4" opacity=".6"/>
+
+  <!-- Radar -->
+  <rect x="76" y="440" width="110" height="52" rx="10" fill="#111a33" stroke="#ffd166" stroke-width="2"/>
+  <text x="131" y="462" text-anchor="middle" fill="#ffd166" font-size="12">📡 Radar</text>
+  <text x="131" y="480" text-anchor="middle" fill="#b9c7e6" font-size="10">20 Hz</text>
+  <line x1="186" y1="466" x2="310" y2="350" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="5,4" opacity=".6"/>
+
+  <!-- LiDAR -->
+  <rect x="1014" y="148" width="110" height="52" rx="10" fill="#111a33" stroke="#28c840" stroke-width="2"/>
+  <text x="1069" y="170" text-anchor="middle" fill="#28c840" font-size="12">🔭 LiDAR</text>
+  <text x="1069" y="188" text-anchor="middle" fill="#b9c7e6" font-size="10">10 Hz</text>
+  <line x1="1014" y1="174" x2="890" y2="290" stroke="#28c840" stroke-width="1.5" stroke-dasharray="5,4" opacity=".6"/>
+
+  <!-- RTMaps -->
+  <rect x="1014" y="440" width="110" height="52" rx="10" fill="#111a33" stroke="#8aa9ff" stroke-width="2"/>
+  <text x="1069" y="462" text-anchor="middle" fill="#8aa9ff" font-size="12">⚙ RTMaps</text>
+  <text x="1069" y="480" text-anchor="middle" fill="#b9c7e6" font-size="10">Fusion</text>
+  <line x1="1014" y1="466" x2="890" y2="350" stroke="#8aa9ff" stroke-width="1.5" stroke-dasharray="5,4" opacity=".6"/>
+</g>
+
+<!-- Center fusion node -->
+<circle cx="600" cy="320" r="52" fill="#111a33" stroke="url(#g)" stroke-width="4" filter="url(#glow)"/>
+<text x="600" y="314" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="700">C++</text>
+<text x="600" y="333" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="11">Fusion</text>
+
+<!-- Bottom bar -->
+<text x="600" y="626" text-anchor="middle" fill="#fff" font-family="Arial" font-size="18" font-weight="700">RTMaps · C++ · Lead Vehicle Detection · Driver Attention Monitoring</text>
+<text x="600" y="656" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="14">V&amp;V requirements · Real-time perception · Multi-sensor synchronization</text>
+</svg>

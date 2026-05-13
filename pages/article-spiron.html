@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spiron: Building a Fully Offline Voice Assistant Before LLMs Made It Easy — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Spiron: Building a Fully Offline Voice Assistant Before LLMs Made It Easy · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Voice Systems · Python · Offline-First</span>
+        <h1 class="page-title">Spiron: Building a Fully Offline Voice Assistant Before LLMs Made It Easy</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Spiron started as a project to understand voice-first interfaces from scratch — no API keys, no cloud dependencies, no shortcuts. speech_recognition, pyttsx3, and a lot of command parsing logic taught me what voice UX actually requires.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-spiron-assistant.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-spiron.svg" alt="Spiron voice assistant — command categories and voice pipeline" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Spiron — offline voice pipeline with speech_recognition, NLP parsing, and pyttsx3 TTS</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Before ChatGPT, before voice APIs were everywhere</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Spiron was built in 2022 — before large language models became the obvious answer to every voice interface question. Building a voice assistant at that time meant making real decisions: what speech recognition engine? What TTS? How do you handle command intent without a language model doing the disambiguation for you?
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The constraint I set for myself: fully offline. No API calls, no cloud dependency, no keys to manage. The system had to work on any machine with a microphone and speakers, without an internet connection.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          That constraint forced me to think carefully about what a voice assistant actually needs to do — and what it doesn't. You don't need GPT-4 to answer "what time is it" or "open YouTube." You need reliable speech recognition, clean intent parsing, and a fast response loop. Those are the actual hard problems in offline voice UX.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The stack: speech_recognition, pyttsx3, and intent routing</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The speech recognition layer uses the Python speech_recognition library, which wraps several backends. For offline use, the CMU Sphinx engine handles transcription without any network call. For environments where internet access is available, the Google Web Speech API provides significantly better accuracy — but Spiron works in either mode.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Text-to-speech uses pyttsx3 — a cross-platform TTS engine that works on Windows, macOS, and Linux using the native voice engine on each platform. Response latency is under half a second, which is fast enough to feel conversational rather than mechanical.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Intent routing is the part that required the most thought. Without a language model, you parse intent through pattern matching and keyword detection. The challenge is making the patterns robust enough to handle natural variation without becoming so complex they're unmaintainable. The solution: category-based routing first, then specific intent detection within each category.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">What Spiron taught me about voice UX</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The biggest lesson: voice interfaces require different error handling than visual interfaces. When a GUI fails, you can show an error message and the user recovers. When a voice assistant fails — doesn't understand the command, gives a wrong response — the experience breaks completely. There's no visual cue to orient the user.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Spiron's error handling philosophy: acknowledge what you heard, explain what you can do, and offer an alternative. "I didn't catch that — you can ask me the time, open a website, or search Wikipedia." That feedback loop kept the assistant usable even when recognition failed. It's a pattern I carried forward into AILA and every voice-adjacent project since.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · speech_recognition · pyttsx3 · wikipedia-api · webbrowser · pyjokes</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Key lesson</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Voice UX requires graceful failure handling above all else. A voice assistant that doesn't know how to recover from misrecognition is unusable.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-spiron-assistant.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

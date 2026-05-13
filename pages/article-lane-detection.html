@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Monocular Lane Detection: Why Simpler Backbones Sometimes Win — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Monocular Lane Detection: Why Simpler Backbones Sometimes Win · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Computer Vision · Research · Deep Learning</span>
+        <h1 class="page-title">Monocular Lane Detection: Why Simpler Backbones Sometimes Win</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · CS 584 Machine Learning · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">EfficientNet looked better on paper than ResNet-18. It wasn't — at least not for this task. A backbone comparison study revealed that robustness isn't the same as parameter count.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="https://github.com/DanishNadar/CS-584-Final-Project" target="_blank" rel="noreferrer">View on GitHub</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-lane-detection.svg" alt="Lane detection backbone comparison — ResNet-18, EfficientNet, MobileNetV2" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Backbone comparison: ResNet-18 vs EfficientNet-B0 vs MobileNetV2 with augmentation study</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The project: simplifying 3D lane detection into a feasible 2D problem</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The original framing of this CS 584 project involved 3D lane detection — predicting lane coordinates in three-dimensional space from a monocular (single camera) image. That's an extremely hard problem: monocular depth estimation is an unsolved challenge even in production autonomous driving systems.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The decision I made early was to simplify the problem scope. Rather than chasing 3D reconstruction, I focused on 2D lane coordinate prediction — a more tractable version of the task that still evaluates the meaningful question: which backbone architecture is most robust to real-world variations in lighting, weather, and road conditions?
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The simplification made the evaluation cleaner. With a well-defined 2D prediction target, I could compare architectures fairly — without confounding the results with 3D reconstruction error.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The backbones: ResNet-18, EfficientNet-B0, and MobileNetV2</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          ResNet-18 is the baseline — a well-understood architecture with skip connections that help with training stability. It's not the most parameter-efficient, but it's reliable and well-tested on vision tasks.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          EfficientNet-B0 uses compound scaling — simultaneously increasing width, depth, and resolution rather than scaling one dimension at a time. On ImageNet benchmarks, EfficientNet-B0 outperforms ResNet-18 at a fraction of the parameter count. The expectation going in was that it would win.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          MobileNetV2 is the efficiency-first option — designed for deployment on resource-constrained hardware. It uses depthwise separable convolutions and inverted residuals to minimize compute while maintaining reasonable accuracy.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Results: what the augmentation study revealed</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The augmentation set tested robustness to realistic driving conditions: Gaussian blur (fog/rain simulation), random noise (sensor degradation), brightness shifts (time of day variation), and shadow simulation (overpass/tree conditions).
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          ResNet-18 showed the most consistent performance across augmentation conditions. Its F1-score degraded less than EfficientNet-B0 when augmentation was applied — suggesting that the compound scaling in EfficientNet creates a model that's more sensitive to distribution shift, not more robust to it.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The lesson: benchmark performance on clean data is not the same as robustness under realistic conditions. For lane detection specifically — where weather and lighting are constant variables, not edge cases — the more conservative backbone architecture won.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · PyTorch · torchvision · OpenCV · scikit-learn · matplotlib</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Key finding</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">ResNet-18 outperformed EfficientNet-B0 under augmentation — benchmark accuracy on clean data doesn't predict robustness to distribution shift.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-lane-detection-salad.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

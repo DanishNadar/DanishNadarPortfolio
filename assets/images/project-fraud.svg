@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#ff7a1a"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".38"/></filter>
+</defs>
+<rect width="1200" height="720" rx="42" fill="#0b1020"/>
+<text x="600" y="68" text-anchor="middle" fill="#fff" font-family="Arial" font-size="44" font-weight="800">Fraud Detection System</text>
+<text x="600" y="104" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="21">Isolation Forest · One-Class SVM · Anomaly Detection</text>
+
+<!-- Transaction scatter plot -->
+<g filter="url(#s)">
+  <rect x="60" y="136" width="480" height="420" rx="18" fill="#0d1628" stroke="url(#g)" stroke-width="2"/>
+  <text x="300" y="168" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="14" font-weight="700">Transaction Anomaly Scatter</text>
+
+  <!-- Axes -->
+  <line x1="100" y1="490" x2="500" y2="490" stroke="#16213d" stroke-width="2"/>
+  <line x1="100" y1="490" x2="100" y2="198" stroke="#16213d" stroke-width="2"/>
+  <text x="300" y="510" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="11">Transaction amount ($)</text>
+  <text x="74" y="344" text-anchor="middle" fill="#8894a8" font-family="Arial" font-size="11" transform="rotate(-90,74,344)">Frequency</text>
+
+  <!-- Normal transaction cloud -->
+  <circle cx="180" cy="420" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="195" cy="408" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="210" cy="430" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="225" cy="415" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="240" cy="400" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="255" cy="422" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="170" cy="435" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="215" cy="445" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="235" cy="412" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="245" cy="428" r="4" fill="#28c840" opacity=".6"/>
+  <circle cx="200" cy="438" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="190" cy="416" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="265" cy="418" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="275" cy="408" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="155" cy="425" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="160" cy="445" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="230" cy="440" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="250" cy="442" r="4" fill="#28c840" opacity=".5"/>
+
+  <!-- Normal cluster mid -->
+  <circle cx="210" cy="340" r="4" fill="#28c840" opacity=".55"/>
+  <circle cx="230" cy="328" r="4" fill="#28c840" opacity=".55"/>
+  <circle cx="250" cy="350" r="4" fill="#28c840" opacity=".55"/>
+  <circle cx="220" cy="360" r="4" fill="#28c840" opacity=".5"/>
+  <circle cx="240" cy="318" r="4" fill="#28c840" opacity=".5"/>
+
+  <!-- Anomaly points (outliers) -->
+  <circle cx="440" cy="218" r="8" fill="#ff5f57" opacity=".9"/>
+  <text x="440" y="208" text-anchor="middle" fill="#ff5f57" font-family="Arial" font-size="9" font-weight="700">FRAUD</text>
+  <circle cx="420" cy="245" r="7" fill="#ff5f57" opacity=".85"/>
+  <circle cx="460" cy="232" r="7" fill="#ff5f57" opacity=".85"/>
+  <circle cx="145" cy="218" r="7" fill="#febc2e" opacity=".85"/>
+  <text x="145" y="208" text-anchor="middle" fill="#febc2e" font-family="Arial" font-size="9">ALERT</text>
+  <circle cx="390" cy="455" r="7" fill="#ff5f57" opacity=".8"/>
+  <circle cx="410" cy="440" r="6" fill="#ff5f57" opacity=".75"/>
+
+  <!-- Decision boundary (ellipse) -->
+  <ellipse cx="225" cy="390" rx="110" ry="90" fill="none" stroke="#28c840" stroke-width="1.5" stroke-dasharray="8,5" opacity=".5"/>
+  <text x="225" y="500" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="11">normal region</text>
+
+  <!-- Legend -->
+  <circle cx="116" cy="214" r="5" fill="#28c840"/>
+  <text x="128" y="218" fill="#28c840" font-family="Arial" font-size="11">Normal tx</text>
+  <circle cx="116" cy="234" r="5" fill="#ff5f57"/>
+  <text x="128" y="238" fill="#ff5f57" font-family="Arial" font-size="11">Fraud</text>
+  <circle cx="116" cy="254" r="5" fill="#febc2e"/>
+  <text x="128" y="258" fill="#febc2e" font-family="Arial" font-size="11">Alert</text>
+</g>
+
+<!-- Model comparison panel -->
+<g filter="url(#s)" transform="translate(600,136)">
+  <rect x="0" y="0" width="540" height="420" rx="18" fill="#111a33" stroke="url(#g)" stroke-width="2"/>
+  <text x="270" y="34" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="15" font-weight="700">Model Comparison</text>
+
+  <!-- Isolation Forest -->
+  <rect x="20" y="50" width="240" height="170" rx="12" fill="#0d1628" stroke="#ff7a1a" stroke-width="1.5"/>
+  <text x="140" y="76" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">Isolation Forest</text>
+  <text x="140" y="98" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">Randomly isolates anomalies</text>
+  <text x="140" y="116" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">Fewer splits = outlier</text>
+  <text x="30" y="138" fill="#b9c7e6" font-family="Arial" font-size="11">Precision</text><text x="250" y="138" text-anchor="end" fill="#28c840" font-family="Arial" font-size="11" font-weight="700">94.2%</text>
+  <text x="30" y="156" fill="#b9c7e6" font-family="Arial" font-size="11">Recall</text><text x="250" y="156" text-anchor="end" fill="#28c840" font-family="Arial" font-size="11" font-weight="700">91.8%</text>
+  <text x="30" y="174" fill="#b9c7e6" font-family="Arial" font-size="11">F1-Score</text><text x="250" y="174" text-anchor="end" fill="#28c840" font-family="Arial" font-size="11" font-weight="700">92.9%</text>
+  <text x="30" y="192" fill="#b9c7e6" font-family="Arial" font-size="11">Training</text><text x="250" y="192" text-anchor="end" fill="#28c840" font-family="Arial" font-size="11" font-weight="700">2.3s</text>
+  <rect x="30" y="202" width="200" height="8" rx="4" fill="#16213d"/>
+  <rect x="30" y="202" width="188" height="8" rx="4" fill="url(#g)" opacity=".8"/>
+
+  <!-- One-Class SVM -->
+  <rect x="280" y="50" width="240" height="170" rx="12" fill="#0d1628" stroke="#8aa9ff" stroke-width="1.5"/>
+  <text x="400" y="76" text-anchor="middle" fill="#8aa9ff" font-family="Arial" font-size="13" font-weight="700">One-Class SVM</text>
+  <text x="400" y="98" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">Hyperplane boundary</text>
+  <text x="400" y="116" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">RBF kernel mapping</text>
+  <text x="290" y="138" fill="#b9c7e6" font-family="Arial" font-size="11">Precision</text><text x="510" y="138" text-anchor="end" fill="#8aa9ff" font-family="Arial" font-size="11" font-weight="700">91.5%</text>
+  <text x="290" y="156" fill="#b9c7e6" font-family="Arial" font-size="11">Recall</text><text x="510" y="156" text-anchor="end" fill="#8aa9ff" font-family="Arial" font-size="11" font-weight="700">89.2%</text>
+  <text x="290" y="174" fill="#b9c7e6" font-family="Arial" font-size="11">F1-Score</text><text x="510" y="174" text-anchor="end" fill="#8aa9ff" font-family="Arial" font-size="11" font-weight="700">90.3%</text>
+  <text x="290" y="192" fill="#b9c7e6" font-family="Arial" font-size="11">Training</text><text x="510" y="192" text-anchor="end" fill="#febc2e" font-family="Arial" font-size="11" font-weight="700">48.7s</text>
+  <rect x="290" y="202" width="200" height="8" rx="4" fill="#16213d"/>
+  <rect x="290" y="202" width="182" height="8" rx="4" fill="#8aa9ff" opacity=".6"/>
+
+  <!-- Dataset info -->
+  <rect x="20" y="240" width="500" height="60" rx="10" fill="#0d1628"/>
+  <text x="270" y="264" text-anchor="middle" fill="#ff7a1a" font-family="Arial" font-size="13" font-weight="700">Dataset: IEEE-CIS Fraud Detection</text>
+  <text x="270" y="284" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="12">590,540 transactions · 3.5% fraud rate · PCA-reduced features</text>
+
+  <!-- Winning badge -->
+  <rect x="140" y="318" width="260" height="52" rx="12" fill="#1a3320" stroke="#28c840" stroke-width="2"/>
+  <text x="270" y="341" text-anchor="middle" fill="#28c840" font-family="Arial" font-size="13" font-weight="700">✓ Isolation Forest selected</text>
+  <text x="270" y="360" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="11">Superior performance + 20× faster training</text>
+
+  <!-- Stack -->
+  <text x="50" y="400" fill="#ff7a1a" font-family="Arial" font-size="12">Python</text>
+  <text x="120" y="400" fill="#ff7a1a" font-family="Arial" font-size="12">scikit-learn</text>
+  <text x="222" y="400" fill="#ff7a1a" font-family="Arial" font-size="12">pandas</text>
+  <text x="300" y="400" fill="#ff7a1a" font-family="Arial" font-size="12">matplotlib</text>
+  <text x="400" y="400" fill="#ff7a1a" font-family="Arial" font-size="12">seaborn</text>
+</g>
+
+<text x="600" y="610" text-anchor="middle" fill="#fff" font-family="Arial" font-size="17" font-weight="700">Unsupervised anomaly detection · 590K transactions · Isolation Forest vs One-Class SVM</text>
+<text x="600" y="640" text-anchor="middle" fill="#b9c7e6" font-family="Arial" font-size="14">IEEE-CIS Fraud Detection dataset · PCA dimensionality reduction · comparative evaluation</text>
+</svg>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JTR: Why I Built an AI Job-Seeking Agent — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>JTR: Why I Built an AI Job-Seeking Agent Instead of Just Updating My Resume · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · Automation · Agent Systems</span>
+        <h1 class="page-title">JTR: Why I Built an AI Job-Seeking Agent Instead of Just Updating My Resume</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">Job searching is an operations problem disguised as a personal challenge. JTR treats it that way — matching, outreach, tracking, and automation instead of hoping the right person sees the right PDF at the right time.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="https://github.com/DanishNadar/JTR" target="_blank" rel="noreferrer">View on GitHub</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-jtr.svg" alt="JTR AI job-seeking agent pipeline" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">JTR pipeline — profile matching, ranked opportunities, automated outreach</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The actual problem with job searching</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Job boards are full of noise. Outreach is time-consuming and inconsistent. Tracking applications across spreadsheets falls apart after the first week. The whole process is optimized for volume, not quality — which means the candidates who win are often the ones who just send the most messages.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          JTR starts from a different premise: treat job seeking like an ops workflow. Every job listing is an input. Every application is a tracked state. Every outreach message is a personalized artifact generated from profile context, not a copy-pasted template. The goal isn't to automate away effort — it's to redirect effort toward things that actually require judgment.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The pipeline has four stages: ingest job listings from APIs and scraped sources, score them against the candidate's profile using ML matching logic, generate personalized outreach content, and track the full lifecycle from first message to decision.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Matching as a scoring problem</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The matching engine compares job descriptions against a structured profile — skills, experience levels, domain preferences, role type. Rather than keyword matching, it uses a vector-based similarity approach that captures semantic alignment: a role that says "autonomous systems" should match "robotics and computer vision" even without exact term overlap.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The output is a ranked list with a match score. High-scoring roles get routed to outreach. Low-scoring roles are stored for reference but don't trigger action. The system is designed to be selective — not exhaustive — because quality outreach beats volume every time.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Personalized outreach at scale</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The outreach module generates LinkedIn DMs and cold emails using role-specific context. Each message references specific aspects of the job description — not the company in general, but the actual work: the tech stack, the team description, the specific problem they're hiring to solve.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Follow-up scheduling is handled automatically: if no response after five days, a follow-up message is queued. If a response comes in, the state updates accordingly. The system keeps a complete log of what was sent, when, and to whom — which means no accidental double-messages and full visibility into pipeline health.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · FastAPI · React · ML matching · Apollo.io · LinkedIn API · Greenhouse</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Key insight</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Job searching is a data pipeline problem. Once you treat it that way, you stop drowning in noise and start measuring what actually works.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-jtr-agent.html">See the full JTR project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Scammantha: Teaching Scam Resistance Through Live Call Simulation — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Scammantha: Teaching Scam Resistance Through Live Call Simulation · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Cybersecurity · UX Design · Education</span>
+        <h1 class="page-title">Scammantha: Teaching Scam Resistance Through Live Call Simulation, Not Awareness Videos</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Cybersecurity Product · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">People know scams exist. They still fall for them. Scammantha puts users inside simulated scam calls so they can practice the judgment calls before they face a real one.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="cta-btn" href="https://scammantha.vercel.app" target="_blank" rel="noreferrer">Try Scammantha live</a>
+          <a class="secondary-btn" href="https://github.com/DanishNadar/Scammantha" target="_blank" rel="noreferrer">GitHub repo</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-scammantha.svg" alt="Scammantha platform — mission screen and scammer mood tracker" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Scammantha — interactive call simulation, mission progression, and scammer mood tracking</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The problem with awareness-only education</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Cybersecurity awareness training works on paper. Show someone a phishing example, explain what to look for, quiz them at the end. They pass. Two weeks later, they click the link anyway — because awareness doesn't build the reflexes that judgment under pressure actually requires.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The research on this is pretty consistent: people don't fail security tests because they don't know what a scam is. They fail because in the moment — when there's urgency, when an authority figure is on the line, when the stakes feel real — the patterns they learned in training don't activate fast enough.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Scammantha's premise is that you have to train the reflex, not just the knowledge. That means putting users in realistic scenarios and making them act — not just identify.
+        </p>
+      </article>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <a href="https://scammantha.vercel.app" target="_blank" rel="noreferrer" style="display:block;max-width:720px;margin:0 auto;">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fscammantha.vercel.app&screenshot=true&meta=false&embed=screenshot.url&waitFor=1500" alt="Scammantha live site" style="width:100%;border-radius:14px;display:block;border:1px solid rgba(255,122,26,.2);" loading="lazy" />
+        </a>
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-top:8px;margin-bottom:32px;">Live at scammantha.vercel.app</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">How the simulation engine works</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The core mechanic is a call simulation: a scammer's script plays out in real time, and the user has to respond — with words, with actions, with counterarguments. The system tracks what the user does and adjusts the scammer's behavior in response.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The scammer mood tracking system is the feature that makes it feel real. If the user pushes back effectively — identifies the manipulation tactic, refuses a request, asks a question that derails the script — the scammer's urgency increases. If the user complies, the scammer gets more confident. This dynamic pressure is the thing that passive training can't reproduce.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Mission scenarios are structured around real scammer playbooks: tech support calls, IRS impersonation, gift card extraction, remote access requests. Each mission teaches one or two specific recognition patterns — not by describing them, but by forcing the user to encounter and respond to them in real time.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Microphone integration and the UX decisions it required</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Scammantha supports microphone input — users can actually speak their responses, not just click buttons. This required handling browser permission flows, audio capture, and graceful fallback for environments where microphone access isn't available.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The UX decision that mattered most: don't force microphone use. Some users are in public spaces, some are on systems without microphone access, and some just prefer typing. The platform works fully in either mode. That flexibility was important for making Scammantha genuinely accessible as a training tool, not just a demo.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">JavaScript · Web Speech API · Microphone API · Vercel · Mission progression engine</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Core insight</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Security training that doesn't build reflexes under pressure doesn't work. Scammantha is designed to build the reflex, not just the knowledge.</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-scammantha.html">See the full Scammantha project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>

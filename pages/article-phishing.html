@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Building a 97% Accurate Phishing Detector — by Danish Nadar." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+  <link rel="stylesheet" href="../assets/styles.css?v=28" />
+  <title>Building a 97% Accurate Phishing Detector: Feature Engineering Beats Model Complexity · Danish Nadar</title>
+</head>
+<body>
+  <div class="shell">
+    <div data-nav></div>
+    <main class="page container">
+
+      <section class="section-block fade-up">
+        <span class="eyebrow">Applied AI · NLP · Security · Classification</span>
+        <h1 class="page-title">Building a 97% Accurate Phishing Detector: Feature Engineering Beats Model Complexity</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:20px 0 8px;">
+          <img src="https://avatars.githubusercontent.com/u/89051895?v=4" alt="Danish Nadar" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,122,26,.5);" />
+          <div>
+            <strong style="color:#fff;font-size:.97rem;display:block;">Danish Nadar</strong>
+            <span style="color:#b9c7e6;font-size:.85rem;">AI Engineer · Illinois Institute of Technology</span>
+          </div>
+        </div>
+        <p class="lead short" style="margin-top:12px;">The biggest lesson from building a phishing email classifier: the model matters less than what you feed it. URL patterns, urgency word counts, and domain age beat raw text embeddings.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="secondary-btn" href="project-phishing-detector.html">See project page</a>
+          <a class="ghost-btn" href="articles.html">Back to articles</a>
+        </div>
+      </section>
+
+      <section class="section fade-up" style="margin-bottom:8px;">
+        <img src="../assets/images/project-phishing.svg" alt="Phishing detection model — Random Forest pipeline and confusion matrix" style="width:100%;border-radius:16px;display:block;border:1px solid rgba(255,122,26,.2);margin-bottom:8px;" />
+        <p style="color:#b9c7e6;font-size:.85rem;text-align:center;margin-bottom:32px;">Phishing detector — feature extraction, Random Forest classifier, and evaluation metrics</p>
+      </section>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Why raw text doesn't work for phishing detection</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The naive approach to email classification is to vectorize the body text, train a classifier on the bag of words, and call it a model. That works — to a point. The problem is that phishing emails are designed to look like legitimate ones. A well-crafted phishing email can use the same vocabulary as a real bank notification. Raw text similarity won't catch it.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          What phishing emails almost always have in common isn't word choice — it's behavioral signals. Suspicious URLs. High urgency word density. Sender domains that were registered recently. Mismatches between the from address and the reply-to address. These are the features that actually separate phishing from legitimate email.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          Building the feature set around these behavioral signals — rather than raw word frequencies — was the decision that pushed accuracy from the low 80s to 97.4%.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">The feature engineering that actually moved the needle</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          The feature set included: URL count per email, presence of IP addresses in URLs (a classic phishing signal), ratio of uppercase characters to total characters (urgency correlates with caps), count of urgency-related words (URGENT, ACT NOW, VERIFY IMMEDIATELY), domain age of the sender's domain, SPF/DKIM authentication status, and HTML-to-plain-text ratio.
+        </p>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          None of these features individually would catch a sophisticated attacker. Combined, and with a Random Forest model that can learn non-linear relationships between them, they create a robust signal profile that's much harder to fool than a text classifier.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The dataset: 10,100 emails, roughly balanced between phishing and legitimate. The evaluation used precision, recall, and F1-score alongside the confusion matrix — because in a security context, both false positives (blocking legitimate email) and false negatives (missing phishing) are costly in different ways.
+        </p>
+      </article>
+
+      <article class="panel fade-up" style="max-width:720px;margin:0 auto 32px;">
+        <h2 class="section-title" style="font-size:1.6rem;">Random Forest: why it works for this problem</h2>
+        <p class="section-copy" style="line-height:1.8;margin-bottom:16px;">
+          Random Forest is a natural fit for phishing detection for a few reasons. It handles mixed feature types well — numerical features like URL count and categorical features like SPF pass/fail don't need separate preprocessing pipelines. It's robust to overfitting on small datasets compared to individual decision trees. And it provides feature importance scores, which are genuinely useful for understanding which signals matter most.
+        </p>
+        <p class="section-copy" style="line-height:1.8;">
+          The top three features by importance: URL count, urgency word density, and domain age. That result told me something useful — not just for this model, but for thinking about email security more broadly. Those three signals, even evaluated manually, would catch a significant percentage of real phishing attempts.
+        </p>
+      </article>
+
+      <div style="max-width:720px;margin:0 auto 48px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Results</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">97.4% accuracy · 97.6% precision · 98.3% recall · 10,100-email dataset</p>
+        </article>
+        <article class="panel fade-up">
+          <h3 style="color:#ff7a1a;font-size:1rem;margin-bottom:8px;">Stack</h3>
+          <p style="color:#b9c7e6;font-size:.9rem;line-height:1.7;">Python · scikit-learn · NLTK · pandas · Jupyter Notebook</p>
+        </article>
+      </div>
+
+      <div style="max-width:720px;margin:0 auto 48px;text-align:center;">
+        <a class="cta-btn" href="project-phishing-detector.html">See the full project page</a>
+        <a class="ghost-btn" href="articles.html" style="margin-left:12px;">Back to articles</a>
+      </div>
+
+    </main>
+    <div data-footer></div>
+  </div>
+  <script src="../assets/data.js?v=28"></script>
+  <script src="../assets/main.js?v=28"></script>
+</body>
+</html>
